@@ -1,0 +1,21 @@
+{
+  "name": "Code Pe Charcha",
+  "short_name": "CPC",
+  "description": "Software, App & Marketing Company in India.",
+  "icons": [
+    {
+      "src": "/logo.jpg",
+      "sizes": "192x192",
+      "type": "image/jpeg"
+    },
+    {
+      "src": "/logo.jpg",
+      "sizes": "512x512",
+      "type": "image/jpeg"
+    }
+  ],
+  "start_url": "/",
+  "display": "standalone",
+  "theme_color": "#f4f0e8",
+  "background_color": "#f4f0e8"
+}
