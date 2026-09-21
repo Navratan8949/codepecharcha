@@ -1203,23 +1203,17 @@ function Pricing() {
 function Testimonials() {
   const reviews = [
     {
-      name: "Rahul Sharma",
-      role: "Founder, TechStart",
-      text: "Code Pe Charcha transformed our business idea into a brilliant working app. Their attention to detail and transparency throughout the process was incredible.",
+      name: "Devanshu Gahlot",
+      role: "CA Firm Manager",
+      text: "Code Pe Charcha build a brilliant web solution for our CA firm. Their attention to detail and transparency throughout the process was incredible.",
       rating: 5,
     },
     {
-      name: "Priya Singh",
-      role: "Marketing Director",
+      name: "Rahul Prajapat",
+      role: "Digital Marketer",
       text: "The website they built for us not only looks stunning but also loads instantly. Our conversion rates have doubled since the launch. Highly recommended!",
       rating: 5,
-    },
-    {
-      name: "Amit Patel",
-      role: "E-commerce Owner",
-      text: "We wanted a complex custom e-commerce solution and they delivered it perfectly on time. The team is very responsive and professional.",
-      rating: 5,
-    },
+    }
   ];
 
   return (
