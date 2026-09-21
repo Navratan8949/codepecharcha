@@ -108,6 +108,7 @@ const jsonLd = {
     closes: "18:00"
   },
   sameAs: [
+    "https://www.facebook.com/codepecharcha",
     "https://www.linkedin.com/company/codepecharcha",
     "https://www.instagram.com/codepecharcha",
   ],

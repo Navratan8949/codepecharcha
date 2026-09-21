@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { ArrowUpRight, Instagram, Linkedin, Mail, Menu, X } from "lucide-react";
+import { ArrowUpRight, Instagram, Linkedin, Mail, Menu, X, Facebook } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
@@ -237,7 +237,17 @@ function Footer() {
             <span className="footer-label">Find us</span>
             <div className="footer-links">
               <a
-                href="https://instagram.com"
+                href="https://facebook.com/codepecharcha"
+                target="_blank"
+                rel="noreferrer"
+                data-testid="link-social-facebook"
+                className="social-link"
+              >
+                <Facebook size={16} />{" "}
+                <span className="social-text">Facebook</span>
+              </a>
+              <a
+                href="https://instagram.com/codepecharcha"
                 target="_blank"
                 rel="noreferrer"
                 data-testid="link-social-instagram"
