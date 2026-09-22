@@ -18,10 +18,10 @@ export const metadata: Metadata = {
     title: "Code Pe Charcha",
   },
   title: {
-    default: "Code Pe Charcha | Top Software, App & Marketing Agency",
+    default: "Code Pe Charcha | Software Development, Mobile Apps & Digital Marketing",
     template: "%s | Code Pe Charcha",
   },
-  description: "Code Pe Charcha is a premier software development, mobile app creation, and digital marketing agency delivering innovative solutions for modern businesses. We help you scale and succeed.",
+  description: "Code Pe Charcha builds modern websites, mobile apps, custom software, CRM systems and digital solutions for businesses in Jaipur and across India.",
   keywords: ["Software Development", "Mobile App Development", "Digital Marketing", "Web Development", "IT Agency", "Tech Startup", "Code Pe Charcha", "SEO Services", "UI/UX Design"],
   authors: [{ name: "Code Pe Charcha Team" }],
   creator: "Code Pe Charcha",
@@ -32,20 +32,26 @@ export const metadata: Metadata = {
     telephone: false,
   },
   openGraph: {
-    title: "Code Pe Charcha | Software, App & Marketing Agency",
-    description: "Transforming ideas into digital reality with modern software, mobile app, and marketing solutions.",
+    title: "Code Pe Charcha | Software Development, Mobile Apps & Digital Marketing",
+    description: "Code Pe Charcha builds modern websites, mobile apps, custom software, CRM systems and digital solutions for businesses in Jaipur and across India.",
     url: "https://thecodepecharcha.vercel.app",
     siteName: "Code Pe Charcha",
     images: [
       {
-        url: "/logo.jpg", 
+        url: "/og-image.jpg", 
         width: 1200,
         height: 630,
-        alt: "Code Pe Charcha Open Graph Image",
+        alt: "Code Pe Charcha - Software Development, Mobile Apps and Digital Solutions",
       }
     ],
     locale: "en_US",
     type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Code Pe Charcha | Software Development, Mobile Apps & Digital Marketing",
+    description: "Code Pe Charcha builds modern websites, mobile apps, custom software, CRM systems and digital solutions for businesses in Jaipur and across India.",
+    images: ["/og-image.jpg"],
   },
   robots: {
     index: true,
@@ -74,7 +80,7 @@ const jsonLd = {
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
   name: "Code Pe Charcha",
-  image: "https://thecodepecharcha.vercel.app/logo.png",
+  image: "https://thecodepecharcha.vercel.app/logo.jpg",
   url: "https://thecodepecharcha.vercel.app",
   telephone: "+91-8949936535",
   address: {

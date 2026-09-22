@@ -213,7 +213,7 @@ export const projects: ProjectData[] = [
   }
 ,
   {
-    id: "dincharya attendance app",
+    id: "dincharya-attendance-app",
     name: "DinCharya",
     category: "HR & Attendance App",
     copy: "A robust employee attendance and leave management mobile app with location tracking and biometric support.",
@@ -225,7 +225,7 @@ export const projects: ProjectData[] = [
     scope: ["Mobile App Development","Geolocation Services","Biometric Auth","Offline Sync"]
   },
   {
-    id: "ejuuz app",
+    id: "ejuuz-app",
     name: "Ejuuz App",
     category: "E-Commerce App",
     copy: "A complete shopping experience on mobile, featuring fast browsing, secure checkout, and real-time order tracking.",
@@ -237,7 +237,7 @@ export const projects: ProjectData[] = [
     scope: ["E-Commerce Mobile UX","Payment Gateway Integration","Search & Filtering","Push Notifications"]
   },
   {
-    id: "lms app",
+    id: "lms-app",
     name: "Learning Management",
     category: "EdTech App",
     copy: "A mobile learning platform for students to access courses, submit assignments, and track their progress on the go.",
@@ -249,7 +249,7 @@ export const projects: ProjectData[] = [
     scope: ["Video Streaming Integration","Gamified UX","Real-time Assessments","Scalable Backend Architecture"]
   },
   {
-    id: "school app",
+    id: "school-app",
     name: "School Connect",
     category: "Education App",
     copy: "A dedicated school app bridging communication between teachers, parents, and students with real-time updates.",
@@ -261,7 +261,7 @@ export const projects: ProjectData[] = [
     scope: ["Real-time Messaging","Secure Document Delivery","Cross-platform Mobile App","Push Notifications"]
   },
   {
-    id: "wavvy salon app",
+    id: "wavvy-salon-app",
     name: "Wavvy Salon",
     category: "Booking & Lifestyle App",
     copy: "A premium salon booking app enabling users to discover stylists, book appointments, and explore beauty services.",
