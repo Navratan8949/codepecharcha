@@ -48,7 +48,7 @@ function Wordmark({ footer = false }: { footer?: boolean }) {
         />
         <span className="wordmark-copy">
           <strong>Code Pe Charcha</strong>
-          <small>Software, App & Marketing Company</small>
+          <small>Web • Apps • Software Solutions</small>
         </span>
       </span>
     </span>

@@ -89,7 +89,7 @@ export const services: ServiceData[] = [
   {
     id: "seo-growth",
     number: "09",
-    title: "SEO & Pages Growth",
+    title: "SEO & Digital Growth",
     copy: "Technical and content optimization to improve search rankings and organic traffic.",
     features: ["Keyword Research", "On-page Optimization", "Link Building", "Performance Audits"],
     icon: Target,
@@ -158,7 +158,7 @@ export const projects: ProjectData[] = [
   },
   {
     id: "omnibit",
-    name: "OmniBit Tech",
+    name: "OmniBit Tech (Concept)",
     category: "SaaS & Tech",
     copy: "A custom B2B tech solution with a complex dashboard, real-time analytics, and secure data handling.",
     url: "#projects",
@@ -169,7 +169,7 @@ export const projects: ProjectData[] = [
   },
   {
     id: "karma-bhumi",
-    name: "Karma Bhumi",
+    name: "Karma Bhumi (Concept)",
     category: "Real Estate",
     copy: "A professional corporate website highlighting large-scale infrastructure projects with smooth animations.",
     url: "#projects",
@@ -180,7 +180,7 @@ export const projects: ProjectData[] = [
   },
   {
     id: "healthcare",
-    name: "Medical Clinic",
+    name: "Medical Clinic (Demo)",
     category: "Healthcare",
     copy: "A patient-centric healthcare platform enabling easy appointment booking, service browsing, and doctor profiles.",
     url: "#projects",
@@ -191,7 +191,7 @@ export const projects: ProjectData[] = [
   },
   {
     id: "hotel",
-    name: "Luxury Hotel",
+    name: "Luxury Hotel (Demo)",
     category: "Hospitality",
     copy: "A premium hospitality website featuring high-quality image galleries, room booking capabilities, and elegant design.",
     url: "#projects",
@@ -202,7 +202,7 @@ export const projects: ProjectData[] = [
   },
   {
     id: "school",
-    name: "Global School",
+    name: "Global School (Demo)",
     category: "Education",
     copy: "A comprehensive school portal for students and parents featuring announcements, curriculum details, and contact forms.",
     url: "#projects",
@@ -280,8 +280,7 @@ export const technologies = [
   "JavaScript",
   "Tailwind CSS",
   "React.js",
-  "React Native CLI",
-  "Expo",
+  "React Native / Expo",
   "Node.js",
   "MongoDB",
   "Express.js",

@@ -93,7 +93,9 @@ function Hero() {
             animate="visible"
             variants={{ visible: { transition: { staggerChildren: 0.08 } } }}
           >
-            <span className="sr-only">Top Software Development, Mobile App Creation, and Digital Marketing Agency in Jaipur. </span>
+            <span className="sr-only">
+              We build digital solutions for growing businesses.
+            </span>
             {"Code ki baat,".split(" ").map((word, i) => (
               <motion.span
                 key={i}
@@ -164,15 +166,66 @@ function Hero() {
               View Our Work <ArrowDownRight size={16} />
             </motion.a>
           </div>
-          <div className="hero-meta reveal reveal-delay-3">
-            <div>
-              <strong>08</strong>ways to build
+          <div
+            className="hero-meta reveal reveal-delay-3"
+            style={{ textTransform: "capitalize", letterSpacing: "normal" }}
+          >
+            <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+              <div
+                style={{
+                  width: "8px",
+                  height: "8px",
+                  borderRadius: "50%",
+                  background: "var(--coral)",
+                }}
+              ></div>
+              <strong
+                style={{
+                  fontSize: "15px",
+                  letterSpacing: "0",
+                  marginBottom: "0",
+                }}
+              >
+                Websites
+              </strong>
             </div>
-            <div>
-              <strong>01</strong>close-knit team
+            <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+              <div
+                style={{
+                  width: "8px",
+                  height: "8px",
+                  borderRadius: "50%",
+                  background: "var(--coral)",
+                }}
+              ></div>
+              <strong
+                style={{
+                  fontSize: "15px",
+                  letterSpacing: "0",
+                  marginBottom: "0",
+                }}
+              >
+                Mobile Apps
+              </strong>
             </div>
-            <div>
-              <strong>∞</strong>room to grow
+            <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+              <div
+                style={{
+                  width: "8px",
+                  height: "8px",
+                  borderRadius: "50%",
+                  background: "var(--coral)",
+                }}
+              ></div>
+              <strong
+                style={{
+                  fontSize: "15px",
+                  letterSpacing: "0",
+                  marginBottom: "0",
+                }}
+              >
+                Custom Software
+              </strong>
             </div>
           </div>
         </div>
@@ -404,20 +457,22 @@ function Process() {
   );
 }
 
-function ProjectPreview({ image, name }: { image?: string, name: string }) {
+function ProjectPreview({ image, name }: { image?: string; name: string }) {
   return (
-    <div className="project-preview" style={{ padding: 0, overflow: 'hidden' }}>
+    <div className="project-preview" style={{ padding: 0, overflow: "hidden" }}>
       {image ? (
-        <Image 
-          src={image} 
-          alt={name} 
-          width={800} 
-          height={600} 
-          style={{ width: '100%', height: 'auto', objectFit: 'cover' }} 
-          sizes="(max-width: 768px) 100vw, 33vw" 
+        <Image
+          src={image}
+          alt={name}
+          width={800}
+          height={600}
+          style={{ width: "100%", height: "auto", objectFit: "cover" }}
+          sizes="(max-width: 768px) 100vw, 33vw"
         />
       ) : (
-        <div style={{ width: '100%', aspectRatio: '4/3', backgroundColor: '#eee' }} />
+        <div
+          style={{ width: "100%", aspectRatio: "4/3", backgroundColor: "#eee" }}
+        />
       )}
     </div>
   );
@@ -426,7 +481,7 @@ function ProjectPreview({ image, name }: { image?: string, name: string }) {
 function Projects() {
   const [filter, setFilter] = useState("All");
 
-  const filteredProjects = projects.filter(p => {
+  const filteredProjects = projects.filter((p) => {
     if (filter === "All") return true;
     if (filter === "Websites" && p.type === "website") return true;
     if (filter === "Mobile Apps" && p.type === "app") return true;
@@ -452,11 +507,11 @@ function Projects() {
         </div>
 
         <div className="projects-filters reveal">
-          {["All", "Websites", "Mobile Apps"].map(f => (
-            <button 
+          {["All", "Websites", "Mobile Apps"].map((f) => (
+            <button
               key={f}
               onClick={() => setFilter(f)}
-              className={`filter-btn ${filter === f ? 'active' : ''}`}
+              className={`filter-btn ${filter === f ? "active" : ""}`}
             >
               {f}
             </button>
@@ -612,8 +667,7 @@ const techData: Record<string, { icon: React.ReactNode; color: string }> = {
   JavaScript: { icon: <SiJavascript />, color: "#F7DF1E" },
   "Tailwind CSS": { icon: <SiTailwindcss />, color: "#06B6D4" },
   "React.js": { icon: <SiReact />, color: "#61DAFB" },
-  "React Native CLI": { icon: <SiReact />, color: "#61DAFB" },
-  Expo: { icon: <SiExpo />, color: "var(--ink)" },
+  "React Native / Expo": { icon: <SiReact />, color: "#61DAFB" },
   "Node.js": { icon: <SiNodedotjs />, color: "#339933" },
   MongoDB: { icon: <SiMongodb />, color: "#47A248" },
   "Express.js": { icon: <SiExpress />, color: "var(--ink)" },
@@ -988,7 +1042,7 @@ function Pricing() {
   const websitePlans = [
     {
       name: "Basic Website",
-      price: "₹4,999",
+      price: "₹6,999",
       description: "Perfect for establishing a simple online presence.",
       features: [
         { name: "5 Pages Website", included: true },
@@ -1004,14 +1058,14 @@ function Pricing() {
     },
     {
       name: "Standard Website",
-      price: "₹9,999",
+      price: "₹12,999",
       description: "Great for growing businesses that need more features.",
       features: [
         { name: "10 Pages Website", included: true },
         { name: "Mobile & SEO Friendly", included: true },
         { name: "Customized Website", included: true },
         { name: "Free Domain, Hosting & SSL", included: true },
-        { name: "5 Business E-mails", included: true },
+        { name: "3 Business E-mails", included: true },
         { name: "1 Year Support", included: true },
         { name: "Social Media & Google Listing", included: true },
         { name: "Logo & Visiting Card", included: false },
@@ -1020,14 +1074,14 @@ function Pricing() {
     },
     {
       name: "E-commerce / Premium",
-      price: "₹14,999",
+      price: "₹24,999",
       description: "The complete digital package for your business.",
       features: [
         { name: "Unlimited Pages / E-commerce", included: true },
         { name: "Mobile & SEO Friendly", included: true },
         { name: "Customized Website", included: true },
         { name: "Free Domain, Hosting & SSL", included: true },
-        { name: "10 Business E-mails", included: true },
+        { name: "5 Business E-mails", included: true },
         { name: "1 Year Premium Support", included: true },
         { name: "Social Media & Google Listing", included: true },
         { name: "Free Logo & Visiting Card Design", included: true },
@@ -1185,15 +1239,106 @@ function Pricing() {
               </div>
             ))}
           </div>
-          <div style={{ textAlign: "center", marginTop: "32px" }}>
+          <div
+            style={{
+              textAlign: "center",
+              marginTop: "32px",
+              fontSize: "14px",
+              color: "var(--ink)",
+              opacity: 0.8,
+            }}
+          >
+            <p style={{ marginBottom: "4px" }}>
+              Custom software, mobile apps, CRM and advanced solutions are
+              quoted based on project requirements.
+            </p>
+            <p>
+              Final pricing may vary depending on project scope and features.
+            </p>
+          </div>
+          <div style={{ textAlign: "center", marginTop: "24px" }}>
             <a
               href="#contact"
-              className="button"
-              style={{ display: "inline-flex" }}
+              className="button-ghost"
+              style={{
+                borderColor: "var(--coral)",
+                color: "var(--coral)",
+                padding: "12px 24px",
+                borderRadius: "8px",
+              }}
             >
               Request a Custom Quote
             </a>
           </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function Industries() {
+  const industries = [
+    "Restaurants",
+    "Fitness",
+    "Real Estate",
+    "Education",
+    "Healthcare",
+    "Hospitality",
+    "E-commerce",
+    "Startups",
+    "Logistics",
+    "Finance",
+    "Travel & Tourism",
+    "Beauty & Salon",
+    "Non-Profit",
+    "Entertainment",
+    "Manufacturing",
+    "Automotive",
+    "Retail",
+    "Technology",
+  ];
+
+  return (
+    <section
+      className="section bg-light"
+      id="industries"
+      aria-labelledby="industries-title"
+    >
+      <div className="section-shell">
+        <div className="reveal" style={{ textAlign: "center" }}>
+          <div className="section-kicker">05 / Industries We Build For</div>
+          <h2 id="industries-title">Domains we specialize in.</h2>
+          <p className="section-intro" style={{ margin: "0 auto" }}>
+            We create tailored digital experiences for a wide variety of growing
+            businesses.
+          </p>
+        </div>
+
+        <div
+          className="reveal reveal-delay-1"
+          style={{
+            marginTop: "40px",
+            display: "flex",
+            flexWrap: "wrap",
+            gap: "16px",
+            justifyContent: "center",
+          }}
+        >
+          {industries.map((ind, i) => (
+            <span
+              key={i}
+              style={{
+                padding: "12px 24px",
+                background: "#fff",
+                border: "1px solid var(--line)",
+                borderRadius: "30px",
+                fontWeight: "500",
+                fontSize: "15px",
+              }}
+            >
+              {ind}
+            </span>
+          ))}
         </div>
       </div>
     </section>
@@ -1213,20 +1358,25 @@ function Testimonials() {
       role: "Digital Marketer",
       text: "The website they built for us not only looks stunning but also loads instantly. Our conversion rates have doubled since the launch. Highly recommended!",
       rating: 5,
-    }
+    },
   ];
 
   return (
-    <section className="section bg-light" id="testimonials" aria-labelledby="test-title">
+    <section
+      className="section bg-light"
+      id="testimonials"
+      aria-labelledby="test-title"
+    >
       <div className="section-shell">
         <div className="reveal">
-          <div className="section-kicker">05 / Client Reviews</div>
+          <div className="section-kicker">06 / Client Reviews</div>
           <h2 id="test-title">What people say.</h2>
           <p className="section-intro">
-            Don't just take our word for it. Here's what our clients have to say about our work.
+            Don't just take our word for it. Here's what our clients have to say
+            about our work.
           </p>
         </div>
-        
+
         <div className="testimonials-grid reveal reveal-delay-1">
           {reviews.map((review, i) => (
             <div className="testimonial-card" key={i}>
@@ -1237,9 +1387,7 @@ function Testimonials() {
               </div>
               <p className="review-text">"{review.text}"</p>
               <div className="reviewer">
-                <div className="reviewer-avatar">
-                  {review.name.charAt(0)}
-                </div>
+                <div className="reviewer-avatar">{review.name.charAt(0)}</div>
                 <div className="reviewer-info">
                   <h4>{review.name}</h4>
                   <span>{review.role}</span>
@@ -1277,6 +1425,7 @@ export default function Home() {
         <Services />
         <Process />
         <Projects />
+        <Industries />
         <Testimonials />
         <WhyUs />
         <Pricing />
