@@ -62,7 +62,7 @@ export const metadata: Metadata = {
     canonical: 'https://codepecharcha.com',
   },
   verification: {
-    google: 'your-google-site-verification-id', // Replace with your actual Google Search Console ID
+    google: '-qh8731Gx6TDJ6SAtaWmtIu5dehQs0zyUEoFjASAQQg',
   },
   icons: {
     icon: '/favicon.ico',
