@@ -10,7 +10,7 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://codepecharcha.com'),
+  metadataBase: new URL('https://thecodepecharcha.vercel.app'),
   applicationName: "Code Pe Charcha",
   appleWebApp: {
     capable: true,
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Code Pe Charcha | Software, App & Marketing Agency",
     description: "Transforming ideas into digital reality with modern software, mobile app, and marketing solutions.",
-    url: "https://codepecharcha.com",
+    url: "https://thecodepecharcha.vercel.app",
     siteName: "Code Pe Charcha",
     images: [
       {
@@ -59,7 +59,7 @@ export const metadata: Metadata = {
     },
   },
   alternates: {
-    canonical: 'https://codepecharcha.com',
+    canonical: 'https://thecodepecharcha.vercel.app',
   },
   verification: {
     google: '-qh8731Gx6TDJ6SAtaWmtIu5dehQs0zyUEoFjASAQQg',
@@ -74,8 +74,8 @@ const jsonLd = {
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
   name: "Code Pe Charcha",
-  image: "https://codepecharcha.com/logo.png",
-  url: "https://codepecharcha.com",
+  image: "https://thecodepecharcha.vercel.app/logo.png",
+  url: "https://thecodepecharcha.vercel.app",
   telephone: "+91-8949936535",
   address: {
     "@type": "PostalAddress",
