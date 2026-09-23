@@ -181,6 +181,12 @@ function Footer() {
               products for ambitious teams. Let's build something amazing
               together.
             </p>
+            <div className="mt-4 text-sm text-ink/70">
+              <p><strong>Code Pe Charcha</strong></p>
+              <p>Muhana Mandi Mod, Sanganer</p>
+              <p>Jaipur, Rajasthan, India - 302029</p>
+              <p className="mt-2"><a href="tel:+918949936535" className="hover:text-coral transition-colors">+91 89499 36535</a></p>
+            </div>
             <div className="newsletter-box">
               <input
                 type="email"

@@ -255,7 +255,7 @@ export const projects: ProjectData[] = [
     name: "OmniBit Tech (Concept)",
     category: "SaaS & Tech",
     copy: "A custom B2B tech solution with a complex dashboard, real-time analytics, and secure data handling.",
-    url: "#projects",
+    url: "https://omni-bite.vercel.app/",
     image: "/omnibit.png",
     type: "website",
     challenge: "As a B2B SaaS platform, OmniBit Tech needed a complex data dashboard that remained intuitive. The main hurdle was processing and visualizing large datasets in real-time without overwhelming the user, requiring a meticulously planned component architecture and state management strategy.",

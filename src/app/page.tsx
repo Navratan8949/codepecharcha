@@ -902,8 +902,8 @@ function Contact() {
             <div className="contact-detail">
               <MapPin size={18} />
               <div>
-                <small>Based in</small>
-                <span>India · working everywhere</span>
+                <small>Location</small>
+                <span>Jaipur, Rajasthan, India</span>
               </div>
             </div>
           </div>
