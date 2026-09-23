@@ -2,8 +2,42 @@
 import { useEffect } from "react";
 import { useParams } from "next/navigation";
 import Link from "next/link";
-import { ArrowLeft, Check, ChevronRight } from "lucide-react";
-import { services } from "@/data";
+import { ArrowLeft, Check, ChevronRight, ArrowUpRight } from "lucide-react";
+import { services, projects } from "@/data";
+import Image from "next/image";
+
+function ProjectPreview({ image, name }: { image?: string; name: string }) {
+  return (
+    <div className="project-preview" style={{ padding: 0, overflow: "hidden" }}>
+      {image ? (
+        <Image
+          src={image}
+          alt={name}
+          width={800}
+          height={600}
+          style={{ width: "100%", height: "auto", objectFit: "cover" }}
+          sizes="(max-width: 768px) 100vw, 33vw"
+        />
+      ) : (
+        <div
+          style={{ width: "100%", aspectRatio: "4/3", backgroundColor: "#eee" }}
+        />
+      )}
+    </div>
+  );
+}
+
+const getRelatedProjects = (serviceId: string) => {
+  const map: Record<string, string[]> = {
+    "website-development": ["real-human-trust", "fitness-forma", "karma-bhumi", "healthcare", "hotel", "school"],
+    "mobile-app-development": ["dincharya-attendance-app", "ejuuz-app", "lms-app", "school-app", "wavvy-salon-app"],
+    "e-commerce-development": ["ejuuz-app"],
+    "custom-software": ["omnibit", "healthcare"],
+    "crm-development": ["omnibit"],
+  };
+  const ids = map[serviceId] || [];
+  return projects.filter(p => ids.includes(p.id));
+}
 
 export default function ServiceDetail() {
   const params = useParams();
@@ -41,12 +75,12 @@ export default function ServiceDetail() {
                  <span className="font-mono-cpc text-sm tracking-widest">SERVICE {service.number}</span>
               </div>
               <h1 className="text-5xl md:text-7xl font-bold tracking-tight mt-4 leading-[0.95]">
-                {service.title}
+                {service.h1 || service.title}
               </h1>
             </div>
             <div className="pb-2">
               <p className="text-lg text-bone/70 leading-relaxed mb-6">
-                {service.copy}
+                {service.seoOverview || service.copy}
               </p>
               <Link
                 href="/#contact"
@@ -64,7 +98,7 @@ export default function ServiceDetail() {
           <div className="grid md:grid-cols-2 gap-20">
             <div>
               <div className="section-kicker">01 / Overview</div>
-              <h3 className="text-3xl font-bold mb-6 text-ink">Why {service.title}?</h3>
+              <h2 className="text-3xl font-bold mb-6 text-ink">Why {service.title}?</h2>
               <p className="text-ink/70 leading-relaxed text-[17px] mb-8">
                 In today's digital landscape, having a strong presence isn't just about looking good—it's about 
                 functioning flawlessly. Our approach to {service.title.toLowerCase()} focuses on building 
@@ -78,7 +112,7 @@ export default function ServiceDetail() {
             </div>
             
             <div className="bg-white border border-line p-10 rounded-[2rem] shadow-sm">
-               <h3 className="text-2xl font-bold mb-8 text-ink">What's Included</h3>
+               <h2 className="text-2xl font-bold mb-8 text-ink">What's Included</h2>
                
                <ul className="space-y-6 text-[15px]">
                  {[
@@ -100,6 +134,56 @@ export default function ServiceDetail() {
           </div>
         </div>
       </section>
+
+      {service.faqs && service.faqs.length > 0 && (
+        <section className="py-24 bg-bone">
+          <div className="section-shell">
+            <div className="max-w-3xl mx-auto">
+              <div className="section-kicker text-center mb-4">02 / FAQs</div>
+              <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-ink">Frequently Asked Questions</h2>
+              <div className="space-y-6">
+                {service.faqs.map((faq, index) => (
+                  <div key={index} className="bg-white p-8 rounded-2xl border border-line shadow-sm">
+                    <h3 className="text-xl font-bold mb-4 text-ink">{faq.question}</h3>
+                    <p className="text-ink/70 leading-relaxed text-[16px]">{faq.answer}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
+
+      {getRelatedProjects(service.id).length > 0 && (
+        <section className="section projects" aria-labelledby="related-projects-title" style={{ paddingBottom: "6rem" }}>
+          <div className="section-shell">
+            <div className="projects-top mb-12">
+              <div>
+                <div className="section-kicker">02 / Our Work</div>
+                <h2 id="related-projects-title" className="text-4xl font-bold tracking-tight text-ink">Related {service.title} Projects</h2>
+              </div>
+            </div>
+
+            <div className="project-grid">
+              {getRelatedProjects(service.id).slice(0, 3).map((project, index) => (
+                <Link href={`/projects/${project.id}`} key={project.name}>
+                  <article className="project-card">
+                    <ProjectPreview image={project.image} name={project.name} />
+                    <div className="project-info">
+                      <span className="project-tag">{project.category}</span>
+                      <h3>{project.name}</h3>
+                      <p>{project.copy}</p>
+                      <span className="project-link">
+                        View project <ArrowUpRight size={14} />
+                      </span>
+                    </div>
+                  </article>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
 
       <section className="bg-lime text-ink py-24 relative overflow-hidden">
         <div className="section-shell text-center relative z-10">

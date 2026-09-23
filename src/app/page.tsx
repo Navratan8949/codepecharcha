@@ -144,7 +144,7 @@ function Hero() {
           </motion.h1>
           <p className="hero-copy reveal reveal-delay-2">
             We build modern websites, mobile apps and custom software that help
-            businesses turn ideas into digital products.
+            businesses in Jaipur, Rajasthan, and across India turn ideas into digital products.
           </p>
           <div className="hero-actions reveal reveal-delay-3">
             <motion.a

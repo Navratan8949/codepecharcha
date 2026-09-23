@@ -2,11 +2,12 @@ import { Metadata } from 'next';
 import { projects } from '@/data';
 
 type Props = {
-  params: { id: string };
+  params: Promise<{ id: string }>;
 };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const project = projects.find((p) => p.id === params.id);
+  const { id } = await params;
+  const project = projects.find((p) => p.id === id);
 
   if (!project) {
     return {
@@ -14,21 +15,24 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     };
   }
 
+  const title = project.seoTitle || `${project.name} - ${project.category} | Code Pe Charcha`;
+  const description = project.seoDescription || project.copy;
+
   const metadata: Metadata = {
-    title: `${project.name} - ${project.category} | Code Pe Charcha`,
-    description: project.copy,
+    title,
+    description,
     alternates: {
       canonical: `https://thecodepecharcha.vercel.app/projects/${project.id}`,
     },
     openGraph: {
-      title: `${project.name} Portfolio | Code Pe Charcha`,
-      description: project.copy,
+      title,
+      description,
       url: `https://thecodepecharcha.vercel.app/projects/${project.id}`,
       ...(project.image ? { images: [{ url: project.image }] } : {}),
     },
     twitter: {
-      title: `${project.name} Portfolio | Code Pe Charcha`,
-      description: project.copy,
+      title,
+      description,
       ...(project.image ? { card: "summary_large_image", images: [project.image] } : {}),
     },
   };
@@ -36,10 +40,50 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return metadata;
 }
 
-export default function ProjectLayout({
+export default async function ProjectLayout({
   children,
+  params,
 }: {
   children: React.ReactNode;
+  params: Promise<{ id: string }>;
 }) {
-  return <>{children}</>;
+  const { id } = await params;
+  const project = projects.find((p) => p.id === id);
+
+  const breadcrumbLd = project ? {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://thecodepecharcha.vercel.app/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Projects",
+        "item": "https://thecodepecharcha.vercel.app/#projects"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": project.name,
+        "item": `https://thecodepecharcha.vercel.app/projects/${project.id}`
+      }
+    ]
+  } : null;
+
+  return (
+    <>
+      {breadcrumbLd && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }}
+        />
+      )}
+      {children}
+    </>
+  );
 }

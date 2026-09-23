@@ -36,13 +36,13 @@ export default function ProjectDetail() {
             <div>
               <div className="section-kicker">{project.category}</div>
               <h1 className="text-5xl md:text-7xl font-bold tracking-tight text-ink mt-4 leading-[0.95]">
-                {project.name}
+                {project.h1 || project.name}
               </h1>
             </div>
             <div className="pb-2">
-              <p className="text-lg text-ink/70 leading-relaxed mb-6">
-                {project.copy}
-              </p>
+              <div className="text-lg text-ink/70 leading-relaxed mb-6">
+                {project.seoOverview || project.copy}
+              </div>
               {project.url !== "#contact" && (
                 <a
                   href={project.url}
@@ -81,7 +81,7 @@ export default function ProjectDetail() {
           
           <div className="grid md:grid-cols-2 gap-20">
             <div>
-              <h3 className="text-3xl font-bold mb-6 text-ink">The Challenge</h3>
+              <h2 className="text-3xl font-bold mb-6 text-ink">The Challenge</h2>
               <p className="text-ink/70 leading-relaxed text-[17px] mb-8">
                 {project.challenge || "Building a modern digital product requires deep understanding of the problem space."}
               </p>
@@ -89,7 +89,7 @@ export default function ProjectDetail() {
             
             <div className="bg-ink text-bone p-10 rounded-[2rem] relative overflow-hidden">
                <div className="absolute top-0 right-0 w-64 h-64 bg-coral/20 blur-3xl rounded-full translate-x-1/2 -translate-y-1/2" />
-               <h3 className="text-2xl font-bold mb-8 relative z-10">Project Scope</h3>
+               <h2 className="text-2xl font-bold mb-8 relative z-10">Project Scope</h2>
                
                <ul className="space-y-4 relative z-10 font-mono-cpc text-sm tracking-wide">
                  {(project.scope || ["UI/UX Design", "Frontend Development", "Backend Architecture", "Deployment Strategy"]).map((item) => (

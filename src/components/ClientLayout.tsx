@@ -207,28 +207,28 @@ function Footer() {
           <div>
             <span className="footer-label">Services</span>
             <div className="footer-links">
-              <Link href="/#services" data-testid="link-footer-service-website">
+              <Link href="/services/website-development" data-testid="link-footer-service-website">
                 Website Development
               </Link>
-              <Link href="/#services" data-testid="link-footer-service-mobile">
+              <Link href="/services/mobile-app-development" data-testid="link-footer-service-mobile">
                 Mobile Apps
               </Link>
               <Link
-                href="/#services"
+                href="/services/e-commerce-development"
                 data-testid="link-footer-service-commerce"
               >
                 E-commerce
               </Link>
               <Link
-                href="/#services"
+                href="/services/custom-software"
                 data-testid="link-footer-service-software"
               >
                 Custom Software
               </Link>
-              <Link href="/#services" data-testid="link-footer-service-crm">
+              <Link href="/services/crm-development" data-testid="link-footer-service-crm">
                 CRM
               </Link>
-              <Link href="/#services" data-testid="link-footer-service-admin">
+              <Link href="/services/admin-panels" data-testid="link-footer-service-admin">
                 Admin Panels
               </Link>
             </div>
@@ -281,7 +281,7 @@ function Footer() {
             <span>© 2026 Code Pe Charcha. All rights reserved.</span>
             <div className="legal-links">
               <Link href="/privacy-policy">Privacy Policy</Link>
-              <Link href="/terms-and-conditions">Terms of Service</Link>
+              <Link href="/terms">Terms of Service</Link>
             </div>
           </div>
           <div className="socials">
