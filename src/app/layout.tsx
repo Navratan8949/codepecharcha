@@ -10,7 +10,7 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://thecodepecharcha.vercel.app'),
+  metadataBase: new URL("https://thecodepecharcha.vercel.app"),
   applicationName: "Code Pe Charcha",
   appleWebApp: {
     capable: true,
@@ -18,11 +18,23 @@ export const metadata: Metadata = {
     title: "Code Pe Charcha",
   },
   title: {
-    default: "Code Pe Charcha | Software Development, Mobile Apps & Digital Marketing",
+    default:
+      "Code Pe Charcha | Software Development, Mobile Apps & Digital Marketing",
     template: "%s | Code Pe Charcha",
   },
-  description: "Code Pe Charcha builds modern websites, mobile apps, custom software, CRM systems and digital solutions for businesses in Jaipur and across India.",
-  keywords: ["Software Development", "Mobile App Development", "Digital Marketing", "Web Development", "IT Agency", "Tech Startup", "Code Pe Charcha", "SEO Services", "UI/UX Design"],
+  description:
+    "Code Pe Charcha builds modern websites, mobile apps, custom software, CRM systems and digital solutions for businesses in Jaipur and across India.",
+  keywords: [
+    "Software Development",
+    "Mobile App Development",
+    "Digital Marketing",
+    "Web Development",
+    "IT Agency",
+    "Tech Startup",
+    "Code Pe Charcha",
+    "SEO Services",
+    "UI/UX Design",
+  ],
   authors: [{ name: "Code Pe Charcha Team" }],
   creator: "Code Pe Charcha",
   publisher: "Code Pe Charcha",
@@ -32,26 +44,30 @@ export const metadata: Metadata = {
     telephone: false,
   },
   openGraph: {
-    title: "Code Pe Charcha | Software Development, Mobile Apps & Digital Marketing",
-    description: "Code Pe Charcha builds modern websites, mobile apps, custom software, CRM systems and digital solutions for businesses in Jaipur and across India.",
+    title:
+      "Code Pe Charcha | Software Development, Mobile Apps & Digital Marketing",
+    description:
+      "Code Pe Charcha builds modern websites, mobile apps, custom software, CRM systems and digital solutions for businesses in Jaipur and across India.",
     url: "https://thecodepecharcha.vercel.app",
     siteName: "Code Pe Charcha",
     images: [
       {
-        url: "/og-image.jpg", 
+        url: "/og-image.png",
         width: 1200,
         height: 630,
         alt: "Code Pe Charcha - Software Development, Mobile Apps and Digital Solutions",
-      }
+      },
     ],
     locale: "en_US",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Code Pe Charcha | Software Development, Mobile Apps & Digital Marketing",
-    description: "Code Pe Charcha builds modern websites, mobile apps, custom software, CRM systems and digital solutions for businesses in Jaipur and across India.",
-    images: ["/og-image.jpg"],
+    title:
+      "Code Pe Charcha | Software Development, Mobile Apps & Digital Marketing",
+    description:
+      "Code Pe Charcha builds modern websites, mobile apps, custom software, CRM systems and digital solutions for businesses in Jaipur and across India.",
+    images: ["/og-image.png"],
   },
   robots: {
     index: true,
@@ -59,20 +75,20 @@ export const metadata: Metadata = {
     googleBot: {
       index: true,
       follow: true,
-      'max-video-preview': -1,
-      'max-image-preview': 'large',
-      'max-snippet': -1,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
     },
   },
   alternates: {
-    canonical: 'https://thecodepecharcha.vercel.app',
+    canonical: "https://thecodepecharcha.vercel.app",
   },
   verification: {
-    google: '-qh8731Gx6TDJ6SAtaWmtIu5dehQs0zyUEoFjASAQQg',
+    google: "-qh8731Gx6TDJ6SAtaWmtIu5dehQs0zyUEoFjASAQQg",
   },
   icons: {
-    icon: '/favicon.ico',
-    apple: '/logo.jpg',
+    icon: "/favicon.ico",
+    apple: "/logo.jpg",
   },
 };
 
@@ -89,29 +105,23 @@ const jsonLd = {
     addressLocality: "Jaipur",
     addressRegion: "Rajasthan",
     postalCode: "302029",
-    addressCountry: "IN"
+    addressCountry: "IN",
   },
   geo: {
     "@type": "GeoCoordinates",
     latitude: 26.7909,
-    longitude: 75.7538
+    longitude: 75.7538,
   },
   areaServed: {
     "@type": "City",
-    name: "Jaipur"
+    name: "Jaipur",
   },
   priceRange: "$$",
   openingHoursSpecification: {
     "@type": "OpeningHoursSpecification",
-    dayOfWeek: [
-      "Monday",
-      "Tuesday",
-      "Wednesday",
-      "Thursday",
-      "Friday"
-    ],
+    dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
     opens: "09:00",
-    closes: "18:00"
+    closes: "18:00",
   },
   sameAs: [
     "https://www.facebook.com/codepecharcha",
