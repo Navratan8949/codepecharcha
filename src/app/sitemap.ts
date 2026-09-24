@@ -2,7 +2,7 @@ import { MetadataRoute } from 'next'
 import { services, projects } from '@/data'
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://thecodepecharcha.vercel.app'
+  const baseUrl = 'https://codepecharcha.in'
 
   const serviceUrls = services.map((service) => ({
     url: `${baseUrl}/services/${service.id}`,

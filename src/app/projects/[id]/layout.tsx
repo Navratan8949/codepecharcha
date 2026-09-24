@@ -22,12 +22,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title,
     description,
     alternates: {
-      canonical: `https://thecodepecharcha.vercel.app/projects/${project.id}`,
+      canonical: `https://codepecharcha.in/projects/${project.id}`,
     },
     openGraph: {
       title,
       description,
-      url: `https://thecodepecharcha.vercel.app/projects/${project.id}`,
+      url: `https://codepecharcha.in/projects/${project.id}`,
       ...(project.image ? { images: [{ url: project.image }] } : {}),
     },
     twitter: {
@@ -58,19 +58,19 @@ export default async function ProjectLayout({
         "@type": "ListItem",
         "position": 1,
         "name": "Home",
-        "item": "https://thecodepecharcha.vercel.app/"
+        "item": "https://codepecharcha.in/"
       },
       {
         "@type": "ListItem",
         "position": 2,
         "name": "Projects",
-        "item": "https://thecodepecharcha.vercel.app/#projects"
+        "item": "https://codepecharcha.in/#projects"
       },
       {
         "@type": "ListItem",
         "position": 3,
         "name": project.name,
-        "item": `https://thecodepecharcha.vercel.app/projects/${project.id}`
+        "item": `https://codepecharcha.in/projects/${project.id}`
       }
     ]
   } : null;

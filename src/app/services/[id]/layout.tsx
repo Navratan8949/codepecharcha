@@ -17,7 +17,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   const title = service.seoTitle || `${service.title} | Code Pe Charcha`;
   const description = service.seoDescription || service.copy;
-  const url = `https://thecodepecharcha.vercel.app/services/${service.id}`;
+  const url = `https://codepecharcha.in/services/${service.id}`;
 
   return {
     title,
@@ -55,19 +55,19 @@ export default async function ServiceLayout({
         "@type": "ListItem",
         "position": 1,
         "name": "Home",
-        "item": "https://thecodepecharcha.vercel.app/"
+        "item": "https://codepecharcha.in/"
       },
       {
         "@type": "ListItem",
         "position": 2,
         "name": "Services",
-        "item": "https://thecodepecharcha.vercel.app/#services"
+        "item": "https://codepecharcha.in/#services"
       },
       {
         "@type": "ListItem",
         "position": 3,
         "name": service.title,
-        "item": `https://thecodepecharcha.vercel.app/services/${service.id}`
+        "item": `https://codepecharcha.in/services/${service.id}`
       }
     ]
   } : null;
