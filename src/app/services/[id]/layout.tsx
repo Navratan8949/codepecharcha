@@ -84,6 +84,24 @@ export default async function ServiceLayout({
     }))
   } : null;
 
+  const serviceLd = service ? {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": service.title,
+    "serviceType": service.title,
+    "description": service.seoDescription || service.copy,
+    "provider": {
+      "@type": "LocalBusiness",
+      "name": "Code Pe Charcha",
+      "image": "https://codepecharcha.in/logo.png",
+      "@id": "https://codepecharcha.in/#localbusiness"
+    },
+    "areaServed": {
+      "@type": "Country",
+      "name": "India"
+    }
+  } : null;
+
   return (
     <>
       {breadcrumbLd && (
@@ -96,6 +114,12 @@ export default async function ServiceLayout({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }}
+        />
+      )}
+      {serviceLd && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceLd) }}
         />
       )}
       {children}

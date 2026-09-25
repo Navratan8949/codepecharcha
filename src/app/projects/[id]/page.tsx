@@ -107,9 +107,14 @@ export default function ProjectDetail() {
       <section className="bg-coral text-bone py-24 relative overflow-hidden">
         <div className="section-shell text-center relative z-10">
           <h2 className="text-4xl md:text-6xl font-bold mb-8">Ready to build your own?</h2>
-          <Link href="/#contact" className="button-ghost border-bone text-bone hover:bg-bone/10 inline-flex">
-            Start a Conversation <ChevronRight size={16} />
-          </Link>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <Link href="/#contact" className="button-ghost border-bone text-bone hover:bg-bone/10 inline-flex">
+              Start a Conversation <ChevronRight size={16} />
+            </Link>
+            <Link href={`/case-studies/${project.id}`} className="px-6 py-3 rounded-full border-2 border-bone text-bone font-mono-cpc uppercase tracking-wider font-bold text-sm bg-ink hover:bg-bone hover:text-ink transition-colors inline-flex">
+              Read Detailed Case Study
+            </Link>
+          </div>
         </div>
       </section>
     </main>

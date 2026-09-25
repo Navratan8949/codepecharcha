@@ -1419,6 +1419,69 @@ export default function Home() {
           zIndex: 100,
         }}
       />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebPage",
+            "name": "Code Pe Charcha | Software Development, Mobile Apps & Digital Marketing",
+            "description": "Code Pe Charcha builds modern websites, mobile apps, custom software, CRM systems and digital solutions for businesses in Jaipur and across India.",
+            "url": "https://codepecharcha.in/"
+          })
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "What is your typical process for a project?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "We start with a detailed discovery phase to understand your goals. Then we move into design and prototyping, followed by development, testing, and finally, deployment. You are kept in the loop at every stage."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How much does a new website or app cost?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "The cost depends entirely on the scope, features, and complexity of the project. A simple business website will cost much less than a full-fledged custom mobile application. We offer a free consultation to give you an accurate estimate."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How long does it take to complete a project?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "A standard website typically takes 2-4 weeks. Larger custom software or mobile apps can take anywhere from 1 to 3 months depending on the requirements."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Do you provide ongoing support after launch?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes! We offer maintenance and support packages to ensure your digital product stays updated, secure, and running smoothly."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Who owns the source code once the project is finished?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Once the final payment is cleared, the intellectual property and source code are entirely handed over to you. We hold no ownership over your product."
+                }
+              }
+            ]
+          })
+        }}
+      />
       <main>
         <Hero />
         <Intro />

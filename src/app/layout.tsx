@@ -82,6 +82,10 @@ export const metadata: Metadata = {
   },
   alternates: {
     canonical: "https://codepecharcha.in",
+    languages: {
+      "en-IN": "https://codepecharcha.in",
+      "en-US": "https://codepecharcha.in",
+    },
   },
   verification: {
     google: "-qh8731Gx6TDJ6SAtaWmtIu5dehQs0zyUEoFjASAQQg",
@@ -97,39 +101,82 @@ export const metadata: Metadata = {
 
 const jsonLd = {
   "@context": "https://schema.org",
-  "@type": "ProfessionalService",
-  name: "Code Pe Charcha",
-  image: "https://codepecharcha.in/logo.jpg",
-  url: "https://codepecharcha.in",
-  telephone: "+91-8949936535",
-  address: {
-    "@type": "PostalAddress",
-    streetAddress: "Muhana Mandi Mod, Sanganer",
-    addressLocality: "Jaipur",
-    addressRegion: "Rajasthan",
-    postalCode: "302029",
-    addressCountry: "IN",
-  },
-  geo: {
-    "@type": "GeoCoordinates",
-    latitude: 26.7909,
-    longitude: 75.7538,
-  },
-  areaServed: {
-    "@type": "City",
-    name: "Jaipur",
-  },
-  priceRange: "$$",
-  openingHoursSpecification: {
-    "@type": "OpeningHoursSpecification",
-    dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-    opens: "09:00",
-    closes: "18:00",
-  },
-  sameAs: [
-    "https://www.facebook.com/codepecharcha",
-    "https://www.linkedin.com/company/codepecharcha",
-    "https://www.instagram.com/codepecharcha",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://codepecharcha.in/#organization",
+      name: "Code Pe Charcha",
+      url: "https://codepecharcha.in",
+      logo: {
+        "@type": "ImageObject",
+        url: "https://codepecharcha.in/logo.png",
+        width: 1200,
+        height: 1200,
+      },
+      sameAs: [
+        "https://www.facebook.com/codepecharcha",
+        "https://www.linkedin.com/company/codepecharcha-solutions",
+        "https://www.instagram.com/code.pe_charcha",
+      ],
+      contactPoint: {
+        "@type": "ContactPoint",
+        telephone: "+91-8949936535",
+        contactType: "customer service",
+        areaServed: "IN",
+        availableLanguage: ["English", "Hindi"],
+      },
+    },
+    {
+      "@type": "LocalBusiness",
+      "@id": "https://codepecharcha.in/#localbusiness",
+      name: "Code Pe Charcha",
+      image: "https://codepecharcha.in/logo.png",
+      url: "https://codepecharcha.in",
+      telephone: "+91-8949936535",
+      priceRange: "$$",
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: "Muhana Mandi Mod, Sanganer",
+        addressLocality: "Jaipur",
+        addressRegion: "Rajasthan",
+        postalCode: "302029",
+        addressCountry: "IN",
+      },
+      geo: {
+        "@type": "GeoCoordinates",
+        latitude: 26.7909,
+        longitude: 75.7538,
+      },
+      areaServed: {
+        "@type": "City",
+        name: "Jaipur",
+      },
+      openingHoursSpecification: {
+        "@type": "OpeningHoursSpecification",
+        dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        opens: "09:00",
+        closes: "18:00",
+      },
+      parentOrganization: {
+        "@id": "https://codepecharcha.in/#organization",
+      },
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://codepecharcha.in/#website",
+      url: "https://codepecharcha.in/",
+      name: "Code Pe Charcha",
+      alternateName: ["Code Pe Charcha Jaipur", "CodePeCharcha"],
+      description: "Code Pe Charcha builds modern websites, mobile apps, custom software, CRM systems and digital solutions for businesses in Jaipur and across India.",
+      publisher: {
+        "@id": "https://codepecharcha.in/#organization",
+      },
+      potentialAction: {
+        "@type": "SearchAction",
+        target: "https://codepecharcha.in/services?q={search_term_string}",
+        "query-input": "required name=search_term_string",
+      },
+    },
   ],
 };
 
@@ -139,34 +186,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en-IN">
       <head>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "WebSite",
-              "@id": "https://codepecharcha.in/#website",
-              url: "https://codepecharcha.in/",
-              name: "Code Pe Charcha",
-              alternateName: ["Code Pe Charcha Jaipur", "CodePeCharcha"],
-              description:
-                "Code Pe Charcha builds modern websites, mobile apps, custom software, CRM systems and digital solutions for businesses in Jaipur and across India.",
-              publisher: {
-                "@id": "https://codepecharcha.in/#organization",
-              },
-              potentialAction: {
-                "@type": "SearchAction",
-                target: "https://codepecharcha.in/services?q={search_term_string}",
-                "query-input": "required name=search_term_string",
-              },
-            }),
-          }}
         />
       </head>
       <body className="antialiased">

@@ -15,6 +15,7 @@ const queryClient = new QueryClient();
 const navLinks = [
   ["Home", "/#home"],
   ["Services", "/#services"],
+  ["Case Studies", "/case-studies"],
   ["Projects", "/#projects"],
   ["Reviews", "/#testimonials"],
   ["Why Us", "/#why-us"],
@@ -253,7 +254,7 @@ function Footer() {
                 <span className="social-text">Facebook</span>
               </a>
               <a
-                href="https://instagram.com/codepecharcha"
+                href="https://www.instagram.com/code.pe_charcha"
                 target="_blank"
                 rel="noreferrer"
                 data-testid="link-social-instagram"
@@ -263,7 +264,7 @@ function Footer() {
                 <span className="social-text">Instagram</span>
               </a>
               <a
-                href="https://linkedin.com"
+                href="https://www.linkedin.com/company/codepecharcha-solutions"
                 target="_blank"
                 rel="noreferrer"
                 data-testid="link-social-linkedin"
