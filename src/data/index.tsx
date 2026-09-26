@@ -424,8 +424,8 @@ export type ProjectData = {
 
 export const projects: ProjectData[] = [
   {
-    id: "codedev-crm",
-    name: "CodeDev CRM Solutions",
+    id: "crm",
+    name: "CodePeCharcha CRM Solutions",
     category: "CRM & SaaS Platform",
     copy: "A full-featured, multi-tenant CRM & Office Management System for modern sales teams — with Kanban pipeline, employee management, attendance tracking, task assignment, reminders, and real-time notifications all under one dashboard.",
     url: "https://codedev-crm-company-frontend.vercel.app",
@@ -466,10 +466,11 @@ export const projects: ProjectData[] = [
       "The whole company can use it — one platform for sales, HR, operations, and management; no need for 5 different tools with 5 different subscriptions",
       "Secure Login for Everyone — every user has a personal account with password protection; company data never gets exposed",
     ],
-    seoTitle: "CodeDev CRM - Full-Stack Office Management & CRM Platform | Code Pe Charcha",
+    seoTitle:
+      "CodePeCharcha CRM - Full-Stack Office Management & CRM Platform | Code Pe Charcha",
     seoDescription:
-      "CodeDev CRM is a full-featured multi-tenant CRM and Office Management System with Kanban lead pipeline, employee management, attendance tracking, task assignment, and real-time notifications.",
-    h1: "CodeDev CRM Platform",
+      "CodePeCharcha CRM is a full-featured multi-tenant CRM and Office Management System with Kanban lead pipeline, employee management, attendance tracking, task assignment, and real-time notifications.",
+    h1: "CodePeCharcha CRM Platform",
     seoOverview: (
       <>
         A full-featured multi-tenant CRM and Office Management System built for
