@@ -29,11 +29,11 @@ function ProjectPreview({ image, name }: { image?: string; name: string }) {
 
 const getRelatedProjects = (serviceId: string) => {
   const map: Record<string, string[]> = {
-    "website-development": ["real-human-trust", "fitness-forma", "karma-bhumi", "healthcare", "hotel", "school"],
+    "website-development": ["efendi-academy", "fitness-forma", "karma-bhumi", "healthcare", "hotel", "school"],
     "mobile-app-development": ["dincharya-attendance-app", "ejuuz-app", "lms-app", "school-app", "wavvy-salon-app"],
     "e-commerce-development": ["ejuuz-app"],
-    "custom-software": ["omnibit", "healthcare"],
-    "crm-development": ["omnibit"],
+    "custom-software": ["codedev-crm", "omnibit", "healthcare"],
+    "crm-development": ["codedev-crm", "omnibit"],
   };
   const ids = map[serviceId] || [];
   return projects.filter(p => ids.includes(p.id));
