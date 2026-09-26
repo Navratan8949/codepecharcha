@@ -1048,8 +1048,8 @@ function Pricing() {
         { name: "5 Pages Website", included: true },
         { name: "Mobile & SEO Friendly", included: true },
         { name: "Customized Website", included: true },
-        { name: "Free Hosting", included: true },
-        { name: "1 Year Support", included: true },
+        { name: "Free Hosting", included: false },
+        { name: "1 Year Support", included: false },
         { name: "Free Domain & SSL", included: false },
         { name: "Business E-mails", included: false },
         { name: "Logo & Visiting Card", included: false },
@@ -1058,7 +1058,7 @@ function Pricing() {
     },
     {
       name: "Standard Website",
-      price: "₹12,999",
+      price: "₹14,999",
       description: "Great for growing businesses that need more features.",
       features: [
         { name: "10 Pages Website", included: true },
