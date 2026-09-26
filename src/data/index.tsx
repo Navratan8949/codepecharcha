@@ -497,50 +497,33 @@ export const projects: ProjectData[] = [
     ),
   },
   {
-    id: "efendi-academy",
-    name: "Efendi Academy",
-    category: "NGO & Education Trust",
-    copy: "A modern, highly responsive website for Mahmud Efendl Q.S. Welfare Education Trust — an Islamic educational institution offering academics, tarbiyah, residential programs, sports, and community welfare.",
-    url: "https://efendiacademy.in",
-    image: "/efendiacademy.png",
+    id: "welfare-ngo-trust",
+    name: "Welfare NGO Trust",
+    category: "NGO & Social Welfare",
+    copy: "A modern, highly responsive website for a registered NGO focused on education, healthcare, and community empowerment.",
+    url: "#projects",
+    image: "/realhumantrust.png",
     type: "website",
-    techStack: [
-      "PHP",
-      "Bootstrap 5",
-      "JavaScript",
-      "MySQL",
-      "Swiper.js",
-      "GLightbox",
-      "Font Awesome 6",
-      "Google Translate API",
-      "Google Fonts",
-    ],
-    challenge:
-      "Efendi Academy is a multi-program educational trust with initiatives spanning academics, tarbiyah (Islamic character building), health & nutrition, residential programs, sports, and community welfare. The challenge was to build a comprehensive, bilingual (multi-language via GTranslate) institutional website that serves multiple audiences — prospective students, parents, donors, and volunteers — while clearly presenting mandatory compliance documents, annual reports, fee structures, admission processes, and news updates. High performance on low-bandwidth devices was a priority since the primary audience is from rural and semi-urban areas.",
+    challenge: "The NGO needed a digital presence that accurately reflects their ground-level impact in Gujarat. The challenge was to organize their diverse initiatives (education, healthcare, empowerment) into a cohesive, accessible platform that drives donations and volunteer sign-ups while maintaining high performance and local SEO visibility.",
     scope: [
       "Multi-language Website — visitors can read everything in their own language, no one feels left out",
-      "Complete Programme Showcase — parents & students can explore all offerings: Academics, Tarbiyah, Health & Nutrition, Sports, Residential Life, Mentorship, and more",
-      "Transparent Admission Process — fee structure, selection list, hostel requirements, entrance syllabus all publicly accessible so parents never have to call just to ask",
-      "Government Compliance Documents — all mandatory certificates (NOC, Trust Deed, Safety, Disclosure) downloadable in one place, builds instant trust with regulators and donors",
-      "Online Donation Button — makes it easy for well-wishers anywhere in the world to contribute in seconds",
-      "News & Notice Board — school can publish exam schedules, events, and updates without any technical help",
-      "Meet Our People — parents see the managing committee, advisory board, teachers, and student leaders, reinforcing credibility and transparency",
-      "Photo Gallery — beautifully showcases campus life, events, and achievements to attract new admissions",
-      "School Calendar Download — parents and students can plan the entire year in one PDF",
-      "Mobile-friendly Design — works perfectly on any phone, which is how most parents will visit",
-      "Contact & Location Map — visitors can find and reach the academy without confusion",
-      "FAQ Section — answers the most common parent queries so the office receives fewer repetitive calls",
-      "Our Partners & Future Plans — shows stakeholders and donors that the organization has vision and credibility",
-      "SEO-Optimized — families searching for Islamic educational institutions in the region find this website on Google",
+      "Complete Programme Showcase — explore all offerings: Education, Health & Nutrition, Social Welfare, and more",
+      "Transparent Donation Portal — makes it easy for well-wishers anywhere in the world to contribute securely in seconds",
+      "News & Notice Board — publish schedules, events, and updates without any technical help",
+      "Meet Our People — showcases the managing committee, advisory board, and volunteers, reinforcing credibility and transparency",
+      "Photo Gallery — beautifully showcases on-ground activities, events, and achievements to build trust",
+      "Contact & Location Map — visitors can find and reach the organization easily without confusion",
+      "FAQ Section — answers the most common queries to save administrative time",
+      "SEO-Optimized — people searching for NGOs and social work in the region find this website first on Google",
     ],
-    seoTitle: "Efendi Academy - Education Trust Website | Code Pe Charcha",
+    seoTitle: "Welfare NGO Trust - NGO Website | Code Pe Charcha",
     seoDescription:
-      "A modern, highly responsive website built for Efendi Academy, an educational trust focused on academics, tarbiyah, and community welfare.",
-    h1: "Efendi Academy",
+      "A modern, highly responsive website built for an NGO focused on academics, healthcare, and community welfare.",
+    h1: "Welfare NGO Trust",
     seoOverview: (
       <>
-        A modern, highly responsive website for a registered educational trust
-        focused on academics, tarbiyah, and community welfare. To achieve their
+        A modern, highly responsive website for a registered NGO
+        focused on education, healthcare, and community welfare. To achieve their
         goals, we utilized our{" "}
         <Link
           href="/services/website-development"
@@ -549,7 +532,7 @@ export const projects: ProjectData[] = [
           Website Development
         </Link>{" "}
         expertise to create an accessible platform that drives donations and
-        student enrollments.
+        volunteer sign-ups.
       </>
     ),
   },

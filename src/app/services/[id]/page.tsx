@@ -30,7 +30,7 @@ function ProjectPreview({ image, name }: { image?: string; name: string }) {
 const getRelatedProjects = (serviceId: string) => {
   const map: Record<string, string[]> = {
     "website-development": [
-      "efendi-academy",
+      "welfare-ngo-trust",
       "fitness-forma",
       "karma-bhumi",
       "healthcare",
