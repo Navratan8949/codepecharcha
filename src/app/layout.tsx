@@ -91,13 +91,6 @@ export const metadata: Metadata = {
   verification: {
     google: "-qh8731Gx6TDJ6SAtaWmtIu5dehQs0zyUEoFjASAQQg",
   },
-  icons: {
-    icon: [
-      { url: "/logo.png", type: "image/png", sizes: "1200x1200" }
-    ],
-    shortcut: "/logo.png",
-    apple: "/logo.png",
-  },
 };
 
 const jsonLd = {
