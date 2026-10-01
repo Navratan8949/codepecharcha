@@ -1076,7 +1076,7 @@ function Pricing() {
     },
     {
       name: "Business Growth",
-      price: "₹24,999 + ₹2,999/mo",
+      price: "₹24,999",
       description: "For serious businesses focusing on leads and SEO.",
       features: [
         { name: "15+ Pages / E-commerce setup", included: true },
