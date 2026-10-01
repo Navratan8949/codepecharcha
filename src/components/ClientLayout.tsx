@@ -1,7 +1,15 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { ArrowUpRight, Instagram, Linkedin, Mail, Menu, X, Facebook } from "lucide-react";
+import {
+  ArrowUpRight,
+  Instagram,
+  Linkedin,
+  Mail,
+  Menu,
+  X,
+  Facebook,
+} from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
@@ -98,7 +106,7 @@ function Navbar() {
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
         >
-          Start a Project <ArrowUpRight size={14} />
+          Free consultation <ArrowUpRight size={14} />
         </motion.a>
         <button
           className="menu-toggle"
@@ -123,8 +131,8 @@ function Navbar() {
           >
             <div className="mobile-menu-header">
               <Wordmark />
-              <button 
-                className="menu-toggle" 
+              <button
+                className="menu-toggle"
                 onClick={close}
                 aria-label="Close menu"
               >
@@ -151,7 +159,10 @@ function Navbar() {
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.1 + navLinks.length * 0.04, ease: "easeOut" }}
+                transition={{
+                  delay: 0.1 + navLinks.length * 0.04,
+                  ease: "easeOut",
+                }}
               >
                 <Link
                   className="mobile-nav-cta"
@@ -159,7 +170,7 @@ function Navbar() {
                   onClick={close}
                   data-testid="link-mobile-start"
                 >
-                  Start a Project <ArrowUpRight size={20} />
+                  Free consultation <ArrowUpRight size={20} />
                 </Link>
               </motion.div>
             </div>
@@ -183,10 +194,19 @@ function Footer() {
               together.
             </p>
             <div className="mt-4 text-sm text-ink/70">
-              <p><strong>Code Pe Charcha</strong></p>
+              <p>
+                <strong>Code Pe Charcha</strong>
+              </p>
               <p>Muhana Mandi Mod, Sanganer</p>
               <p>Jaipur, Rajasthan, India - 302029</p>
-              <p className="mt-2"><a href="tel:+918949936535" className="hover:text-coral transition-colors">+91 89499 36535</a></p>
+              <p className="mt-2">
+                <a
+                  href="tel:+918949936535"
+                  className="hover:text-coral transition-colors"
+                >
+                  +91 89499 36535
+                </a>
+              </p>
             </div>
             <div className="newsletter-box">
               <input
@@ -214,10 +234,16 @@ function Footer() {
           <div>
             <span className="footer-label">Services</span>
             <div className="footer-links">
-              <Link href="/services/website-development" data-testid="link-footer-service-website">
+              <Link
+                href="/services/website-development"
+                data-testid="link-footer-service-website"
+              >
                 Website Development
               </Link>
-              <Link href="/services/mobile-app-development" data-testid="link-footer-service-mobile">
+              <Link
+                href="/services/mobile-app-development"
+                data-testid="link-footer-service-mobile"
+              >
                 Mobile Apps
               </Link>
               <Link
@@ -232,10 +258,16 @@ function Footer() {
               >
                 Custom Software
               </Link>
-              <Link href="/services/crm-development" data-testid="link-footer-service-crm">
+              <Link
+                href="/services/crm-development"
+                data-testid="link-footer-service-crm"
+              >
                 CRM
               </Link>
-              <Link href="/services/admin-panels" data-testid="link-footer-service-admin">
+              <Link
+                href="/services/admin-panels"
+                data-testid="link-footer-service-admin"
+              >
                 Admin Panels
               </Link>
             </div>
@@ -332,7 +364,7 @@ function Preloader() {
           alignItems: "center",
         }}
       >
-        <span className="loading-text-premium">LOADING</span>
+        <span className="loading-text-premium">CODE PE CHARCHA</span>
         <span
           style={{
             display: "flex",

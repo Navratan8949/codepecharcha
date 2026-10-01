@@ -94,7 +94,8 @@ function Hero() {
             variants={{ visible: { transition: { staggerChildren: 0.08 } } }}
           >
             <span className="sr-only">
-              We build digital solutions for growing businesses.
+              Custom Websites, Apps & CRM for Jaipur's businesses starting at
+              ₹6,999.
             </span>
             {"Code ki baat,".split(" ").map((word, i) => (
               <motion.span
@@ -144,7 +145,8 @@ function Hero() {
           </motion.h1>
           <p className="hero-copy reveal reveal-delay-2">
             We build modern websites, mobile apps and custom software that help
-            businesses in Jaipur, Rajasthan, and across India turn ideas into digital products.
+            businesses in Jaipur, Rajasthan, and across India turn ideas into
+            digital products.
           </p>
           <div className="hero-actions reveal reveal-delay-3">
             <motion.a
@@ -587,7 +589,7 @@ function WhyUs() {
           justifyContent: "center",
         }}
       >
-        <div className="section-kicker">06 / Why choose us</div>
+        <div className="section-kicker">05 / Why choose us</div>
         <h2 id="why-title" className="why-timeline-title">
           Why <span>Code Pe Charcha</span>
         </h2>
@@ -688,7 +690,7 @@ function Technologies() {
     <section className="tech-section" aria-labelledby="tech-title">
       <div className="section-shell">
         <div className="tech-header reveal">
-          <div className="section-kicker">08 / Technologies</div>
+          <div className="section-kicker">06 / Technologies</div>
           <h2 id="tech-title">The tech stack behind our work</h2>
           <p>
             Comfortable with the modern web. Curious enough to choose the right
@@ -791,7 +793,7 @@ function FAQ() {
     <section className="section bg-light" id="faq" aria-labelledby="faq-title">
       <div className="section-shell">
         <div className="reveal">
-          <div className="section-kicker">07 / Pricing</div>
+          <div className="section-kicker">07 / FAQ</div>
           <h2 id="faq-title">Common questions.</h2>
           <p className="section-intro">
             Everything you need to know about how we work.
@@ -866,7 +868,7 @@ function Contact() {
     >
       <div className="section-shell contact-layout">
         <div className="reveal">
-          <div className="section-kicker">11 / Say hello</div>
+          <div className="section-kicker">08 / Say hello</div>
           <h2 id="contact-title">Let's start a conversation.</h2>
           <p className="section-intro">
             Have a rough idea, a stuck workflow or a product that needs its next
@@ -1073,11 +1075,12 @@ function Pricing() {
       popular: true,
     },
     {
-      name: "E-commerce / Premium",
-      price: "₹24,999",
-      description: "The complete digital package for your business.",
+      name: "Business Growth",
+      price: "₹24,999 + ₹2,999/mo",
+      description: "For serious businesses focusing on leads and SEO.",
       features: [
-        { name: "Unlimited Pages / E-commerce", included: true },
+        { name: "15+ Pages / E-commerce setup", included: true },
+        { name: "Free Logo & Brand Kit", included: true },
         { name: "Mobile & SEO Friendly", included: true },
         { name: "Customized Website", included: true },
         { name: "Free Domain, Hosting & SSL", included: true },
@@ -1112,7 +1115,7 @@ function Pricing() {
     <section className="section" id="pricing" aria-labelledby="pricing-title">
       <div className="section-shell">
         <div className="reveal flex flex-col items-center text-center gap-6 mb-16">
-          <div className="section-kicker">06 / Pricing</div>
+          <div className="section-kicker">09 / Pricing</div>
           <h2 id="pricing-title">Clear, upfront pricing.</h2>
           <p
             className="section-intro"
@@ -1306,7 +1309,7 @@ function Industries() {
     >
       <div className="section-shell">
         <div className="reveal" style={{ textAlign: "center" }}>
-          <div className="section-kicker">05 / Industries We Build For</div>
+          <div className="section-kicker">10 / Industries We Build For</div>
           <h2 id="industries-title">Domains we specialize in.</h2>
           <p className="section-intro" style={{ margin: "0 auto" }}>
             We create tailored digital experiences for a wide variety of growing
@@ -1350,7 +1353,7 @@ function Testimonials() {
     {
       name: "Devanshu Gahlot",
       role: "CA Firm Manager",
-      text: "Code Pe Charcha build a brilliant web solution for our CA firm. Their attention to detail and transparency throughout the process was incredible.",
+      text: "Code Pe Charcha built a brilliant web solution for our CA firm. Their attention to detail and transparency throughout the process was incredible.",
       rating: 5,
     },
     {
@@ -1369,7 +1372,7 @@ function Testimonials() {
     >
       <div className="section-shell">
         <div className="reveal">
-          <div className="section-kicker">06 / Client Reviews</div>
+          <div className="section-kicker">11 / Client Reviews</div>
           <h2 id="test-title">What people say.</h2>
           <p className="section-intro">
             Don't just take our word for it. Here's what our clients have to say
@@ -1425,10 +1428,11 @@ export default function Home() {
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "WebPage",
-            "name": "Code Pe Charcha | Software Development, Mobile Apps & Digital Marketing",
-            "description": "Code Pe Charcha builds modern websites, mobile apps, custom software, CRM systems and digital solutions for businesses in Jaipur and across India.",
-            "url": "https://codepecharcha.in/"
-          })
+            name: "Code Pe Charcha | Software Development, Mobile Apps & Digital Marketing",
+            description:
+              "Code Pe Charcha builds modern websites, mobile apps, custom software, CRM systems and digital solutions for businesses in Jaipur and across India.",
+            url: "https://codepecharcha.in/",
+          }),
         }}
       />
       <script
@@ -1437,49 +1441,49 @@ export default function Home() {
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "FAQPage",
-            "mainEntity": [
+            mainEntity: [
               {
                 "@type": "Question",
-                "name": "What is your typical process for a project?",
-                "acceptedAnswer": {
+                name: "What is your typical process for a project?",
+                acceptedAnswer: {
                   "@type": "Answer",
-                  "text": "We start with a detailed discovery phase to understand your goals. Then we move into design and prototyping, followed by development, testing, and finally, deployment. You are kept in the loop at every stage."
-                }
+                  text: "We start with a detailed discovery phase to understand your goals. Then we move into design and prototyping, followed by development, testing, and finally, deployment. You are kept in the loop at every stage.",
+                },
               },
               {
                 "@type": "Question",
-                "name": "How much does a new website or app cost?",
-                "acceptedAnswer": {
+                name: "How much does a new website or app cost?",
+                acceptedAnswer: {
                   "@type": "Answer",
-                  "text": "The cost depends entirely on the scope, features, and complexity of the project. A simple business website will cost much less than a full-fledged custom mobile application. We offer a free consultation to give you an accurate estimate."
-                }
+                  text: "The cost depends entirely on the scope, features, and complexity of the project. A simple business website will cost much less than a full-fledged custom mobile application. We offer a free consultation to give you an accurate estimate.",
+                },
               },
               {
                 "@type": "Question",
-                "name": "How long does it take to complete a project?",
-                "acceptedAnswer": {
+                name: "How long does it take to complete a project?",
+                acceptedAnswer: {
                   "@type": "Answer",
-                  "text": "A standard website typically takes 2-4 weeks. Larger custom software or mobile apps can take anywhere from 1 to 3 months depending on the requirements."
-                }
+                  text: "A standard website typically takes 2-4 weeks. Larger custom software or mobile apps can take anywhere from 1 to 3 months depending on the requirements.",
+                },
               },
               {
                 "@type": "Question",
-                "name": "Do you provide ongoing support after launch?",
-                "acceptedAnswer": {
+                name: "Do you provide ongoing support after launch?",
+                acceptedAnswer: {
                   "@type": "Answer",
-                  "text": "Yes! We offer maintenance and support packages to ensure your digital product stays updated, secure, and running smoothly."
-                }
+                  text: "Yes! We offer maintenance and support packages to ensure your digital product stays updated, secure, and running smoothly.",
+                },
               },
               {
                 "@type": "Question",
-                "name": "Who owns the source code once the project is finished?",
-                "acceptedAnswer": {
+                name: "Who owns the source code once the project is finished?",
+                acceptedAnswer: {
                   "@type": "Answer",
-                  "text": "Once the final payment is cleared, the intellectual property and source code are entirely handed over to you. We hold no ownership over your product."
-                }
-              }
-            ]
-          })
+                  text: "Once the final payment is cleared, the intellectual property and source code are entirely handed over to you. We hold no ownership over your product.",
+                },
+              },
+            ],
+          }),
         }}
       />
       <main>
