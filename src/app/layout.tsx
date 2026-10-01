@@ -91,8 +91,10 @@ export const metadata: Metadata = {
   verification: {
     google: "-qh8731Gx6TDJ6SAtaWmtIu5dehQs0zyUEoFjASAQQg",
   },
+  manifest: "/site.webmanifest",
   icons: {
     icon: [
+      { url: "/logo.png", type: "image/png" },
       { url: "/favicon.ico" },
       { url: "/favicon.svg", type: "image/svg+xml" },
     ],
