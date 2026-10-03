@@ -356,20 +356,20 @@ function Preloader() {
     >
       <div
         style={{
-          fontSize: "clamp(2rem, 6vw, 4rem)",
+          fontSize: "clamp(1.25rem, 5vw, 4rem)",
           fontWeight: 700,
-          letterSpacing: "0.2em",
+          letterSpacing: "0.15em",
           textTransform: "uppercase",
-          display: "flex",
-          alignItems: "center",
+          textAlign: "center",
+          padding: "0 1rem",
         }}
       >
         <span className="loading-text-premium">CODE PE CHARCHA</span>
         <span
           style={{
-            display: "flex",
+            display: "inline-flex",
             gap: "4px",
-            marginLeft: "12px",
+            marginLeft: "8px",
             color: "var(--coral)",
           }}
         >
