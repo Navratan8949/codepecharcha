@@ -116,7 +116,7 @@ const jsonLd = {
         height: 1200,
       },
       sameAs: [
-        "https://www.facebook.com/codepecharcha",
+        "https://www.facebook.com/people/codepecharcha/61594409911258/",
         "https://www.linkedin.com/company/codepecharcha-solutions",
         "https://www.instagram.com/code.pe_charcha",
       ],

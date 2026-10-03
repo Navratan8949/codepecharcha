@@ -276,7 +276,7 @@ function Footer() {
             <span className="footer-label">Find us</span>
             <div className="footer-links">
               <a
-                href="https://facebook.com/codepecharcha"
+                href="https://www.facebook.com/people/codepecharcha/61594409911258/"
                 target="_blank"
                 rel="noreferrer"
                 data-testid="link-social-facebook"
