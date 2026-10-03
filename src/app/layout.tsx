@@ -94,9 +94,8 @@ export const metadata: Metadata = {
   manifest: "/site.webmanifest",
   icons: {
     icon: [
-      { url: "/logo.png", type: "image/png" },
-      { url: "/favicon.ico" },
-      { url: "/favicon.svg", type: "image/svg+xml" },
+      { url: "/favicon.svg", type: "image/svg+xml" }, // SVG ka koi size issue nahi hota
+      { url: "/logo.png", type: "image/png", sizes: "1200x1200" },
     ],
     apple: "/logo.png",
   },
@@ -170,7 +169,8 @@ const jsonLd = {
       url: "https://codepecharcha.in/",
       name: "Code Pe Charcha",
       alternateName: ["Code Pe Charcha Jaipur", "CodePeCharcha"],
-      description: "Code Pe Charcha builds modern websites, mobile apps, custom software, CRM systems and digital solutions for businesses in Jaipur and across India.",
+      description:
+        "Code Pe Charcha builds modern websites, mobile apps, custom software, CRM systems and digital solutions for businesses in Jaipur and across India.",
       publisher: {
         "@id": "https://codepecharcha.in/#organization",
       },
