@@ -1118,7 +1118,7 @@ function Pricing() {
     },
     {
       name: "Website + Mobile App",
-      price: "₹39,999",
+      price: "₹44,999",
       description: "Complete digital presence: Dynamic website + Cross-platform Mobile App with unified backend.",
       badge: "Combo Pack",
       popular: false,
