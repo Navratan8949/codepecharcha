@@ -168,7 +168,7 @@ const jsonLd = {
       "@id": "https://codepecharcha.in/#website",
       url: "https://codepecharcha.in/",
       name: "Code Pe Charcha",
-      alternateName: ["Code Pe Charcha Jaipur", "CodePeCharcha"],
+      alternateName: ["Code Pe Charcha Jaipur", "CodePeCharcha", "Code Pe Charcha Solutions"],
       description:
         "Code Pe Charcha builds modern websites, mobile apps, custom software, CRM systems and digital solutions for businesses in Jaipur and across India.",
       publisher: {
@@ -176,9 +176,98 @@ const jsonLd = {
       },
       potentialAction: {
         "@type": "SearchAction",
-        target: "https://codepecharcha.in/services?q={search_term_string}",
+        target: {
+          "@type": "EntryPoint",
+          urlTemplate: "https://codepecharcha.in/services?q={search_term_string}",
+        },
         "query-input": "required name=search_term_string",
       },
+      hasPart: [
+        {
+          "@type": "WebPage",
+          "@id": "https://codepecharcha.in/services",
+          name: "Services",
+          url: "https://codepecharcha.in/services",
+          description: "Software, Mobile App, Web, CRM and ERP Development Services",
+        },
+        {
+          "@type": "WebPage",
+          "@id": "https://codepecharcha.in/projects",
+          name: "Projects & Portfolio",
+          url: "https://codepecharcha.in/projects",
+          description: "Live Demos and Engineering Track Record of Software, Web and Mobile Apps",
+        },
+        {
+          "@type": "WebPage",
+          "@id": "https://codepecharcha.in/case-studies",
+          name: "Case Studies",
+          url: "https://codepecharcha.in/case-studies",
+          description: "Detailed client case studies and technical architectures",
+        },
+      ],
+    },
+    {
+      "@type": "ItemList",
+      "@id": "https://codepecharcha.in/#sitenav",
+      name: "Primary Navigation Sitelinks",
+      itemListElement: [
+        {
+          "@type": "SiteNavigationElement",
+          position: 1,
+          name: "Services",
+          description: "Software Development, Mobile Apps, CRM, ERP & Web Solutions",
+          url: "https://codepecharcha.in/services",
+        },
+        {
+          "@type": "SiteNavigationElement",
+          position: 2,
+          name: "Projects",
+          description: "Our portfolio of enterprise ERPs, clinical software, and web applications",
+          url: "https://codepecharcha.in/projects",
+        },
+        {
+          "@type": "SiteNavigationElement",
+          position: 3,
+          name: "Case Studies",
+          description: "Deep dive into client success stories and system architectures",
+          url: "https://codepecharcha.in/case-studies",
+        },
+        {
+          "@type": "SiteNavigationElement",
+          position: 4,
+          name: "Website Development",
+          description: "Modern, responsive, fast, and SEO-optimized business websites",
+          url: "https://codepecharcha.in/services/website-development",
+        },
+        {
+          "@type": "SiteNavigationElement",
+          position: 5,
+          name: "Custom Software & ERP",
+          description: "Bespoke SaaS platforms, internal tools, manufacturing and hospital ERPs",
+          url: "https://codepecharcha.in/services/custom-software",
+        },
+        {
+          "@type": "SiteNavigationElement",
+          position: 6,
+          name: "Mobile App Development",
+          description: "Native and cross-platform Android and iOS mobile app development",
+          url: "https://codepecharcha.in/services/mobile-app-development",
+        },
+        {
+          "@type": "SiteNavigationElement",
+          position: 7,
+          name: "CRM Development",
+          description: "Multi-tenant CRM, lead pipelines, attendance, and task automation",
+          url: "https://codepecharcha.in/services/crm-development",
+        },
+        {
+          "@type": "SiteNavigationElement",
+          position: 8,
+          name: "Contact Us",
+          description: "Get a free project consultation and quotation from our team",
+          url: "https://codepecharcha.in/#contact",
+        },
+      ],
     },
   ],
 };

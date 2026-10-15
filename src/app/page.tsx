@@ -72,7 +72,7 @@ function useReveal() {
           }
         });
       },
-      { threshold: 0.12 },
+      { threshold: 0.05, rootMargin: "0px 0px 80px 0px" },
     );
     items.forEach((item) => observer.observe(item));
     return () => observer.disconnect();
@@ -394,6 +394,15 @@ function Services() {
             ),
           )}
         </div>
+        <div style={{ textAlign: "center", marginTop: "40px" }} className="reveal">
+          <Link
+            href="/services"
+            className="button-ghost inline-flex items-center gap-2"
+            data-testid="link-view-all-services"
+          >
+            Explore Complete Services Directory <ArrowUpRight size={15} />
+          </Link>
+        </div>
       </div>
     </section>
   );
@@ -486,6 +495,7 @@ function Projects() {
   const filteredProjects = projects.filter((p) => {
     if (filter === "All") return true;
     if (filter === "Websites" && p.type === "website") return true;
+    if (filter === "Software" && p.type === "software") return true;
     if (filter === "Mobile Apps" && p.type === "app") return true;
     return false;
   });
@@ -509,7 +519,7 @@ function Projects() {
         </div>
 
         <div className="projects-filters reveal">
-          {["All", "Websites", "Mobile Apps"].map((f) => (
+          {["All", "Websites", "Software", "Mobile Apps"].map((f) => (
             <button
               key={f}
               onClick={() => setFilter(f)}
@@ -522,9 +532,12 @@ function Projects() {
 
         <div className="project-grid">
           {filteredProjects.map((project, index) => (
-            <Link href={`/projects/${project.id}`} key={project.name}>
-              <article
-                className={`project-card reveal reveal-delay-${(index % 3) + 1}`}
+            <Link href={`/projects/${project.id}`} key={project.id}>
+              <motion.article
+                initial={{ opacity: 0, y: 15 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.3, delay: (index % 6) * 0.04 }}
+                className="project-card"
                 data-testid={`card-project-${index + 1}`}
               >
                 <ProjectPreview image={project.image} name={project.name} />
@@ -536,11 +549,18 @@ function Projects() {
                     View project <ArrowUpRight size={14} />
                   </span>
                 </div>
-              </article>
+              </motion.article>
             </Link>
           ))}
         </div>
-        <div className="projects-end reveal">
+        <div className="projects-end reveal" style={{ display: "flex", gap: "12px", justifyContent: "center", flexWrap: "wrap" }}>
+          <Link
+            className="button-coral"
+            href="/projects"
+            data-testid="button-view-all-portfolio"
+          >
+            Explore Full Portfolio Hub <ArrowUpRight size={15} />
+          </Link>
           <a
             className="button-ghost"
             href="#contact"
@@ -1043,71 +1063,95 @@ function Contact() {
 function Pricing() {
   const websitePlans = [
     {
-      name: "Basic Website",
+      name: "Starter Website",
       price: "₹6,999",
-      description: "Perfect for establishing a simple online presence.",
-      features: [
-        { name: "5 Pages Website", included: true },
-        { name: "Mobile & SEO Friendly", included: true },
-        { name: "Customized Website", included: true },
-        { name: "Free Hosting", included: false },
-        { name: "1 Year Support", included: false },
-        { name: "Free Domain & SSL", included: false },
-        { name: "Business E-mails", included: false },
-        { name: "Logo & Visiting Card", included: false },
-      ],
+      description: "Perfect for local businesses wanting a fast, clean digital presence.",
+      badge: null,
       popular: false,
+      features: [
+        { name: "5 Pages Responsive Website", included: true },
+        { name: "Mobile & SEO Friendly Layout", included: true },
+        { name: "WhatsApp Lead Chat & Contact Form", included: true },
+        { name: "Google Maps & Business Listing", included: true },
+        { name: "Fast Loading Speed Optimization", included: true },
+        { name: "1 Month Post-Launch Support", included: true },
+        { name: "Custom Admin / CMS Panel", included: false },
+        { name: "Android & iOS Mobile App", included: false },
+        { name: "Custom Software / ERP", included: false },
+      ],
     },
     {
-      name: "Standard Website",
+      name: "Standard Website & CMS",
       price: "₹14,999",
-      description: "Great for growing businesses that need more features.",
-      features: [
-        { name: "10 Pages Website", included: true },
-        { name: "Mobile & SEO Friendly", included: true },
-        { name: "Customized Website", included: true },
-        { name: "Free Domain, Hosting & SSL", included: true },
-        { name: "3 Business E-mails", included: true },
-        { name: "1 Year Support", included: true },
-        { name: "Social Media & Google Listing", included: true },
-        { name: "Logo & Visiting Card", included: false },
-      ],
+      description: "Best for growing companies needing a strong lead-generating website.",
+      badge: "Most Popular",
       popular: true,
+      features: [
+        { name: "Up to 10 Pages Dynamic Website", included: true },
+        { name: "Free Domain, Fast Cloud Hosting & SSL", included: true },
+        { name: "Mobile & On-Page SEO Optimized", included: true },
+        { name: "3 Professional Business Emails", included: true },
+        { name: "Social Media & Google Setup", included: true },
+        { name: "Dynamic Blog / CMS & Admin Panel", included: true },
+        { name: "6 Months Dedicated Support", included: true },
+        { name: "Android & iOS Mobile App", included: false },
+        { name: "Custom Software / ERP", included: false },
+      ],
     },
     {
-      name: "Business Growth",
+      name: "Web App & E-Commerce",
       price: "₹24,999",
-      description: "For serious businesses focusing on leads and SEO.",
-      features: [
-        { name: "15+ Pages / E-commerce setup", included: true },
-        { name: "Free Logo & Brand Kit", included: true },
-        { name: "Mobile & SEO Friendly", included: true },
-        { name: "Customized Website", included: true },
-        { name: "Free Domain, Hosting & SSL", included: true },
-        { name: "5 Business E-mails", included: true },
-        { name: "1 Year Premium Support", included: true },
-        { name: "Social Media & Google Listing", included: true },
-        { name: "Free Logo & Visiting Card Design", included: true },
-      ],
+      description: "For full-featured e-commerce stores, portals, and dynamic web apps.",
+      badge: null,
       popular: false,
+      features: [
+        { name: "15+ Pages or Complete Online Store", included: true },
+        { name: "Payment Gateway (Razorpay/UPI) Setup", included: true },
+        { name: "Inventory, Cart & Order Management", included: true },
+        { name: "Custom Admin Dashboard & Analytics", included: true },
+        { name: "5 Business Emails + Free Domain & SSL", included: true },
+        { name: "WhatsApp & SMS Order Alerts", included: true },
+        { name: "1 Year Priority Maintenance & Support", included: true },
+        { name: "Free Logo & Visiting Card Design", included: true },
+        { name: "Cross-Platform App Ready Architecture", included: true },
+      ],
+    },
+    {
+      name: "Website + Mobile App",
+      price: "₹39,999",
+      description: "Complete digital presence: Dynamic website + Cross-platform Mobile App with unified backend.",
+      badge: "Combo Pack",
+      popular: false,
+      highlight: true,
+      features: [
+        { name: "Dynamic Business Website & Web Portal", included: true },
+        { name: "Cross-Platform Mobile App (Android & iOS)", included: true },
+        { name: "Unified Cloud Database & REST API Backend", included: true },
+        { name: "Custom Admin Dashboard for Web & App", included: true },
+        { name: "Push Notifications & WhatsApp Integration", included: true },
+        { name: "Production-Ready APK & iOS App Build Files", included: true },
+        { name: "100% Full Source Code Handover", included: true },
+        { name: "1 Year Technical Support & Maintenance", included: true },
+        { name: "Play Store & App Store Console / Publishing Fee", included: false },
+      ],
     },
   ];
 
   const customServices = [
     {
-      title: "Custom Software & Apps",
-      desc: "Large scale CRMs, SaaS, and native iOS & Android mobile apps. Tailored architecture and complex APIs.",
+      title: "Custom Software & ERP/CRM",
+      desc: "Tailored manufacturing, hospital, hotel, billing, and wholesale distribution software built for your exact operational workflow.",
       icon: <Monitor size={24} />,
     },
     {
-      title: "Digital Marketing & SEO",
-      desc: "Social Media Management, Page Growth, SEO Optimization, Google/Meta Ads, and Content Strategy.",
-      icon: <TrendingUp size={24} />,
+      title: "Mobile App Development",
+      desc: "Native and cross-platform Android & iOS apps with real-time notifications, camera/GPS integration, and seamless offline sync.",
+      icon: <Smartphone size={24} />,
     },
     {
-      title: "Branding & Graphic Design",
-      desc: "Logo & Visiting Card Design, UI/UX Design, Social Media Graphics, and full Brand Kits.",
-      icon: <PenTool size={24} />,
+      title: "Digital Marketing & Branding",
+      desc: "Google/Meta Ads, targeted local SEO, Social Media management, UI/UX brand kits, and visiting cards.",
+      icon: <TrendingUp size={24} />,
     },
   ];
 
@@ -1115,14 +1159,13 @@ function Pricing() {
     <section className="section" id="pricing" aria-labelledby="pricing-title">
       <div className="section-shell">
         <div className="reveal flex flex-col items-center text-center gap-6 mb-16">
-          <div className="section-kicker">09 / Pricing</div>
-          <h2 id="pricing-title">Clear, upfront pricing.</h2>
+          <div className="section-kicker">09 / Pricing & Packages</div>
+          <h2 id="pricing-title">Clear, upfront packages for Web, Software & Apps.</h2>
           <p
             className="section-intro"
-            style={{ margin: "0 auto", maxWidth: "600px" }}
+            style={{ margin: "0 auto", maxWidth: "650px" }}
           >
-            No hidden fees. Choose the website package that best fits your
-            business needs and scale as you grow.
+            No hidden fees. Transparent investment from quick-launch business websites to production-grade custom software and cross-platform mobile apps.
           </p>
         </div>
 
@@ -1130,12 +1173,22 @@ function Pricing() {
           {websitePlans.map((plan, index) => (
             <motion.div
               key={plan.name}
-              className={`pricing-card reveal reveal-delay-${(index % 3) + 1} ${plan.popular ? "popular" : ""}`}
+              className={`pricing-card reveal reveal-delay-${(index % 4) + 1} ${plan.popular ? "popular" : ""} ${plan.highlight ? "highlighted" : ""}`}
               whileHover={{ y: -8 }}
               transition={{ type: "spring", stiffness: 300 }}
+              style={plan.highlight ? { borderColor: "var(--ink)" } : undefined}
             >
-              {plan.popular && (
-                <div className="pricing-badge">Most Popular</div>
+              {plan.badge && (
+                <div
+                  className="pricing-badge"
+                  style={
+                    plan.highlight
+                      ? { background: "var(--ink)", color: "#fff" }
+                      : undefined
+                  }
+                >
+                  {plan.badge}
+                </div>
               )}
               <div className="pricing-header">
                 <h3>{plan.name}</h3>
@@ -1168,13 +1221,19 @@ function Pricing() {
                     fontWeight: "600",
                     border: plan.popular
                       ? "2px solid var(--coral)"
-                      : "2px solid var(--line)",
-                    background: plan.popular ? "var(--coral)" : "transparent",
-                    color: plan.popular ? "#fff" : "var(--ink)",
+                      : plan.highlight
+                        ? "2px solid var(--ink)"
+                        : "2px solid var(--line)",
+                    background: plan.popular
+                      ? "var(--coral)"
+                      : plan.highlight
+                        ? "var(--ink)"
+                        : "transparent",
+                    color: plan.popular || plan.highlight ? "#fff" : "var(--ink)",
                     transition: "all 0.3s ease",
                   }}
                 >
-                  Choose {plan.name}
+                  {plan.price.includes("+") ? "Get Custom Quote" : `Choose ${plan.name}`}
                 </a>
               </div>
             </motion.div>
@@ -1404,24 +1463,31 @@ function Testimonials() {
   );
 }
 
-export default function Home() {
-  useReveal();
+function ScrollProgressBar() {
   const { scrollYProgress } = useScroll();
   return (
+    <motion.div
+      style={{
+        scaleX: scrollYProgress,
+        position: "fixed",
+        top: 0,
+        left: 0,
+        right: 0,
+        height: 3,
+        background: "var(--coral)",
+        transformOrigin: "0%",
+        zIndex: 100,
+        willChange: "transform",
+      }}
+    />
+  );
+}
+
+export default function Home() {
+  useReveal();
+  return (
     <>
-      <motion.div
-        style={{
-          scaleX: scrollYProgress,
-          position: "fixed",
-          top: 0,
-          left: 0,
-          right: 0,
-          height: 3,
-          background: "var(--coral)",
-          transformOrigin: "0%",
-          zIndex: 100,
-        }}
-      />
+      <ScrollProgressBar />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{

@@ -69,7 +69,12 @@
     @apply border-border;
   }
   html {
-    scroll-behavior: smooth;
+    scroll-behavior: auto;
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    :root:has(:target) {
+      scroll-behavior: smooth;
+    }
   }
   body {
     @apply font-sans antialiased bg-background text-foreground;
@@ -100,8 +105,12 @@
     text-wrap: balance;
   }
   .section-shell {
-    width: min(1180px, calc(100% - 40px));
+    width: min(1340px, calc(100% - 32px));
     margin-inline: auto;
+  }
+  .section {
+    content-visibility: auto;
+    contain-intrinsic-size: 1px 700px;
   }
 }
 
@@ -124,9 +133,9 @@ body::before {
   inset: 0;
   z-index: 50;
   pointer-events: none;
-  opacity: 0.065;
-  mix-blend-mode: multiply;
+  opacity: 0.04;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.3'/%3E%3C/svg%3E");
+  transform: translateZ(0);
 }
 
 .site-nav {
@@ -134,8 +143,9 @@ body::before {
   z-index: 40;
   top: 16px;
   left: 50%;
-  transform: translateX(-50%);
-  width: min(1180px, calc(100% - 40px));
+  transform: translate3d(-50%, 0, 0);
+  will-change: transform;
+  width: min(1340px, calc(100% - 32px));
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -149,8 +159,9 @@ body::before {
 }
 .site-nav.scrolled {
   padding-block: 9px;
-  background: rgba(244, 240, 232, 0.86);
-  backdrop-filter: blur(15px);
+  background: rgba(244, 240, 232, 0.88);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   border-color: var(--line);
   box-shadow: 0 12px 38px rgba(24, 28, 27, 0.08);
 }
@@ -906,8 +917,13 @@ body::before {
   border: 1px solid var(--line);
   border-radius: 12px;
   overflow: hidden;
-  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  transition:
+    transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 0.35s ease,
+    border-color 0.35s ease;
   position: relative;
+  will-change: transform;
+  transform: translateZ(0);
 }
 .project-card:hover {
   transform: translateY(-6px);
@@ -1433,14 +1449,16 @@ body::before {
 
 .reveal {
   opacity: 0;
-  transform: translateY(40px);
+  transform: translateY(28px) translateZ(0);
+  will-change: opacity, transform;
   transition:
-    opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
-    transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 .reveal.is-visible {
   opacity: 1;
-  transform: translateY(0);
+  transform: translateY(0) translateZ(0);
+  will-change: auto;
 }
 .reveal-delay-1 {
   transition-delay: 0.1s;
@@ -1479,15 +1497,15 @@ body::before {
 /* Pricing Section */
 .pricing-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 24px;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 22px;
 }
 .pricing-card {
   display: flex;
   flex-direction: column;
   background: #ffffff;
   border: 1px solid var(--line);
-  padding: 40px 32px;
+  padding: 36px 22px;
   border-radius: 20px;
   position: relative;
   transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
@@ -1616,11 +1634,11 @@ body::before {
 }
 @media (max-width: 680px) {
   .section-shell {
-    width: min(100% - 28px, 560px);
+    width: calc(100% - 20px);
   }
   .site-nav {
     top: 9px;
-    width: calc(100% - 28px);
+    width: calc(100% - 20px);
   }
   .nav-links,
   .site-nav > .nav-cta {
@@ -2045,29 +2063,48 @@ body::before {
   display: flex;
   align-items: center;
   justify-content: center;
+  will-change: transform;
+  transform: translateZ(0);
+  box-shadow: 0 4px 14px rgba(37, 211, 102, 0.4);
   transition:
     transform 0.3s ease,
     box-shadow 0.3s ease;
-  animation: pulse-whatsapp 2s infinite;
 }
 
-@keyframes pulse-whatsapp {
+.whatsapp-float::before {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  border-radius: 50px;
+  background-color: #25d366;
+  z-index: -1;
+  animation: pulse-whatsapp-ring 2.4s ease-out infinite;
+  will-change: transform, opacity;
+}
+
+@keyframes pulse-whatsapp-ring {
   0% {
-    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+    transform: scale(0.92);
+    opacity: 0.7;
   }
-  70% {
-    box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+  65% {
+    transform: scale(1.35);
+    opacity: 0;
   }
   100% {
-    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+    transform: scale(1.35);
+    opacity: 0;
   }
 }
 
 .whatsapp-float:hover {
-  animation: none;
-  transform: translateY(-5px) scale(1.05);
+  transform: translateY(-5px) scale(1.05) translateZ(0);
   box-shadow: 0 8px 25px rgba(37, 211, 102, 0.6);
   color: #fff;
+}
+.whatsapp-float:hover::before {
+  animation: none;
+  opacity: 0;
 }
 
 @media (max-width: 768px) {

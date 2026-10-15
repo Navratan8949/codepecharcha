@@ -22,9 +22,9 @@ const queryClient = new QueryClient();
 
 const navLinks = [
   ["Home", "/#home"],
-  ["Services", "/#services"],
+  ["Services", "/services"],
+  ["Projects", "/projects"],
   ["Case Studies", "/case-studies"],
-  ["Projects", "/#projects"],
   ["Reviews", "/#testimonials"],
   ["Why Us", "/#why-us"],
   ["Pricing", "/#pricing"],
@@ -68,7 +68,17 @@ function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 24);
+    let ticking = false;
+    const onScroll = () => {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          const isScrolled = window.scrollY > 24;
+          setScrolled((prev) => (prev !== isScrolled ? isScrolled : prev));
+          ticking = false;
+        });
+        ticking = true;
+      }
+    };
     window.addEventListener("scroll", onScroll, { passive: true });
     onScroll();
     return () => window.removeEventListener("scroll", onScroll);

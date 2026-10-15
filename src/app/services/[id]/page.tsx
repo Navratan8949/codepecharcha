@@ -30,11 +30,11 @@ function ProjectPreview({ image, name }: { image?: string; name: string }) {
 const getRelatedProjects = (serviceId: string) => {
   const map: Record<string, string[]> = {
     "website-development": [
+      "safaisarthi",
       "welfare-ngo-trust",
       "fitness-forma",
       "karma-bhumi",
       "healthcare",
-      "hotel",
       "school",
     ],
     "mobile-app-development": [
@@ -44,9 +44,32 @@ const getRelatedProjects = (serviceId: string) => {
       "school-app",
       "wavvy-salon-app",
     ],
-    "e-commerce-development": ["ejuuz-app"],
-    "custom-software": ["crm", "omnibit", "healthcare"],
-    "crm-development": ["crm", "omnibit"],
+    "e-commerce-development": ["fillkart-luxury-ecommerce", "ejuuz-app"],
+    "custom-software": [
+      "clinic-diagnostic-center",
+      "construction-contractor-management",
+      "hr-attendance-payroll-software",
+      "manufacturing-production-management",
+      "stayora-hotel-operations-management",
+      "wholesale-distribution-management",
+      "crm",
+      "omnibit",
+      "healthcare",
+    ],
+    "crm-development": [
+      "wholesale-distribution-management",
+      "construction-contractor-management",
+      "crm",
+      "omnibit",
+    ],
+    "admin-panels": [
+      "clinic-diagnostic-center",
+      "hr-attendance-payroll-software",
+      "manufacturing-production-management",
+      "stayora-hotel-operations-management",
+      "wholesale-distribution-management",
+      "crm",
+    ],
   };
   const ids = map[serviceId] || [];
   return projects.filter((p) => ids.includes(p.id));
