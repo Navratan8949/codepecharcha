@@ -423,7 +423,7 @@ export type ProjectData = {
 };
 
 export const projects: ProjectData[] = [
-  {
+{
     id: "crm",
     name: "CodePeCharcha CRM Solutions",
     category: "CRM & SaaS Platform",
@@ -497,42 +497,468 @@ export const projects: ProjectData[] = [
     ),
   },
   {
-    id: "welfare-ngo-trust",
-    name: "Welfare NGO Trust",
-    category: "NGO & Social Welfare",
-    copy: "A modern, highly responsive website for a registered NGO focused on education, healthcare, and community empowerment.",
-    url: "#projects",
-    image: "/realhumantrust.png",
-    type: "website",
-    challenge: "The NGO needed a digital presence that accurately reflects their ground-level impact in Gujarat. The challenge was to organize their diverse initiatives (education, healthcare, empowerment) into a cohesive, accessible platform that drives donations and volunteer sign-ups while maintaining high performance and local SEO visibility.",
-    scope: [
-      "Multi-language Website — visitors can read everything in their own language, no one feels left out",
-      "Complete Programme Showcase — explore all offerings: Education, Health & Nutrition, Social Welfare, and more",
-      "Transparent Donation Portal — makes it easy for well-wishers anywhere in the world to contribute securely in seconds",
-      "News & Notice Board — publish schedules, events, and updates without any technical help",
-      "Meet Our People — showcases the managing committee, advisory board, and volunteers, reinforcing credibility and transparency",
-      "Photo Gallery — beautifully showcases on-ground activities, events, and achievements to build trust",
-      "Contact & Location Map — visitors can find and reach the organization easily without confusion",
-      "FAQ Section — answers the most common queries to save administrative time",
-      "SEO-Optimized — people searching for NGOs and social work in the region find this website first on Google",
+    id: "construction-contractor-management",
+    name: "ShreeShyam ERP — Construction & Contractor Management Software",
+    category: "Construction & Real Estate ERP",
+    copy: "A dedicated civil construction and contractor ERP platform managing multi-site project schedules, Bill of Quantities (BOQ), Daily Progress Reports (DPR), Measurement Books (MB), subcontractor RA billing, and site material indents.",
+    url: "https://shree-shyam-construction-erp.vercel.app",
+    image: "/construction-erp.jpg",
+    type: "software",
+    techStack: [
+      "Next.js 15",
+      "React 19",
+      "Tailwind CSS",
+      "Recharts",
+      "Lucide React",
+      "Motion",
+      "date-fns",
     ],
-    seoTitle: "Welfare NGO Trust - NGO Website | Code Pe Charcha",
+    challenge:
+      "Civil contracting and infrastructure firms routinely face cost overruns, delayed material deliveries, ghost labor attendance, and chaotic subcontractor billing across scattered project sites. ShreeShyam ERP was engineered to bridge the gap between corporate headquarters and on-site field engineers. It automates Bill of Quantities (BOQ) tracking, enables digitized daily site diaries and Measurement Books (MB), standardizes material indents and Goods Receipt Notes (GRN), and provides automated Running Account (RA) billing calculations with retention and statutory tax deductions.",
+    scope: [
+      "Multi-Site Project Command Center — Real-time tracking of project completion percentages, milestone timelines, financial burn rates, and variance alerts",
+      "BOQ & Estimation Analysis — Import structured Bill of Quantities, set item-level rate analyses, and track budgeted vs. actual quantities consumed",
+      "Digital Daily Progress Reports (DPR) — Site supervisors submit weather conditions, machinery hours, labor gang muster rolls, and photo evidence from the site",
+      "Civil Measurement Book (MB) Recording — Standardized chainage and dimensional quantity measurements with joint verification audit trails",
+      "Subcontractor & Client RA Billing — Automated Running Account bill generation with automated deductions for retention money, TDS, GST, and advances",
+      "Site Material Indents & Store Requisition — Field engineers raise indent requests against approved budgets, preventing unauthorized site purchases",
+      "Store Inventory & GRN Validation — Goods Receipt Notes verify incoming steel, cement, and aggregate quantities before updating physical inventory",
+      "Labor Master & Muster Roll Attendance — Daily biometric and contractor gang attendance tracking with daily wage and overtime calculations",
+      "Heavy Equipment & Fuel Consumption Logs — Monitors JCBs, cranes, and concrete mixers run-hours alongside diesel fuel consumption efficiency",
+      "Safety Audits & Quality Cube Test Registers — Quality assurance logging for concrete compressive strength tests, site hazard reports, and incident registers",
+    ],
+    seoTitle:
+      "ShreeShyam ERP - Construction & Contractor Management Software | Code Pe Charcha",
     seoDescription:
-      "A modern, highly responsive website built for an NGO focused on academics, healthcare, and community welfare.",
-    h1: "Welfare NGO Trust",
+      "Comprehensive Construction and Contractor Management ERP by Code Pe Charcha. Streamlining BOQ, DPR, site measurement books, labor muster, and subcontractor RA billing.",
+    h1: "ShreeShyam ERP — Construction & Contractor Management System",
     seoOverview: (
       <>
-        A modern, highly responsive website for a registered NGO
-        focused on education, healthcare, and community welfare. To achieve their
-        goals, we utilized our{" "}
+        A high-performance construction and contractor operations ERP engineered
+        for infrastructure builders and civil contractors. Built leveraging our{" "}
+        <Link
+          href="/services/custom-software"
+          className="text-coral underline hover:text-ink transition-colors"
+        >
+          Custom Software
+        </Link>{" "}
+        and{" "}
+        <Link
+          href="/services/crm-development"
+          className="text-coral underline hover:text-ink transition-colors"
+        >
+          CRM &amp; ERP Solutions
+        </Link>
+        , ShreeShyam ERP gives project owners instant control over field DPRs,
+        measurement books, material indents, and running account (RA) billings.
+      </>
+    ),
+  },
+  {
+    id: "fillkart-luxury-ecommerce",
+    name: "Fillkart — Luxury E-Commerce Platform & Atelier Admin Console",
+    category: "E-Commerce & Retail Management Platform",
+    copy: "A luxury fashion and lifestyle digital flagship pairing a high-converting storefront with an Atelier Admin Console for omnichannel order fulfillment, catalog variant matrices, dynamic promotions, and revenue analytics.",
+    url: "https://fillkart.vercel.app",
+    image: "/fillkart-ecommerce.jpg",
+    type: "software",
+    techStack: [
+      "React 19",
+      "Vite",
+      "Tailwind CSS 4",
+      "Framer Motion",
+      "Recharts",
+      "Lucide React",
+      "React Router v7",
+    ],
+    challenge:
+      "High-end fashion brands require an aesthetic digital showcase that matches physical boutique exclusivity while needing a powerful back-office infrastructure to manage SKU variants, dynamic price books, and rapid order dispatch. Fillkart delivers an editorial shopping experience featuring fluid lookbooks, interactive size advisors, and seamless checkout, backed by an Atelier Admin back-office that gives merchants total command over inventory buffers, order statuses, customer cohorts, and automated shipping labels.",
+    scope: [
+      "Editorial Storefront Experience — Editorial typography, responsive zoom galleries, curated lookbooks, and high-fashion micro-interactions",
+      "Faceted Search & Dynamic Catalog Filter — Instant filtering by size, silhouette, material, price range, and color with zero page reloads",
+      "Atelier Back-Office Admin Console — Real-time merchant command center displaying sales velocity, order lifecycle stages, and inventory levels",
+      "Order Processing & Fulfillment Hub — Manage orders from Confirmed to Packed, Dispatched, In-Transit, and Delivered with shipping tracking integration",
+      "Complex SKU & Variant Matrix — Control product sizes, colors, fabric weights, barcodes, and inventory thresholds per warehouse",
+      "Promotions & Dynamic Discount Engine — Create flash sale countdowns, tier-based promo codes, free shipping rules, and VIP customer discounts",
+      "Multi-Currency & Regional Pricing — Automatic geolocation currency switching with live forex exchange rates and regional tax compliance",
+      "Customer Accounts & Wishlist Vault — Persistent client shopping bags, cross-device wishlists, order receipts, and return request processing",
+      "Conversion Rate Optimization (CRO) Checkout — Frictionless multi-step checkout with address autocompletion and Razorpay/Stripe card gateways",
+      "Real-Time E-Commerce Analytics — Track Average Order Value (AOV), customer acquisition cohorts, gross merchandise value (GMV), and top products",
+    ],
+    seoTitle:
+      "Luxury E-Commerce Platform & Atelier Admin Software | Code Pe Charcha",
+    seoDescription:
+      "Bespoke luxury e-commerce platform and back-office admin system by Code Pe Charcha. Featuring editorial storefront, live order processing, SKU inventory, and analytics.",
+    h1: "Fillkart — Luxury E-Commerce & Retail ERP",
+    seoOverview: (
+      <>
+        A bespoke luxury e-commerce flagship storefront paired with an Atelier
+        Admin Operations Console. Harnessing our expertise in{" "}
+        <Link
+          href="/services/e-commerce-development"
+          className="text-coral underline hover:text-ink transition-colors"
+        >
+          E-Commerce Development
+        </Link>{" "}
+        and{" "}
+        <Link
+          href="/services/custom-software"
+          className="text-coral underline hover:text-ink transition-colors"
+        >
+          Custom Software Architecture
+        </Link>
+        , Fillkart combines an editorial customer buying journey with enterprise
+        SKU control, fulfillment tracking, and live gross revenue analytics.
+      </>
+    ),
+  },
+  {
+    id: "wholesale-distribution-management",
+    name: "VyavasthaKendra — Wholesale & Distribution ERP",
+    category: "Wholesale ERP & Supply Chain Management",
+    copy: "A high-volume B2B wholesale and FMCG distribution ERP with multi-warehouse inventory, credit-limit order processing, GST invoicing with E-Way bills, sales route beats, and customer ledger management.",
+    url: "https://vyavastha-kendra.vercel.app",
+    image: "/wholesale-erp.jpg",
+    type: "software",
+    techStack: [
+      "Next.js 15",
+      "React 19",
+      "Tailwind CSS",
+      "Recharts",
+      "Lucide React",
+      "Motion",
+      "date-fns",
+    ],
+    challenge:
+      "Wholesale distributors handle massive order volumes, multiple godowns, complex customer credit limits, and fluctuating purchase rates. When relying on fragmented billing systems, distributors suffer from uncollected receivables, inventory pilferage, and dispatch bottlenecks. VyavasthaKendra was designed specifically for wholesale supply chains: it manages customer credit boundaries, enables multi-godown stock transfers, tracks field sales beat visits, and automates GST-compliant invoice generation alongside live profitability reports.",
+    scope: [
+      "B2B Bulk Sales Order Processing — Order punching with custom customer price lists, tiered volume discounts, and automatic credit limit verification",
+      "GST Invoicing & E-Way Bill Readiness — Fast tax-compliant invoicing supporting B2B GSTIN validation, thermal dispatch receipts, and credit notes",
+      "Multi-Warehouse & Godown Inventory — Real-time visibility across central warehouses and local godowns with inter-godown transfer vouchers",
+      "Procurement & Goods Receipt Notes (GRN) — Vendor purchase order management, landed cost computations, batch tracking, and expiry date management",
+      "Customer Outstanding & Aging Receivables — 30/60/90 days payment aging analysis, automated payment reminders, and payment receipts entry",
+      "Field Salesman Beat Route Management — Assign daily customer visit beats, track order bookings per route, and calculate salesman commissions",
+      "Delivery Dispatch & Driver Run Sheets — Consolidates pending dispatches into vehicle load sheets, driver manifests, and delivery route tracking",
+      "SKU-Level Profitability & Gross Margins — Analyze profit margins per brand, product category, and customer account to identify top revenue drivers",
+      "Supplier Payables & Ledger Accounting — Complete vendor ledger reconciliation, purchase returns, and supplier payment scheduling",
+      "Tamper-Proof Audit Log Trail — Enterprise security logging every price override, discount approval, and stock adjustment with user and timestamp tags",
+    ],
+    seoTitle:
+      "Wholesale & Distribution ERP Management Software | Code Pe Charcha",
+    seoDescription:
+      "Comprehensive Wholesale & Distribution ERP by Code Pe Charcha. Streamlines B2B sales orders, multi-warehouse inventory, customer credit ledgers, and delivery routes.",
+    h1: "VyavasthaKendra — Wholesale & Distribution ERP",
+    seoOverview: (
+      <>
+        A mission-critical wholesale and FMCG supply chain ERP built to handle
+        high-volume B2B distribution. Delivered using our{" "}
+        <Link
+          href="/services/custom-software"
+          className="text-coral underline hover:text-ink transition-colors"
+        >
+          Custom Software Development
+        </Link>{" "}
+        and{" "}
+        <Link
+          href="/services/crm-development"
+          className="text-coral underline hover:text-ink transition-colors"
+        >
+          CRM &amp; ERP Solutions
+        </Link>
+        , VyavasthaKendra empowers distributors with multi-godown inventory
+        tracking, sales route beat controls, and automated aging receivables.
+      </>
+    ),
+  },
+  {
+    id: "clinic-diagnostic-center",
+    name: "AarogyaCare — Clinic & Diagnostic Centre Management System",
+    category: "Healthcare & Diagnostic ERP",
+    copy: "An end-to-end clinical operations and diagnostic laboratory ERP featuring live patient token queues, digital EMR consultations, barcoded specimen tracking, pathologist verification workflows, and integrated GST billing.",
+    url: "https://aarogya-clinic-diagnostic-centre-ma.vercel.app",
+    image: "/clinic-erp.jpg",
+    type: "software",
+    techStack: [
+      "React 19",
+      "Vite",
+      "Tailwind CSS",
+      "Lucide React",
+      "Motion",
+      "Express.js",
+      "Node.js",
+      "REST APIs",
+    ],
+    challenge:
+      "Multi-specialty outpatient clinics and diagnostic centers frequently suffer from fragmented systems — receptionists struggle with paper tokens, doctors lack quick access to historical vitals and diagnostic reports, and pathology labs manually transfer test parameters into paper formats. AarogyaCare solved this by unifying OPD front desk registration, real-time consultation workspaces with digital Rx templates, barcode-tracked diagnostic worklists with critical panic-range alarms, two-tier pathologist review verification, and day-end multi-tender cash settlement in one synchronized, role-permissioned platform.",
+    scope: [
+      "OPD Live Token & Queue Management — Digital waiting lounge displays and receptionist token counters eliminate patient overcrowding and calculate real-time wait times",
+      "Patient 360° Electronic Medical Records (EMR) — Centralized lifetime patient profile logging vitals, allergies, past diagnoses, chronic conditions, and previous visits",
+      "Doctor Clinical Consultation Workspace — Rapid electronic prescription (e-Rx) builder with ICD-10 diagnosis search, dosage calculators, and instant lab test ordering",
+      "Diagnostic Pathology & Lab Orders — Automated test ordering linked to patient files with automated specimen collection labels and barcoded tube tracking",
+      "Technician Worklist & Machine Interfacing — Direct test result parameter entry with automated reference range checks and highlighted abnormal/critical flags",
+      "Pathologist Review & Two-Step Verification — Authorized digital report signing with automated branded PDF report generation and QR verification",
+      "Consolidated Clinical & Diagnostic Billing — Single invoice covering OPD doctor consultation fees, diagnostic investigations, and consumables with partial payment logging",
+      "Reagents & Clinic Inventory Control — Real-time tracking of test kits, reagents, and clinical consumables with expiry alerts and automated reorder triggers",
+      "Multi-Role Permission Security — Strict access boundaries ensuring receptionists, lab technicians, physicians, and billing cashiers only access authorized modules",
+      "Day-End Cash Register & Financial Audit — Reconciles cash, UPI, card, and insurance payments against patient invoices with discrepancy prevention",
+    ],
+    seoTitle:
+      "Clinic & Diagnostic Centre Management Software | Healthcare ERP | Code Pe Charcha",
+    seoDescription:
+      "Enterprise-grade Clinic and Diagnostic Centre Management System by Code Pe Charcha. Featuring OPD queues, EMR consultations, lab test worklists, pathologist review, and billing.",
+    h1: "AarogyaCare — Clinic & Diagnostic Centre ERP",
+    seoOverview: (
+      <>
+        A comprehensive healthcare operations platform for modern clinics and
+        diagnostic centers. AarogyaCare eliminates operational friction across
+        OPD reception, clinical consultations, pathology sample worklists, and
+        revenue audits. Powered by our{" "}
+        <Link
+          href="/services/custom-software"
+          className="text-coral underline hover:text-ink transition-colors"
+        >
+          Custom Software Development
+        </Link>{" "}
+        and{" "}
+        <Link
+          href="/services/admin-panels"
+          className="text-coral underline hover:text-ink transition-colors"
+        >
+          Admin Panels &amp; Dashboards
+        </Link>{" "}
+        expertise, it delivers reliable role-based workflows for doctors,
+        pathologists, technicians, and cashiers.
+      </>
+    ),
+  },
+  {
+    id: "hr-attendance-payroll-software",
+    name: "KarmikHR — Enterprise HR, Attendance & Payroll Management Software",
+    category: "HRMS & Enterprise Payroll Software",
+    copy: "A unified Human Resource Management System (HRMS) built for fast-scaling companies — with biometric attendance sync, automated payroll runs, statutory compliance (PF, ESI, TDS), and Employee Self-Service (ESS).",
+    url: "https://hr-payroll-attendance-system.vercel.app",
+    image: "/hr-payroll.jpg",
+    type: "software",
+    techStack: [
+      "Next.js 15",
+      "React 19",
+      "Tailwind CSS",
+      "Recharts",
+      "Lucide React",
+      "Motion",
+      "date-fns",
+    ],
+    challenge:
+      "Manual attendance spreadsheets, delayed salary payouts, and complex statutory deductions like Provident Fund (PF), Employee State Insurance (ESI), and Tax Deducted at Source (TDS) drain valuable HR bandwidth and trigger costly compliance errors. KarmikHR eliminates manual overhead with an intelligent, self-service HRMS suite that consolidates employee onboarding, shift schedules, geo-fenced punch clocks, automated one-click monthly payroll runs, digital payslip distribution, and full-and-final (FnF) exit settlements.",
+    scope: [
+      "HR Executive Command Center — Real-time headcount metrics, department breakdown, daily attendance percentages, and pending approval queues",
+      "360° Employee Directory & Document Studio — Complete personnel dossiers, salary compensation structures, digital document storage, and printable ID cards",
+      "Attendance Register & Punch Simulation — Flexible attendance capture with geo-fencing, biometric machine sync, and missed punch regularization",
+      "Shift Rostering & Overtime Rules — Multi-shift scheduling, night allowance computations, rotating shift rosters, and holiday calendar management",
+      "Leave Ledger & Approval Workflows — Configurable paid, casual, sick, and maternity leave quotas with real-time balance calculations and manager approvals",
+      "One-Click Statutory Payroll Engine — Automated gross-to-net salary computation with Indian statutory formulas for PF, ESI, TDS, and Professional Tax",
+      "Printable Digital Payslips — Automatically generated monthly PDF payslips detailing basic pay, HRA, special allowances, and statutory deductions",
+      "Employee Self-Service (ESS) Portal — Dedicated employee interface to check in, download tax sheets, submit expense claims, and view team leaves",
+      "Recruitment & Onboarding Pipeline — Kanban candidate tracking from application review to interview rounds, offer letters, and onboarding checklists",
+      "Full & Final Settlement (FnF) Module — Structured exit process calculating notice period adjustments, leave encashment, gratuity, and clearance sign-offs",
+    ],
+    seoTitle:
+      "HR Attendance & Payroll Management Software | Enterprise HRMS | Code Pe Charcha",
+    seoDescription:
+      "All-in-one HRMS, Attendance, and Payroll software by Code Pe Charcha. Features geo-fenced punch clocks, statutory PF/ESI/TDS payroll runs, and Employee Self-Service.",
+    h1: "KarmikHR — Enterprise Attendance & Payroll Suite",
+    seoOverview: (
+      <>
+        A modern, full-lifecycle Human Resource and Payroll automation suite.
+        Developed through our{" "}
+        <Link
+          href="/services/custom-software"
+          className="text-coral underline hover:text-ink transition-colors"
+        >
+          Custom Software Solutions
+        </Link>{" "}
+        and{" "}
+        <Link
+          href="/services/admin-panels"
+          className="text-coral underline hover:text-ink transition-colors"
+        >
+          Enterprise Admin Panels
+        </Link>
+        , KarmikHR powers seamless attendance tracking, zero-error statutory
+        payroll processing, and autonomous employee self-service portals.
+      </>
+    ),
+  },
+  {
+    id: "manufacturing-production-management",
+    name: "ForgeFlow — Manufacturing & Production Management ERP",
+    category: "Manufacturing ERP & Production Control",
+    copy: "A heavy-duty manufacturing execution and production ERP featuring multi-level Bills of Materials (BOM), Material Requirements Planning (MRP), shop-floor job card routing, WIP stage tracking, and machine maintenance.",
+    url: "https://manufacturing-production-management.vercel.app",
+    image: "/manufacturing-erp.jpg",
+    type: "software",
+    techStack: [
+      "Next.js 15",
+      "React 19",
+      "Tailwind CSS",
+      "Recharts",
+      "Lucide React",
+      "Motion",
+      "date-fns",
+    ],
+    challenge:
+      "Industrial manufacturing plants face constant hurdles with stock-outs of critical raw materials, untracked shop-floor bottlenecks, scrap inflation, and inaccurate unit manufacturing costs. ForgeFlow was developed to give plant managers and floor supervisors total end-to-end visibility. It automates multi-tier Bill of Materials (BOM) explosions, generates shop-floor job cards, tracks Work-In-Progress (WIP) across machine workstations, monitors quality rejection rates, and tracks Overall Equipment Effectiveness (OEE).",
+    scope: [
+      "Multi-Level Bill of Materials (BOM) — Configure finished product assemblies, sub-assemblies, raw material quantities, and scrap allowances with version control",
+      "Production Planning & Master Scheduling (MPS) — Forecast production capacities, machine runtimes, and allocate work orders against customer sales demand",
+      "Material Requirements Planning (MRP) — Automatically calculate raw material requirements to prevent line stoppages and over-purchasing",
+      "Work Orders & Stage Routing — Issue production work orders with predefined routing steps: machining, fabrication, welding, coating, and assembly",
+      "Shop Floor Job Cards & Operator Logging — Floor supervisors allocate tasks to machines and operators, logging output quantities, cycle times, and scrap",
+      "Live Work-in-Progress (WIP) Tracking — Monitor parts flowing through assembly lines with real-time bottleneck identification",
+      "In-Process & Final Quality Assurance — Defect classification, tolerance inspection, rejection logs, and quarantine holding workflows",
+      "Raw Material & Finished Goods Inventory — Bin-level warehouse tracking with automated Goods Receipt Notes (GRN) and material issue vouchers",
+      "Machine Maintenance & OEE Monitoring — Preventive maintenance scheduling, breakdown logging, machine downtime analysis, and equipment efficiency",
+      "Batch Costing & Profit Margin Analysis — Computes true unit production cost by combining raw materials, direct labor, and machine hour electricity overheads",
+    ],
+    seoTitle:
+      "Manufacturing & Production Management Software | Industrial ERP | Code Pe Charcha",
+    seoDescription:
+      "Industrial Manufacturing and Production Management ERP by Code Pe Charcha. Featuring multi-level BOM, MRP calculations, shop-floor job cards, and WIP tracking.",
+    h1: "ForgeFlow — Manufacturing & Production ERP",
+    seoOverview: (
+      <>
+        An industrial-grade manufacturing operations and production execution ERP
+        tailored for factories and processing plants. Created with our{" "}
+        <Link
+          href="/services/custom-software"
+          className="text-coral underline hover:text-ink transition-colors"
+        >
+          Custom Software Engineering
+        </Link>{" "}
+        and{" "}
+        <Link
+          href="/services/admin-panels"
+          className="text-coral underline hover:text-ink transition-colors"
+        >
+          Admin Panels
+        </Link>
+        , ForgeFlow synchronizes multi-level BOMs, shop-floor job cards, WIP
+        assemblies, and machine maintenance into a single plant command dashboard.
+      </>
+    ),
+  },
+  {
+    id: "stayora-hotel-operations-management",
+    name: "Stayora — Hotel & Operations Management System (PMS)",
+    category: "Hospitality & Property Management (PMS)",
+    copy: "A cloud-native Property Management System (PMS) and hotel operations ERP featuring an interactive room status tape chart, front desk guest check-in/out, multi-room folio billing, housekeeping task boards, and restaurant F&B POS.",
+    url: "https://stayora-hotel-operations-management.vercel.app/",
+    image: "/stayora-hotel.jpg",
+    type: "software",
+    techStack: [
+      "Next.js 15",
+      "React 19",
+      "Tailwind CSS",
+      "Recharts",
+      "Lucide React",
+      "Motion",
+      "date-fns",
+    ],
+    challenge:
+      "Boutique hotels and luxury resorts struggle with disconnected software: separate tools for front desk room bookings, housekeeping status, restaurant food bills, and accounting ledged to billing leakages and frustrated guests. Stayora unifies the entire hospitality lifecycle into one intuitive interface: front desk agents manage arrivals with speed, housekeepers update room cleanliness in real time from mobile devices, and restaurant dining orders are charged straight to the guest's consolidated master folio.",
+    scope: [
+      "Interactive Room Grid & Visual Tape Chart — Color-coded room status calendar displaying clean, inspected, dirty, occupied, and maintenance states",
+      "Front Desk Fast Check-in & Check-out — Guest registration, ID document upload, key allocation, room change handling, and early/late departure fees",
+      "Multi-Room Reservations & Walk-in Engine — Manage direct walk-in reservations, corporate rate agreements, and travel agency block bookings",
+      "Consolidated Guest 360° Master Folio — Merges room tariffs, restaurant dining, laundry charges, spa services, and minibar into a single tax invoice",
+      "Real-Time Housekeeping Management — Mobile-ready task boards prioritizing checkout room turnarounds, linen change schedules, and supervisor inspections",
+      "Restaurant & F&B POS Integration — Order punching, Kitchen Order Tickets (KOT), table management, and seamless 'Charge to Room' billing",
+      "Hotel Store Purchasing & Inventory — Tracks F&B perishables, guest amenities, cleaning chemicals, and linens with low-stock warnings",
+      "Preventive Facility Maintenance — Log guest room plumbing, HVAC, or electrical issues with SLA priority flags and technician assignment",
+      "RevPAR & Occupancy Analytics — Daily insights into Average Daily Rate (ADR), Revenue Per Available Room (RevPAR), occupancy percentage, and booking channels",
+      "Multi-Property Switcher & Role Security — Multi-branch hotel chain support with strict role permissions for receptionists, managers, and accountants",
+    ],
+    seoTitle:
+      "Hotel Management System & Property Management ERP (PMS) | Code Pe Charcha",
+    seoDescription:
+      "Next-gen Hotel & Operations Management Software (PMS) by Code Pe Charcha. Featuring visual room tape chart, guest master folios, housekeeping, and F&B POS.",
+    h1: "Stayora — Hotel & Operations Management ERP",
+    seoOverview: (
+      <>
+        A modern, unified Hotel Property Management System (PMS) and hospitality
+        operations software. Built using our{" "}
+        <Link
+          href="/services/custom-software"
+          className="text-coral underline hover:text-ink transition-colors"
+        >
+          Custom Software Development
+        </Link>{" "}
+        and{" "}
+        <Link
+          href="/services/admin-panels"
+          className="text-coral underline hover:text-ink transition-colors"
+        >
+          Admin Dashboard Architecture
+        </Link>
+        , Stayora powers live room grid calendars, front desk express
+        check-in, housekeeping task tracking, and unified guest master folios.
+      </>
+    ),
+  },
+  {
+    id: "safaisarthi",
+    name: "SafaiSarthi — Professional Cleaning Services Platform",
+    category: "Home & Commercial Cleaning Services",
+    copy: "A hyper-local cleaning services platform for Jaipur featuring instant rate calculation, BHK-based package customizers, interactive before/after transformation galleries, corporate AMC inquiries, and 1-click WhatsApp booking.",
+    url: "https://safaisaarthi.com",
+    image: "/safaisarthi.jpg",
+    type: "website",
+    techStack: [
+      "Next.js 14",
+      "React 18",
+      "Tailwind CSS",
+      "Framer Motion",
+      "Lucide React",
+      "Supabase",
+    ],
+    challenge:
+      "The residential and commercial cleaning industry in India is plagued by opaque pricing, unreliable local aggregators, and cumbersome booking forms that create friction. SafaiSarthi needed a spotless digital experience that instills immediate customer trust, displays crystal-clear transparent pricing for flats, villas, and commercial offices, validates service availability by Jaipur pincodes, and enables swift bookings via WhatsApp without requiring tedious customer sign-ups.",
+    scope: [
+      "Instant Interactive Rate Calculator — Transparent pricing estimates based on property type (1 BHK, 2 BHK, 3 BHK, Villas) and square footage",
+      "Specialized Cleaning Service Catalog — Deep home cleaning, sofa and carpet shampooing, kitchen degreasing, bathroom descaling, and water tank sanitation",
+      "Corporate & Commercial Facility AMC — Dedicated quotation portal for corporate offices, retail showrooms, hospitals, and educational campuses",
+      "Interactive Before/After Transformations — Interactive visual slider comparisons showcasing real on-ground cleaning results across tiles, stone, and upholstery",
+      "Localized Pincode & Neighborhood Checker — Validates service availability across Vaishali Nagar, Malviya Nagar, Mansarovar, Jagatpura, and Raja Park",
+      "One-Click WhatsApp Booking Integration — Automatically pre-formats customer package selections, address details, and date into a direct WhatsApp chat",
+      "Verified Trust & Eco-Chemical Badges — Highlights certified eco-friendly Taski chemicals, background-checked cleaning staff, and 100% satisfaction guarantee",
+      "Customer Reviews & Rating Aggregator — Social proof module displaying verified Jaipur client reviews and ratings",
+      "Sub-Second Mobile-First Performance — Optimized WebP image delivery, lazy loading, and Core Web Vitals compliance for instant mobile browsing",
+      "Hyper-Local Jaipur SEO Architecture — Dominates local search results for house cleaning, sofa dry cleaning, and office sanitization services in Jaipur",
+    ],
+    seoTitle:
+      "SafaiSarthi - Professional Cleaning Services in Jaipur | Code Pe Charcha",
+    seoDescription:
+      "Explore SafaiSarthi developed by Code Pe Charcha — Jaipur's premier home and corporate cleaning services platform with instant rate calculator and WhatsApp booking.",
+    h1: "SafaiSarthi — Professional Cleaning Services Platform",
+    seoOverview: (
+      <>
+        A high-converting local service web platform built for Jaipur&apos;s
+        trusted on-demand cleaning provider. Leveraging our{" "}
         <Link
           href="/services/website-development"
           className="text-coral underline hover:text-ink transition-colors"
         >
           Website Development
         </Link>{" "}
-        expertise to create an accessible platform that drives donations and
-        volunteer sign-ups.
+        and{" "}
+        <Link
+          href="/services/seo-growth"
+          className="text-coral underline hover:text-ink transition-colors"
+        >
+          SEO &amp; Growth
+        </Link>{" "}
+        capabilities, the platform features instant rate calculators, interactive
+        before/after visual comparisons, and direct WhatsApp booking synthesis.
       </>
     ),
   },
@@ -644,6 +1070,46 @@ export const projects: ProjectData[] = [
         </Link>{" "}
         expertise to design a meticulously planned architecture for real-time
         data visualization.
+      </>
+    ),
+  },
+  {
+    id: "welfare-ngo-trust",
+    name: "Welfare NGO Trust",
+    category: "NGO & Social Welfare",
+    copy: "A modern, highly responsive website for a registered NGO focused on education, healthcare, and community empowerment.",
+    url: "#projects",
+    image: "/realhumantrust.png",
+    type: "website",
+    challenge: "The NGO needed a digital presence that accurately reflects their ground-level impact in Gujarat. The challenge was to organize their diverse initiatives (education, healthcare, empowerment) into a cohesive, accessible platform that drives donations and volunteer sign-ups while maintaining high performance and local SEO visibility.",
+    scope: [
+      "Multi-language Website — visitors can read everything in their own language, no one feels left out",
+      "Complete Programme Showcase — explore all offerings: Education, Health & Nutrition, Social Welfare, and more",
+      "Transparent Donation Portal — makes it easy for well-wishers anywhere in the world to contribute securely in seconds",
+      "News & Notice Board — publish schedules, events, and updates without any technical help",
+      "Meet Our People — showcases the managing committee, advisory board, and volunteers, reinforcing credibility and transparency",
+      "Photo Gallery — beautifully showcases on-ground activities, events, and achievements to build trust",
+      "Contact & Location Map — visitors can find and reach the organization easily without confusion",
+      "FAQ Section — answers the most common queries to save administrative time",
+      "SEO-Optimized — people searching for NGOs and social work in the region find this website first on Google",
+    ],
+    seoTitle: "Welfare NGO Trust - NGO Website | Code Pe Charcha",
+    seoDescription:
+      "A modern, highly responsive website built for an NGO focused on academics, healthcare, and community welfare.",
+    h1: "Welfare NGO Trust",
+    seoOverview: (
+      <>
+        A modern, highly responsive website for a registered NGO
+        focused on education, healthcare, and community welfare. To achieve their
+        goals, we utilized our{" "}
+        <Link
+          href="/services/website-development"
+          className="text-coral underline hover:text-ink transition-colors"
+        >
+          Website Development
+        </Link>{" "}
+        expertise to create an accessible platform that drives donations and
+        volunteer sign-ups.
       </>
     ),
   },
@@ -1152,472 +1618,6 @@ export const projects: ProjectData[] = [
         </Link>{" "}
         expertise, we delivered a highly visual interface and a robust calendar
         scheduling system to reduce no-shows.
-      </>
-    ),
-  },
-  {
-    id: "clinic-diagnostic-center",
-    name: "AarogyaCare — Clinic & Diagnostic Centre Management System",
-    category: "Healthcare & Diagnostic ERP",
-    copy: "An end-to-end clinical operations and diagnostic laboratory ERP featuring live patient token queues, digital EMR consultations, barcoded specimen tracking, pathologist verification workflows, and integrated GST billing.",
-    url: "#projects",
-    image: "/clinic-erp.jpg",
-    type: "software",
-    techStack: [
-      "React 19",
-      "Vite",
-      "Tailwind CSS",
-      "Lucide React",
-      "Motion",
-      "Express.js",
-      "Node.js",
-      "REST APIs",
-    ],
-    challenge:
-      "Multi-specialty outpatient clinics and diagnostic centers frequently suffer from fragmented systems — receptionists struggle with paper tokens, doctors lack quick access to historical vitals and diagnostic reports, and pathology labs manually transfer test parameters into paper formats. AarogyaCare solved this by unifying OPD front desk registration, real-time consultation workspaces with digital Rx templates, barcode-tracked diagnostic worklists with critical panic-range alarms, two-tier pathologist review verification, and day-end multi-tender cash settlement in one synchronized, role-permissioned platform.",
-    scope: [
-      "OPD Live Token & Queue Management — Digital waiting lounge displays and receptionist token counters eliminate patient overcrowding and calculate real-time wait times",
-      "Patient 360° Electronic Medical Records (EMR) — Centralized lifetime patient profile logging vitals, allergies, past diagnoses, chronic conditions, and previous visits",
-      "Doctor Clinical Consultation Workspace — Rapid electronic prescription (e-Rx) builder with ICD-10 diagnosis search, dosage calculators, and instant lab test ordering",
-      "Diagnostic Pathology & Lab Orders — Automated test ordering linked to patient files with automated specimen collection labels and barcoded tube tracking",
-      "Technician Worklist & Machine Interfacing — Direct test result parameter entry with automated reference range checks and highlighted abnormal/critical flags",
-      "Pathologist Review & Two-Step Verification — Authorized digital report signing with automated branded PDF report generation and QR verification",
-      "Consolidated Clinical & Diagnostic Billing — Single invoice covering OPD doctor consultation fees, diagnostic investigations, and consumables with partial payment logging",
-      "Reagents & Clinic Inventory Control — Real-time tracking of test kits, reagents, and clinical consumables with expiry alerts and automated reorder triggers",
-      "Multi-Role Permission Security — Strict access boundaries ensuring receptionists, lab technicians, physicians, and billing cashiers only access authorized modules",
-      "Day-End Cash Register & Financial Audit — Reconciles cash, UPI, card, and insurance payments against patient invoices with discrepancy prevention",
-    ],
-    seoTitle:
-      "Clinic & Diagnostic Centre Management Software | Healthcare ERP | Code Pe Charcha",
-    seoDescription:
-      "Enterprise-grade Clinic and Diagnostic Centre Management System by Code Pe Charcha. Featuring OPD queues, EMR consultations, lab test worklists, pathologist review, and billing.",
-    h1: "AarogyaCare — Clinic & Diagnostic Centre ERP",
-    seoOverview: (
-      <>
-        A comprehensive healthcare operations platform for modern clinics and
-        diagnostic centers. AarogyaCare eliminates operational friction across
-        OPD reception, clinical consultations, pathology sample worklists, and
-        revenue audits. Powered by our{" "}
-        <Link
-          href="/services/custom-software"
-          className="text-coral underline hover:text-ink transition-colors"
-        >
-          Custom Software Development
-        </Link>{" "}
-        and{" "}
-        <Link
-          href="/services/admin-panels"
-          className="text-coral underline hover:text-ink transition-colors"
-        >
-          Admin Panels &amp; Dashboards
-        </Link>{" "}
-        expertise, it delivers reliable role-based workflows for doctors,
-        pathologists, technicians, and cashiers.
-      </>
-    ),
-  },
-  {
-    id: "construction-contractor-management",
-    name: "NirmanFlow — Construction & Contractor Management Software",
-    category: "Construction & Real Estate ERP",
-    copy: "A dedicated civil construction and contractor ERP platform managing multi-site project schedules, Bill of Quantities (BOQ), Daily Progress Reports (DPR), Measurement Books (MB), subcontractor RA billing, and site material indents.",
-    url: "#projects",
-    image: "/construction-erp.jpg",
-    type: "software",
-    techStack: [
-      "Next.js 15",
-      "React 19",
-      "Tailwind CSS",
-      "Recharts",
-      "Lucide React",
-      "Motion",
-      "date-fns",
-    ],
-    challenge:
-      "Civil contracting and infrastructure firms routinely face cost overruns, delayed material deliveries, ghost labor attendance, and chaotic subcontractor billing across scattered project sites. NirmanFlow was engineered to bridge the gap between corporate headquarters and on-site field engineers. It automates Bill of Quantities (BOQ) tracking, enables digitized daily site diaries and Measurement Books (MB), standardizes material indents and Goods Receipt Notes (GRN), and provides automated Running Account (RA) billing calculations with retention and statutory tax deductions.",
-    scope: [
-      "Multi-Site Project Command Center — Real-time tracking of project completion percentages, milestone timelines, financial burn rates, and variance alerts",
-      "BOQ & Estimation Analysis — Import structured Bill of Quantities, set item-level rate analyses, and track budgeted vs. actual quantities consumed",
-      "Digital Daily Progress Reports (DPR) — Site supervisors submit weather conditions, machinery hours, labor gang muster rolls, and photo evidence from the site",
-      "Civil Measurement Book (MB) Recording — Standardized chainage and dimensional quantity measurements with joint verification audit trails",
-      "Subcontractor & Client RA Billing — Automated Running Account bill generation with automated deductions for retention money, TDS, GST, and advances",
-      "Site Material Indents & Store Requisition — Field engineers raise indent requests against approved budgets, preventing unauthorized site purchases",
-      "Store Inventory & GRN Validation — Goods Receipt Notes verify incoming steel, cement, and aggregate quantities before updating physical inventory",
-      "Labor Master & Muster Roll Attendance — Daily biometric and contractor gang attendance tracking with daily wage and overtime calculations",
-      "Heavy Equipment & Fuel Consumption Logs — Monitors JCBs, cranes, and concrete mixers run-hours alongside diesel fuel consumption efficiency",
-      "Safety Audits & Quality Cube Test Registers — Quality assurance logging for concrete compressive strength tests, site hazard reports, and incident registers",
-    ],
-    seoTitle:
-      "Construction & Contractor Management Software | Civil ERP | Code Pe Charcha",
-    seoDescription:
-      "Comprehensive Construction and Contractor Management ERP by Code Pe Charcha. Streamlining BOQ, DPR, site measurement books, labor muster, and subcontractor RA billing.",
-    h1: "NirmanFlow — Construction & Contractor Management ERP",
-    seoOverview: (
-      <>
-        A high-performance construction and contractor operations ERP engineered
-        for infrastructure builders and civil contractors. Built leveraging our{" "}
-        <Link
-          href="/services/custom-software"
-          className="text-coral underline hover:text-ink transition-colors"
-        >
-          Custom Software
-        </Link>{" "}
-        and{" "}
-        <Link
-          href="/services/crm-development"
-          className="text-coral underline hover:text-ink transition-colors"
-        >
-          CRM &amp; ERP Solutions
-        </Link>
-        , NirmanFlow gives project owners instant control over field DPRs,
-        measurement books, material indents, and running account (RA) billings.
-      </>
-    ),
-  },
-  {
-    id: "fillkart-luxury-ecommerce",
-    name: "Fillkart — Luxury E-Commerce Platform & Atelier Admin Console",
-    category: "E-Commerce & Retail Management Platform",
-    copy: "A luxury fashion and lifestyle digital flagship pairing a high-converting storefront with an Atelier Admin Console for omnichannel order fulfillment, catalog variant matrices, dynamic promotions, and revenue analytics.",
-    url: "#projects",
-    image: "/fillkart-ecommerce.jpg",
-    type: "software",
-    techStack: [
-      "React 19",
-      "Vite",
-      "Tailwind CSS 4",
-      "Framer Motion",
-      "Recharts",
-      "Lucide React",
-      "React Router v7",
-    ],
-    challenge:
-      "High-end fashion brands require an aesthetic digital showcase that matches physical boutique exclusivity while needing a powerful back-office infrastructure to manage SKU variants, dynamic price books, and rapid order dispatch. Fillkart delivers an editorial shopping experience featuring fluid lookbooks, interactive size advisors, and seamless checkout, backed by an Atelier Admin back-office that gives merchants total command over inventory buffers, order statuses, customer cohorts, and automated shipping labels.",
-    scope: [
-      "Editorial Storefront Experience — Editorial typography, responsive zoom galleries, curated lookbooks, and high-fashion micro-interactions",
-      "Faceted Search & Dynamic Catalog Filter — Instant filtering by size, silhouette, material, price range, and color with zero page reloads",
-      "Atelier Back-Office Admin Console — Real-time merchant command center displaying sales velocity, order lifecycle stages, and inventory levels",
-      "Order Processing & Fulfillment Hub — Manage orders from Confirmed to Packed, Dispatched, In-Transit, and Delivered with shipping tracking integration",
-      "Complex SKU & Variant Matrix — Control product sizes, colors, fabric weights, barcodes, and inventory thresholds per warehouse",
-      "Promotions & Dynamic Discount Engine — Create flash sale countdowns, tier-based promo codes, free shipping rules, and VIP customer discounts",
-      "Multi-Currency & Regional Pricing — Automatic geolocation currency switching with live forex exchange rates and regional tax compliance",
-      "Customer Accounts & Wishlist Vault — Persistent client shopping bags, cross-device wishlists, order receipts, and return request processing",
-      "Conversion Rate Optimization (CRO) Checkout — Frictionless multi-step checkout with address autocompletion and Razorpay/Stripe card gateways",
-      "Real-Time E-Commerce Analytics — Track Average Order Value (AOV), customer acquisition cohorts, gross merchandise value (GMV), and top products",
-    ],
-    seoTitle:
-      "Luxury E-Commerce Platform & Atelier Admin Software | Code Pe Charcha",
-    seoDescription:
-      "Bespoke luxury e-commerce platform and back-office admin system by Code Pe Charcha. Featuring editorial storefront, live order processing, SKU inventory, and analytics.",
-    h1: "Fillkart — Luxury E-Commerce & Retail ERP",
-    seoOverview: (
-      <>
-        A bespoke luxury e-commerce flagship storefront paired with an Atelier
-        Admin Operations Console. Harnessing our expertise in{" "}
-        <Link
-          href="/services/e-commerce-development"
-          className="text-coral underline hover:text-ink transition-colors"
-        >
-          E-Commerce Development
-        </Link>{" "}
-        and{" "}
-        <Link
-          href="/services/custom-software"
-          className="text-coral underline hover:text-ink transition-colors"
-        >
-          Custom Software Architecture
-        </Link>
-        , Fillkart combines an editorial customer buying journey with enterprise
-        SKU control, fulfillment tracking, and live gross revenue analytics.
-      </>
-    ),
-  },
-  {
-    id: "hr-attendance-payroll-software",
-    name: "KarmikHR — Enterprise HR, Attendance & Payroll Management Software",
-    category: "HRMS & Enterprise Payroll Software",
-    copy: "A unified Human Resource Management System (HRMS) built for fast-scaling companies — with biometric attendance sync, automated payroll runs, statutory compliance (PF, ESI, TDS), and Employee Self-Service (ESS).",
-    url: "#projects",
-    image: "/hr-payroll.jpg",
-    type: "software",
-    techStack: [
-      "Next.js 15",
-      "React 19",
-      "Tailwind CSS",
-      "Recharts",
-      "Lucide React",
-      "Motion",
-      "date-fns",
-    ],
-    challenge:
-      "Manual attendance spreadsheets, delayed salary payouts, and complex statutory deductions like Provident Fund (PF), Employee State Insurance (ESI), and Tax Deducted at Source (TDS) drain valuable HR bandwidth and trigger costly compliance errors. KarmikHR eliminates manual overhead with an intelligent, self-service HRMS suite that consolidates employee onboarding, shift schedules, geo-fenced punch clocks, automated one-click monthly payroll runs, digital payslip distribution, and full-and-final (FnF) exit settlements.",
-    scope: [
-      "HR Executive Command Center — Real-time headcount metrics, department breakdown, daily attendance percentages, and pending approval queues",
-      "360° Employee Directory & Document Studio — Complete personnel dossiers, salary compensation structures, digital document storage, and printable ID cards",
-      "Attendance Register & Punch Simulation — Flexible attendance capture with geo-fencing, biometric machine sync, and missed punch regularization",
-      "Shift Rostering & Overtime Rules — Multi-shift scheduling, night allowance computations, rotating shift rosters, and holiday calendar management",
-      "Leave Ledger & Approval Workflows — Configurable paid, casual, sick, and maternity leave quotas with real-time balance calculations and manager approvals",
-      "One-Click Statutory Payroll Engine — Automated gross-to-net salary computation with Indian statutory formulas for PF, ESI, TDS, and Professional Tax",
-      "Printable Digital Payslips — Automatically generated monthly PDF payslips detailing basic pay, HRA, special allowances, and statutory deductions",
-      "Employee Self-Service (ESS) Portal — Dedicated employee interface to check in, download tax sheets, submit expense claims, and view team leaves",
-      "Recruitment & Onboarding Pipeline — Kanban candidate tracking from application review to interview rounds, offer letters, and onboarding checklists",
-      "Full & Final Settlement (FnF) Module — Structured exit process calculating notice period adjustments, leave encashment, gratuity, and clearance sign-offs",
-    ],
-    seoTitle:
-      "HR Attendance & Payroll Management Software | Enterprise HRMS | Code Pe Charcha",
-    seoDescription:
-      "All-in-one HRMS, Attendance, and Payroll software by Code Pe Charcha. Features geo-fenced punch clocks, statutory PF/ESI/TDS payroll runs, and Employee Self-Service.",
-    h1: "KarmikHR — Enterprise Attendance & Payroll Suite",
-    seoOverview: (
-      <>
-        A modern, full-lifecycle Human Resource and Payroll automation suite.
-        Developed through our{" "}
-        <Link
-          href="/services/custom-software"
-          className="text-coral underline hover:text-ink transition-colors"
-        >
-          Custom Software Solutions
-        </Link>{" "}
-        and{" "}
-        <Link
-          href="/services/admin-panels"
-          className="text-coral underline hover:text-ink transition-colors"
-        >
-          Enterprise Admin Panels
-        </Link>
-        , KarmikHR powers seamless attendance tracking, zero-error statutory
-        payroll processing, and autonomous employee self-service portals.
-      </>
-    ),
-  },
-  {
-    id: "manufacturing-production-management",
-    name: "ForgeFlow — Manufacturing & Production Management ERP",
-    category: "Manufacturing ERP & Production Control",
-    copy: "A heavy-duty manufacturing execution and production ERP featuring multi-level Bills of Materials (BOM), Material Requirements Planning (MRP), shop-floor job card routing, WIP stage tracking, and machine maintenance.",
-    url: "#projects",
-    image: "/manufacturing-erp.jpg",
-    type: "software",
-    techStack: [
-      "Next.js 15",
-      "React 19",
-      "Tailwind CSS",
-      "Recharts",
-      "Lucide React",
-      "Motion",
-      "date-fns",
-    ],
-    challenge:
-      "Industrial manufacturing plants face constant hurdles with stock-outs of critical raw materials, untracked shop-floor bottlenecks, scrap inflation, and inaccurate unit manufacturing costs. ForgeFlow was developed to give plant managers and floor supervisors total end-to-end visibility. It automates multi-tier Bill of Materials (BOM) explosions, generates shop-floor job cards, tracks Work-In-Progress (WIP) across machine workstations, monitors quality rejection rates, and tracks Overall Equipment Effectiveness (OEE).",
-    scope: [
-      "Multi-Level Bill of Materials (BOM) — Configure finished product assemblies, sub-assemblies, raw material quantities, and scrap allowances with version control",
-      "Production Planning & Master Scheduling (MPS) — Forecast production capacities, machine runtimes, and allocate work orders against customer sales demand",
-      "Material Requirements Planning (MRP) — Automatically calculate raw material requirements to prevent line stoppages and over-purchasing",
-      "Work Orders & Stage Routing — Issue production work orders with predefined routing steps: machining, fabrication, welding, coating, and assembly",
-      "Shop Floor Job Cards & Operator Logging — Floor supervisors allocate tasks to machines and operators, logging output quantities, cycle times, and scrap",
-      "Live Work-in-Progress (WIP) Tracking — Monitor parts flowing through assembly lines with real-time bottleneck identification",
-      "In-Process & Final Quality Assurance — Defect classification, tolerance inspection, rejection logs, and quarantine holding workflows",
-      "Raw Material & Finished Goods Inventory — Bin-level warehouse tracking with automated Goods Receipt Notes (GRN) and material issue vouchers",
-      "Machine Maintenance & OEE Monitoring — Preventive maintenance scheduling, breakdown logging, machine downtime analysis, and equipment efficiency",
-      "Batch Costing & Profit Margin Analysis — Computes true unit production cost by combining raw materials, direct labor, and machine hour electricity overheads",
-    ],
-    seoTitle:
-      "Manufacturing & Production Management Software | Industrial ERP | Code Pe Charcha",
-    seoDescription:
-      "Industrial Manufacturing and Production Management ERP by Code Pe Charcha. Featuring multi-level BOM, MRP calculations, shop-floor job cards, and WIP tracking.",
-    h1: "ForgeFlow — Manufacturing & Production ERP",
-    seoOverview: (
-      <>
-        An industrial-grade manufacturing operations and production execution ERP
-        tailored for factories and processing plants. Created with our{" "}
-        <Link
-          href="/services/custom-software"
-          className="text-coral underline hover:text-ink transition-colors"
-        >
-          Custom Software Engineering
-        </Link>{" "}
-        and{" "}
-        <Link
-          href="/services/admin-panels"
-          className="text-coral underline hover:text-ink transition-colors"
-        >
-          Admin Panels
-        </Link>
-        , ForgeFlow synchronizes multi-level BOMs, shop-floor job cards, WIP
-        assemblies, and machine maintenance into a single plant command dashboard.
-      </>
-    ),
-  },
-  {
-    id: "safaisarthi",
-    name: "SafaiSarthi — Professional Cleaning Services Platform",
-    category: "Home & Commercial Cleaning Services",
-    copy: "A hyper-local cleaning services platform for Jaipur featuring instant rate calculation, BHK-based package customizers, interactive before/after transformation galleries, corporate AMC inquiries, and 1-click WhatsApp booking.",
-    url: "https://safaisaarthi.com",
-    image: "/safaisarthi.jpg",
-    type: "website",
-    techStack: [
-      "Next.js 14",
-      "React 18",
-      "Tailwind CSS",
-      "Framer Motion",
-      "Lucide React",
-      "Supabase",
-    ],
-    challenge:
-      "The residential and commercial cleaning industry in India is plagued by opaque pricing, unreliable local aggregators, and cumbersome booking forms that create friction. SafaiSarthi needed a spotless digital experience that instills immediate customer trust, displays crystal-clear transparent pricing for flats, villas, and commercial offices, validates service availability by Jaipur pincodes, and enables swift bookings via WhatsApp without requiring tedious customer sign-ups.",
-    scope: [
-      "Instant Interactive Rate Calculator — Transparent pricing estimates based on property type (1 BHK, 2 BHK, 3 BHK, Villas) and square footage",
-      "Specialized Cleaning Service Catalog — Deep home cleaning, sofa and carpet shampooing, kitchen degreasing, bathroom descaling, and water tank sanitation",
-      "Corporate & Commercial Facility AMC — Dedicated quotation portal for corporate offices, retail showrooms, hospitals, and educational campuses",
-      "Interactive Before/After Transformations — Interactive visual slider comparisons showcasing real on-ground cleaning results across tiles, stone, and upholstery",
-      "Localized Pincode & Neighborhood Checker — Validates service availability across Vaishali Nagar, Malviya Nagar, Mansarovar, Jagatpura, and Raja Park",
-      "One-Click WhatsApp Booking Integration — Automatically pre-formats customer package selections, address details, and date into a direct WhatsApp chat",
-      "Verified Trust & Eco-Chemical Badges — Highlights certified eco-friendly Taski chemicals, background-checked cleaning staff, and 100% satisfaction guarantee",
-      "Customer Reviews & Rating Aggregator — Social proof module displaying verified Jaipur client reviews and ratings",
-      "Sub-Second Mobile-First Performance — Optimized WebP image delivery, lazy loading, and Core Web Vitals compliance for instant mobile browsing",
-      "Hyper-Local Jaipur SEO Architecture — Dominates local search results for house cleaning, sofa dry cleaning, and office sanitization services in Jaipur",
-    ],
-    seoTitle:
-      "SafaiSarthi - Professional Cleaning Services in Jaipur | Code Pe Charcha",
-    seoDescription:
-      "Explore SafaiSarthi developed by Code Pe Charcha — Jaipur's premier home and corporate cleaning services platform with instant rate calculator and WhatsApp booking.",
-    h1: "SafaiSarthi — Professional Cleaning Services Platform",
-    seoOverview: (
-      <>
-        A high-converting local service web platform built for Jaipur&apos;s
-        trusted on-demand cleaning provider. Leveraging our{" "}
-        <Link
-          href="/services/website-development"
-          className="text-coral underline hover:text-ink transition-colors"
-        >
-          Website Development
-        </Link>{" "}
-        and{" "}
-        <Link
-          href="/services/seo-growth"
-          className="text-coral underline hover:text-ink transition-colors"
-        >
-          SEO &amp; Growth
-        </Link>{" "}
-        capabilities, the platform features instant rate calculators, interactive
-        before/after visual comparisons, and direct WhatsApp booking synthesis.
-      </>
-    ),
-  },
-  {
-    id: "stayora-hotel-operations-management",
-    name: "Stayora — Hotel & Operations Management System (PMS)",
-    category: "Hospitality & Property Management (PMS)",
-    copy: "A cloud-native Property Management System (PMS) and hotel operations ERP featuring an interactive room status tape chart, front desk guest check-in/out, multi-room folio billing, housekeeping task boards, and restaurant F&B POS.",
-    url: "#projects",
-    image: "/stayora-hotel.jpg",
-    type: "software",
-    techStack: [
-      "Next.js 15",
-      "React 19",
-      "Tailwind CSS",
-      "Recharts",
-      "Lucide React",
-      "Motion",
-      "date-fns",
-    ],
-    challenge:
-      "Boutique hotels and luxury resorts struggle with disconnected software: separate tools for front desk room bookings, housekeeping status, restaurant food bills, and accounting ledged to billing leakages and frustrated guests. Stayora unifies the entire hospitality lifecycle into one intuitive interface: front desk agents manage arrivals with speed, housekeepers update room cleanliness in real time from mobile devices, and restaurant dining orders are charged straight to the guest's consolidated master folio.",
-    scope: [
-      "Interactive Room Grid & Visual Tape Chart — Color-coded room status calendar displaying clean, inspected, dirty, occupied, and maintenance states",
-      "Front Desk Fast Check-in & Check-out — Guest registration, ID document upload, key allocation, room change handling, and early/late departure fees",
-      "Multi-Room Reservations & Walk-in Engine — Manage direct walk-in reservations, corporate rate agreements, and travel agency block bookings",
-      "Consolidated Guest 360° Master Folio — Merges room tariffs, restaurant dining, laundry charges, spa services, and minibar into a single tax invoice",
-      "Real-Time Housekeeping Management — Mobile-ready task boards prioritizing checkout room turnarounds, linen change schedules, and supervisor inspections",
-      "Restaurant & F&B POS Integration — Order punching, Kitchen Order Tickets (KOT), table management, and seamless 'Charge to Room' billing",
-      "Hotel Store Purchasing & Inventory — Tracks F&B perishables, guest amenities, cleaning chemicals, and linens with low-stock warnings",
-      "Preventive Facility Maintenance — Log guest room plumbing, HVAC, or electrical issues with SLA priority flags and technician assignment",
-      "RevPAR & Occupancy Analytics — Daily insights into Average Daily Rate (ADR), Revenue Per Available Room (RevPAR), occupancy percentage, and booking channels",
-      "Multi-Property Switcher & Role Security — Multi-branch hotel chain support with strict role permissions for receptionists, managers, and accountants",
-    ],
-    seoTitle:
-      "Hotel Management System & Property Management ERP (PMS) | Code Pe Charcha",
-    seoDescription:
-      "Next-gen Hotel & Operations Management Software (PMS) by Code Pe Charcha. Featuring visual room tape chart, guest master folios, housekeeping, and F&B POS.",
-    h1: "Stayora — Hotel & Operations Management ERP",
-    seoOverview: (
-      <>
-        A modern, unified Hotel Property Management System (PMS) and hospitality
-        operations software. Built using our{" "}
-        <Link
-          href="/services/custom-software"
-          className="text-coral underline hover:text-ink transition-colors"
-        >
-          Custom Software Development
-        </Link>{" "}
-        and{" "}
-        <Link
-          href="/services/admin-panels"
-          className="text-coral underline hover:text-ink transition-colors"
-        >
-          Admin Dashboard Architecture
-        </Link>
-        , Stayora powers live room grid calendars, front desk express
-        check-in, housekeeping task tracking, and unified guest master folios.
-      </>
-    ),
-  },
-  {
-    id: "wholesale-distribution-management",
-    name: "VyavasthaKendra — Wholesale & Distribution ERP",
-    category: "Wholesale ERP & Supply Chain Management",
-    copy: "A high-volume B2B wholesale and FMCG distribution ERP with multi-warehouse inventory, credit-limit order processing, GST invoicing with E-Way bills, sales route beats, and customer ledger management.",
-    url: "#projects",
-    image: "/wholesale-erp.jpg",
-    type: "software",
-    techStack: [
-      "Next.js 15",
-      "React 19",
-      "Tailwind CSS",
-      "Recharts",
-      "Lucide React",
-      "Motion",
-      "date-fns",
-    ],
-    challenge:
-      "Wholesale distributors handle massive order volumes, multiple godowns, complex customer credit limits, and fluctuating purchase rates. When relying on fragmented billing systems, distributors suffer from uncollected receivables, inventory pilferage, and dispatch bottlenecks. VyavasthaKendra was designed specifically for wholesale supply chains: it manages customer credit boundaries, enables multi-godown stock transfers, tracks field sales beat visits, and automates GST-compliant invoice generation alongside live profitability reports.",
-    scope: [
-      "B2B Bulk Sales Order Processing — Order punching with custom customer price lists, tiered volume discounts, and automatic credit limit verification",
-      "GST Invoicing & E-Way Bill Readiness — Fast tax-compliant invoicing supporting B2B GSTIN validation, thermal dispatch receipts, and credit notes",
-      "Multi-Warehouse & Godown Inventory — Real-time visibility across central warehouses and local godowns with inter-godown transfer vouchers",
-      "Procurement & Goods Receipt Notes (GRN) — Vendor purchase order management, landed cost computations, batch tracking, and expiry date management",
-      "Customer Outstanding & Aging Receivables — 30/60/90 days payment aging analysis, automated payment reminders, and payment receipts entry",
-      "Field Salesman Beat Route Management — Assign daily customer visit beats, track order bookings per route, and calculate salesman commissions",
-      "Delivery Dispatch & Driver Run Sheets — Consolidates pending dispatches into vehicle load sheets, driver manifests, and delivery route tracking",
-      "SKU-Level Profitability & Gross Margins — Analyze profit margins per brand, product category, and customer account to identify top revenue drivers",
-      "Supplier Payables & Ledger Accounting — Complete vendor ledger reconciliation, purchase returns, and supplier payment scheduling",
-      "Tamper-Proof Audit Log Trail — Enterprise security logging every price override, discount approval, and stock adjustment with user and timestamp tags",
-    ],
-    seoTitle:
-      "Wholesale & Distribution ERP Management Software | Code Pe Charcha",
-    seoDescription:
-      "Comprehensive Wholesale & Distribution ERP by Code Pe Charcha. Streamlines B2B sales orders, multi-warehouse inventory, customer credit ledgers, and delivery routes.",
-    h1: "VyavasthaKendra — Wholesale & Distribution ERP",
-    seoOverview: (
-      <>
-        A mission-critical wholesale and FMCG supply chain ERP built to handle
-        high-volume B2B distribution. Delivered using our{" "}
-        <Link
-          href="/services/custom-software"
-          className="text-coral underline hover:text-ink transition-colors"
-        >
-          Custom Software Development
-        </Link>{" "}
-        and{" "}
-        <Link
-          href="/services/crm-development"
-          className="text-coral underline hover:text-ink transition-colors"
-        >
-          CRM &amp; ERP Solutions
-        </Link>
-        , VyavasthaKendra empowers distributors with multi-godown inventory
-        tracking, sales route beat controls, and automated aging receivables.
       </>
     ),
   },

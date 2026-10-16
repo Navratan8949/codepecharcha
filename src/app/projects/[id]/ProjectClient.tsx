@@ -44,14 +44,19 @@ export default function ProjectDetail() {
                 {project.seoOverview || project.copy}
               </div>
               {project.url !== "#contact" && project.url !== "#projects" && (
-                <a
-                  href={project.url}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="button-coral inline-flex"
-                >
-                  Visit Live Project <ExternalLink size={16} />
-                </a>
+                <div className="flex flex-col gap-2">
+                  <a
+                    href={project.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="button-coral inline-flex items-center gap-2"
+                  >
+                    Launch Live Project <ExternalLink size={16} />
+                  </a>
+                  <span className="text-xs text-ink/50 font-mono-cpc">
+                    Active URL: {project.url}
+                  </span>
+                </div>
               )}
             </div>
           </div>
@@ -70,12 +75,40 @@ export default function ProjectDetail() {
               ))}
             </div>
           ) : (
-            <div className="w-full h-[50vh] md:h-[70vh] rounded-[2rem] overflow-hidden bg-[#f1f3f5] shadow-2xl mb-24 flex items-center justify-center p-8 md:p-16 border border-line">
+            <div className="w-full h-[50vh] md:h-[70vh] rounded-[2rem] overflow-hidden bg-[#f1f3f5] shadow-2xl mb-16 flex items-center justify-center p-8 md:p-16 border border-line">
               {project.image ? (
                 <img src={project.image} alt={project.name} className="w-full h-full object-contain drop-shadow-2xl" />
               ) : (
                 <div className="text-ink/20 text-5xl md:text-8xl font-bold opacity-40">{project.name}</div>
               )}
+            </div>
+          )}
+
+          {/* Active Production Deployment Banner */}
+          {project.url && project.url.startsWith("http") && (
+            <div className="mb-20 p-6 md:p-8 rounded-2xl bg-gradient-to-r from-emerald-50 via-teal-50 to-white border border-emerald-200/90 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 shadow-sm">
+              <div className="flex items-center gap-4">
+                <span className="relative flex h-3.5 w-3.5">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-3.5 w-3.5 bg-emerald-500"></span>
+                </span>
+                <div>
+                  <h3 className="text-base md:text-lg font-bold text-emerald-950">
+                    Live Production Deployment Active
+                  </h3>
+                  <p className="text-xs md:text-sm text-emerald-800 font-mono-cpc mt-0.5 break-all">
+                    {project.url}
+                  </p>
+                </div>
+              </div>
+              <a
+                href={project.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-6 py-3 bg-emerald-700 hover:bg-emerald-800 text-white rounded-xl text-xs font-bold uppercase tracking-wider font-mono-cpc shadow-sm hover:shadow transition-all inline-flex items-center gap-2 shrink-0"
+              >
+                Open Live System <ExternalLink size={14} />
+              </a>
             </div>
           )}
 

@@ -3,7 +3,7 @@
 import { useState, useMemo } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowUpRight, ChevronRight, Search, Sparkles } from "lucide-react";
+import { ArrowUpRight, ChevronRight, ExternalLink, Search, Sparkles } from "lucide-react";
 import { projects } from "@/data";
 
 export default function ProjectsPageClient() {
@@ -13,7 +13,8 @@ export default function ProjectsPageClient() {
   const filteredProjects = useMemo(() => {
     return projects.filter((p) => {
       // Type filter
-      if (filter === "Websites" && p.type !== "website") return false;
+      if (filter === "Live Demos" && (!p.url || !p.url.startsWith("http"))) return false;
+      if (filter === "Websites" && p.type !== "website" && !p.category.toLowerCase().includes("e-commerce")) return false;
       if (filter === "Software" && p.type !== "software") return false;
       if (filter === "Mobile Apps" && p.type !== "app") return false;
 
@@ -116,7 +117,7 @@ export default function ProjectsPageClient() {
           <div className="mt-12 flex flex-col md:flex-row md:items-center justify-between gap-6">
             {/* Filter Buttons */}
             <div className="flex flex-wrap gap-2">
-              {["All", "Websites", "Software", "Mobile Apps"].map((f) => (
+              {["All", "Live Demos", "Software", "Websites", "Mobile Apps"].map((f) => (
                 <button
                   key={f}
                   onClick={() => setFilter(f)}
@@ -128,7 +129,7 @@ export default function ProjectsPageClient() {
                     fontWeight: 600,
                   }}
                 >
-                  {f}
+                  {f === "Live Demos" ? "● Live Demos" : f}
                 </button>
               ))}
             </div>
@@ -170,68 +171,108 @@ export default function ProjectsPageClient() {
             </div>
           ) : (
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {filteredProjects.map((project, index) => (
-                <Link
-                  href={`/projects/${project.id}`}
-                  key={project.id}
-                  className="group flex flex-col bg-white rounded-2xl overflow-hidden border border-line shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
-                >
-                  {/* Image Preview */}
-                  <div className="relative aspect-[16/10] bg-[#f1f3f5] overflow-hidden flex items-center justify-center p-3 border-b border-line">
-                    {project.image ? (
-                      <Image
-                        src={project.image}
-                        alt={`${project.name} - ${project.category}`}
-                        fill
-                        className="object-cover transition-transform duration-700 group-hover:scale-105"
-                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                      />
-                    ) : (
-                      <div className="text-ink/20 font-bold text-2xl font-mono-cpc">
-                        {project.name}
+              {filteredProjects.map((project) => {
+                const isLive = Boolean(project.url && project.url.startsWith("http"));
+                return (
+                  <div
+                    key={project.id}
+                    className="group flex flex-col bg-white rounded-2xl overflow-hidden border border-line shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
+                  >
+                    {/* Image Preview */}
+                    <div className="relative aspect-[16/10] bg-[#f1f3f5] overflow-hidden flex items-center justify-center p-3 border-b border-line">
+                      <Link
+                        href={`/projects/${project.id}`}
+                        aria-label={`View ${project.name} case study`}
+                        className="absolute inset-0 z-0"
+                      >
+                        {project.image ? (
+                          <Image
+                            src={project.image}
+                            alt={`${project.name} - ${project.category}`}
+                            fill
+                            className="object-cover transition-transform duration-700 group-hover:scale-105"
+                            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                          />
+                        ) : (
+                          <div className="w-full h-full flex items-center justify-center text-ink/20 font-bold text-2xl font-mono-cpc">
+                            {project.name}
+                          </div>
+                        )}
+                      </Link>
+                      <div className="absolute top-3 left-3 bg-white/95 backdrop-blur px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider text-ink border border-line shadow-sm pointer-events-none z-10">
+                        {project.category}
                       </div>
-                    )}
-                    <div className="absolute top-3 left-3 bg-white/95 backdrop-blur px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider text-ink border border-line shadow-sm">
-                      {project.category}
+                      {isLive && (
+                        <a
+                          href={project.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          aria-label={`Open live demo of ${project.name}`}
+                          className="absolute top-3 right-3 bg-emerald-700 hover:bg-emerald-800 text-white px-2.5 py-1 rounded-full text-[11px] font-bold uppercase tracking-wider flex items-center gap-1.5 shadow-md z-10 transition-colors font-mono-cpc"
+                        >
+                          <span className="w-1.5 h-1.5 rounded-full bg-emerald-300 animate-pulse" />
+                          Live Demo <ExternalLink size={11} />
+                        </a>
+                      )}
                     </div>
-                  </div>
 
-                  {/* Body Details */}
-                  <div className="flex flex-col flex-1 p-6">
-                    <h2 className="text-xl font-bold text-ink mb-2 group-hover:text-coral transition-colors leading-snug">
-                      {project.name}
-                    </h2>
-                    <p className="text-ink/65 text-sm line-clamp-3 mb-6 flex-1 leading-relaxed">
-                      {project.copy}
-                    </p>
+                    {/* Body Details */}
+                    <div className="flex flex-col flex-1 p-6">
+                      <Link href={`/projects/${project.id}`} className="hover:text-coral transition-colors">
+                        <h2 className="text-xl font-bold text-ink mb-2 leading-snug">
+                          {project.name}
+                        </h2>
+                      </Link>
+                      <p className="text-ink/65 text-sm line-clamp-3 mb-6 flex-1 leading-relaxed">
+                        {project.copy}
+                      </p>
 
-                    {/* Tech Stack Pills */}
-                    {project.techStack && project.techStack.length > 0 && (
-                      <div className="flex flex-wrap gap-1.5 mb-6">
-                        {project.techStack.slice(0, 4).map((tech) => (
-                          <span
-                            key={tech}
-                            className="bg-bone px-2.5 py-0.5 rounded-md text-[11px] font-mono-cpc text-ink/70 border border-line/60"
+                      {/* Tech Stack Pills */}
+                      {project.techStack && project.techStack.length > 0 && (
+                        <div className="flex flex-wrap gap-1.5 mb-6">
+                          {project.techStack.slice(0, 4).map((tech) => (
+                            <span
+                              key={tech}
+                              className="bg-bone px-2.5 py-0.5 rounded-md text-[11px] font-mono-cpc text-ink/70 border border-line/60"
+                            >
+                              {tech}
+                            </span>
+                          ))}
+                          {project.techStack.length > 4 && (
+                            <span className="text-[11px] font-mono-cpc text-ink/40 self-center">
+                              +{project.techStack.length - 4} more
+                            </span>
+                          )}
+                        </div>
+                      )}
+
+                      {/* CTA Link */}
+                      <div className="flex items-center justify-between pt-4 border-t border-line text-xs font-bold uppercase tracking-wider font-mono-cpc">
+                        <Link
+                          href={`/projects/${project.id}`}
+                          className="text-coral hover:text-ink flex items-center gap-1 transition-colors"
+                        >
+                          Case Study <ArrowUpRight size={14} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                        </Link>
+                        {isLive ? (
+                          <a
+                            href={project.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-emerald-700 bg-emerald-50 hover:bg-emerald-100 px-3 py-1.5 rounded-lg text-xs tracking-normal border border-emerald-200 font-sans font-bold flex items-center gap-1.5 transition-colors"
                           >
-                            {tech}
-                          </span>
-                        ))}
-                        {project.techStack.length > 4 && (
-                          <span className="text-[11px] font-mono-cpc text-ink/40 self-center">
-                            +{project.techStack.length - 4} more
+                            Launch Demo <ExternalLink size={12} />
+                          </a>
+                        ) : (
+                          <span className="text-ink/40 bg-bone px-2 py-0.5 rounded text-[10px] tracking-normal font-sans">
+                            Case Study
                           </span>
                         )}
                       </div>
-                    )}
-
-                    {/* CTA Link */}
-                    <div className="flex items-center justify-between pt-4 border-t border-line text-xs font-bold uppercase tracking-wider font-mono-cpc text-coral">
-                      <span>View Project Details</span>
-                      <ArrowUpRight size={15} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
                     </div>
                   </div>
-                </Link>
-              ))}
+                );
+              })}
             </div>
           )}
         </div>

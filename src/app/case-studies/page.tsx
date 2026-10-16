@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight, ChevronRight, Briefcase } from "lucide-react";
+import { ArrowRight, ChevronRight, Briefcase, ExternalLink } from "lucide-react";
 import { projects } from "@/data";
 import type { Metadata } from "next";
 
@@ -58,16 +58,29 @@ export default function CaseStudiesPage() {
                       No Image
                     </div>
                   )}
-                  <div className="absolute top-4 left-4 bg-white/90 backdrop-blur px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider text-ink">
+                  <div className="absolute top-4 left-4 bg-white/90 backdrop-blur px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider text-ink z-10 pointer-events-none">
                     {project.category}
                   </div>
+                  {project.url && project.url.startsWith("http") && (
+                    <a
+                      href={project.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="absolute top-4 right-4 bg-emerald-700 hover:bg-emerald-800 text-white px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider flex items-center gap-1.5 shadow-md z-10 transition-colors font-mono-cpc"
+                    >
+                      <span className="w-1.5 h-1.5 rounded-full bg-emerald-300 animate-pulse" />
+                      Live Demo <ExternalLink size={11} />
+                    </a>
+                  )}
                 </div>
 
                 {/* Content */}
                 <div className="flex flex-col flex-1 p-6 md:p-8">
-                  <h2 className="text-2xl font-bold text-ink mb-3 group-hover:text-coral transition-colors">
-                    {project.name}
-                  </h2>
+                  <Link href={`/case-studies/${project.id}`}>
+                    <h2 className="text-2xl font-bold text-ink mb-3 group-hover:text-coral transition-colors">
+                      {project.name}
+                    </h2>
+                  </Link>
                   <p className="text-ink/70 line-clamp-3 mb-6 flex-1 text-sm md:text-base leading-relaxed">
                     {project.copy}
                   </p>
@@ -91,12 +104,24 @@ export default function CaseStudiesPage() {
                     </div>
                   )}
 
-                  <Link
-                    href={`/case-studies/${project.id}`}
-                    className="flex items-center gap-2 text-sm font-bold uppercase tracking-wider text-ink group-hover:text-coral transition-colors mt-auto w-fit"
-                  >
-                    Read Case Study <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" />
-                  </Link>
+                  <div className="flex items-center justify-between gap-4 mt-auto pt-4 border-t border-line">
+                    <Link
+                      href={`/case-studies/${project.id}`}
+                      className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-ink group-hover:text-coral transition-colors font-mono-cpc"
+                    >
+                      Read Case Study <ArrowRight size={14} className="transition-transform group-hover:translate-x-1" />
+                    </Link>
+                    {project.url && project.url.startsWith("http") && (
+                      <a
+                        href={project.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1.5 text-xs font-bold bg-emerald-50 text-emerald-700 hover:bg-emerald-100 px-3 py-1.5 rounded-lg border border-emerald-200 transition-colors"
+                      >
+                        Launch Demo <ExternalLink size={12} />
+                      </a>
+                    )}
+                  </div>
                 </div>
               </div>
             ))}

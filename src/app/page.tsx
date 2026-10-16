@@ -494,7 +494,8 @@ function Projects() {
 
   const filteredProjects = projects.filter((p) => {
     if (filter === "All") return true;
-    if (filter === "Websites" && p.type === "website") return true;
+    if (filter === "Live Demos" && p.url && p.url.startsWith("http")) return true;
+    if (filter === "Websites" && (p.type === "website" || p.category.toLowerCase().includes("e-commerce"))) return true;
     if (filter === "Software" && p.type === "software") return true;
     if (filter === "Mobile Apps" && p.type === "app") return true;
     return false;
@@ -513,45 +514,158 @@ function Projects() {
             <h2 id="projects-title">Our Web & App Portfolio</h2>
           </div>
           <p className="section-intro">
-            A small tour of concepts and live demos. Every screen is a chance to
-            make the next step feel easier.
+            A small tour of live deployments and interactive demos. Test our
+            enterprise systems, ERPs, and client platforms directly in real time.
           </p>
         </div>
 
         <div className="projects-filters reveal">
-          {["All", "Websites", "Software", "Mobile Apps"].map((f) => (
+          {["All", "Live Demos", "Software", "Websites", "Mobile Apps"].map((f) => (
             <button
               key={f}
               onClick={() => setFilter(f)}
               className={`filter-btn ${filter === f ? "active" : ""}`}
             >
-              {f}
+              {f === "Live Demos" ? "● Live Demos" : f}
             </button>
           ))}
         </div>
 
         <div className="project-grid">
-          {filteredProjects.map((project, index) => (
-            <Link href={`/projects/${project.id}`} key={project.id}>
+          {filteredProjects.map((project, index) => {
+            const isLive = Boolean(project.url && project.url.startsWith("http"));
+            return (
               <motion.article
+                key={project.id}
                 initial={{ opacity: 0, y: 15 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.3, delay: (index % 6) * 0.04 }}
                 className="project-card"
                 data-testid={`card-project-${index + 1}`}
               >
-                <ProjectPreview image={project.image} name={project.name} />
+                <div style={{ position: "relative" }}>
+                  <Link
+                    href={`/projects/${project.id}`}
+                    aria-label={`View ${project.name} case study`}
+                    style={{ display: "block" }}
+                  >
+                    <ProjectPreview image={project.image} name={project.name} />
+                  </Link>
+                  {isLive && (
+                    <a
+                      href={project.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={`Open live demo of ${project.name}`}
+                      style={{
+                        position: "absolute",
+                        top: "12px",
+                        right: "12px",
+                        display: "inline-flex",
+                        alignItems: "center",
+                        gap: "5px",
+                        padding: "4px 10px",
+                        borderRadius: "999px",
+                        background: "rgba(21, 128, 61, 0.95)",
+                        color: "#ffffff",
+                        fontSize: "10.5px",
+                        fontWeight: 700,
+                        letterSpacing: "0.03em",
+                        textTransform: "uppercase",
+                        boxShadow: "0 4px 12px rgba(21, 128, 61, 0.35)",
+                        backdropFilter: "blur(6px)",
+                        border: "1px solid rgba(255, 255, 255, 0.25)",
+                        textDecoration: "none",
+                        zIndex: 2,
+                        transition: "all 0.2s ease",
+                      }}
+                    >
+                      <span
+                        style={{
+                          width: "6px",
+                          height: "6px",
+                          borderRadius: "50%",
+                          background: "#86efac",
+                          boxShadow: "0 0 6px #86efac",
+                        }}
+                      />
+                      Live Demo <ExternalLink size={11} />
+                    </a>
+                  )}
+                </div>
                 <div className="project-info">
                   <span className="project-tag">{project.category}</span>
-                  <h3>{project.name}</h3>
+                  <Link href={`/projects/${project.id}`} style={{ textDecoration: "none" }}>
+                    <h3>{project.name}</h3>
+                  </Link>
                   <p>{project.copy}</p>
-                  <span className="project-link">
-                    View project <ArrowUpRight size={14} />
-                  </span>
+                  <div
+                    className="project-link"
+                    style={{
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "space-between",
+                      gap: "8px",
+                      marginTop: "auto",
+                      paddingTop: "16px",
+                    }}
+                  >
+                    <Link
+                      href={`/projects/${project.id}`}
+                      style={{
+                        display: "inline-flex",
+                        alignItems: "center",
+                        gap: "4px",
+                        color: "var(--coral)",
+                        fontWeight: 700,
+                        textDecoration: "none",
+                        fontSize: "12px",
+                      }}
+                    >
+                      Case Study <ArrowUpRight size={14} />
+                    </Link>
+                    {isLive ? (
+                      <a
+                        href={project.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        style={{
+                          display: "inline-flex",
+                          alignItems: "center",
+                          gap: "4px",
+                          fontSize: "11px",
+                          color: "#15803d",
+                          background: "#f0fdf4",
+                          padding: "4px 10px",
+                          borderRadius: "6px",
+                          border: "1px solid #bbf7d0",
+                          fontWeight: 700,
+                          letterSpacing: "0.01em",
+                          textDecoration: "none",
+                          transition: "all 0.2s ease",
+                        }}
+                      >
+                        Launch Demo <ExternalLink size={11} />
+                      </a>
+                    ) : (
+                      <span
+                        style={{
+                          fontSize: "10px",
+                          color: "#858d89",
+                          background: "#f4f4f4",
+                          padding: "3px 8px",
+                          borderRadius: "4px",
+                          fontWeight: 600,
+                        }}
+                      >
+                        Case Study
+                      </span>
+                    )}
+                  </div>
                 </div>
               </motion.article>
-            </Link>
-          ))}
+            );
+          })}
         </div>
         <div className="projects-end reveal" style={{ display: "flex", gap: "12px", justifyContent: "center", flexWrap: "wrap" }}>
           <Link

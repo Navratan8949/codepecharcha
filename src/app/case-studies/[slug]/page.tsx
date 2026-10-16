@@ -119,6 +119,21 @@ export default async function CaseStudyPage({
                 ? project.seoOverview
                 : project.copy}
             </p>
+            {project.url && project.url.startsWith("http") && (
+              <div className="mt-8 flex flex-wrap items-center gap-4">
+                <a
+                  href={project.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="button-coral inline-flex items-center gap-2"
+                >
+                  Launch Live Demo <ExternalLink size={16} />
+                </a>
+                <span className="text-xs text-ink/60 font-mono-cpc">
+                  Live at: {project.url}
+                </span>
+              </div>
+            )}
           </div>
         </div>
       </section>
@@ -277,16 +292,22 @@ export default async function CaseStudyPage({
                   </div>
 
                   {project.url && project.url !== "#projects" && (
-                    <div className="pt-4 border-t border-line">
+                    <div className="pt-4 border-t border-line space-y-2">
                       <a
                         href={project.url}
                         target="_blank"
-                        rel="noreferrer"
-                        className="flex items-center gap-2 text-coral font-bold text-sm hover:gap-3 transition-all"
+                        rel="noopener noreferrer"
+                        className="flex items-center justify-between gap-2 bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs uppercase tracking-wider font-mono-cpc px-4 py-3 rounded-xl transition-all shadow-sm hover:shadow"
                       >
+                        <span className="flex items-center gap-2">
+                          <span className="w-2 h-2 rounded-full bg-emerald-300 animate-pulse" />
+                          Launch Live System
+                        </span>
                         <ExternalLink size={14} />
-                        Visit Live Project
                       </a>
+                      <span className="block text-[11px] text-ink/50 font-mono-cpc truncate">
+                        {project.url}
+                      </span>
                     </div>
                   )}
                 </div>
