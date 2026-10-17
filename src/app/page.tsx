@@ -55,6 +55,7 @@ import {
   SiTailwindcss,
 } from "react-icons/si";
 import { FaServer, FaVideo, FaChartLine } from "react-icons/fa";
+import SculptureHero from "@/components/ui/liquid-sculpture-hero";
 
 function useReveal() {
   useEffect(() => {
@@ -81,228 +82,123 @@ function useReveal() {
 
 function Hero() {
   return (
-    <section className="hero" id="home" aria-labelledby="hero-title">
-      <div className="section-shell hero-grid">
-        <div>
-          <h2 className="hero-eyebrow reveal">
-            Software, App & Marketing Company
-          </h2>
-          <motion.h1
-            id="hero-title"
-            initial="hidden"
-            animate="visible"
-            variants={{ visible: { transition: { staggerChildren: 0.08 } } }}
-          >
-            <span className="sr-only">
-              Custom Websites, Apps & CRM for Jaipur's businesses starting at
-              ₹6,999.
-            </span>
-            {"Code ki baat,".split(" ").map((word, i) => (
-              <motion.span
-                key={i}
-                variants={{
-                  hidden: { opacity: 0, y: 40 },
-                  visible: {
-                    opacity: 1,
-                    y: 0,
-                    transition: { type: "spring", damping: 12, stiffness: 100 },
-                  },
-                }}
-                style={{ display: "inline-block", marginRight: "0.25em" }}
-              >
-                {word}
-              </motion.span>
-            ))}
-            <br />
-            <motion.em
+    <div id="home" className="relative">
+      <SculptureHero
+        showNav={false}
+        eyebrow="Software, App & Marketing Company — Jaipur"
+        headline={"Code ki baat,\nbusiness ke saath."}
+        headlineAccent="business ke saath."
+        body="We build modern websites, mobile apps and custom software that help businesses in Jaipur, Rajasthan, and across India turn ideas into digital products."
+        primaryCta={{
+          label: "Start Your Project",
+          href: "#contact",
+          testId: "button-hero-start",
+        }}
+        secondaryCta={{
+          label: "View Our Work",
+          href: "#projects",
+          testId: "button-hero-work",
+        }}
+        imageAlt="Code Pe Charcha - Custom Websites, Apps & CRM for Jaipur businesses"
+        backdropText="CODE PE CHARCHA"
+        background="#F4EFEA"
+        darkBackground="#15191C"
+        textColor="#151514"
+        accentColor="#E05A47"
+        headingFont="'DM Sans', sans-serif"
+        bodyFont="'DM Sans', sans-serif"
+        height="min(90svh, 820px)"
+        hint="Move across the liquid form"
+        hintTouch="Touch to stir liquid"
+        interactive={true}
+        ambient={true}
+        ambientIntensity={1.2}
+        strength={1.1}
+        turbulence={1.2}
+        liquid={1.4}
+        speed={1.05}
+        streaks={true}
+        showCredit={false}
+      >
+        <div
+          className="hero-meta reveal is-visible"
+          style={{
+            display: "flex",
+            flexWrap: "wrap",
+            gap: "20px",
+            marginTop: "24px",
+            textTransform: "capitalize",
+            letterSpacing: "normal",
+          }}
+        >
+          <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+            <div
               style={{
-                color: "var(--coral)",
-                fontStyle: "normal",
-                display: "inline-block",
+                width: "8px",
+                height: "8px",
+                borderRadius: "50%",
+                background: "var(--coral, #E05A47)",
+              }}
+            />
+            <strong
+              style={{
+                fontSize: "14px",
+                letterSpacing: "0",
+                marginBottom: "0",
               }}
             >
-              {"business ke saath.".split(" ").map((word, i) => (
-                <motion.span
-                  key={i}
-                  variants={{
-                    hidden: { opacity: 0, y: 40 },
-                    visible: {
-                      opacity: 1,
-                      y: 0,
-                      transition: {
-                        type: "spring",
-                        damping: 12,
-                        stiffness: 100,
-                      },
-                    },
-                  }}
-                  style={{ display: "inline-block", marginRight: "0.25em" }}
-                >
-                  {word}
-                </motion.span>
-              ))}
-            </motion.em>
-          </motion.h1>
-          <p className="hero-copy reveal reveal-delay-2">
-            We build modern websites, mobile apps and custom software that help
-            businesses in Jaipur, Rajasthan, and across India turn ideas into
-            digital products.
-          </p>
-          <div className="hero-actions reveal reveal-delay-3">
-            <motion.a
-              className="button-coral"
-              href="#contact"
-              data-testid="button-hero-start"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              Start Your Project <ArrowUpRight size={16} />
-            </motion.a>
-            <motion.a
-              className="button-ghost"
-              href="#projects"
-              data-testid="button-hero-work"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              View Our Work <ArrowDownRight size={16} />
-            </motion.a>
+              Websites
+            </strong>
           </div>
-          <div
-            className="hero-meta reveal reveal-delay-3"
-            style={{ textTransform: "capitalize", letterSpacing: "normal" }}
-          >
-            <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-              <div
-                style={{
-                  width: "8px",
-                  height: "8px",
-                  borderRadius: "50%",
-                  background: "var(--coral)",
-                }}
-              ></div>
-              <strong
-                style={{
-                  fontSize: "15px",
-                  letterSpacing: "0",
-                  marginBottom: "0",
-                }}
-              >
-                Websites
-              </strong>
-            </div>
-            <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-              <div
-                style={{
-                  width: "8px",
-                  height: "8px",
-                  borderRadius: "50%",
-                  background: "var(--coral)",
-                }}
-              ></div>
-              <strong
-                style={{
-                  fontSize: "15px",
-                  letterSpacing: "0",
-                  marginBottom: "0",
-                }}
-              >
-                Mobile Apps
-              </strong>
-            </div>
-            <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-              <div
-                style={{
-                  width: "8px",
-                  height: "8px",
-                  borderRadius: "50%",
-                  background: "var(--coral)",
-                }}
-              ></div>
-              <strong
-                style={{
-                  fontSize: "15px",
-                  letterSpacing: "0",
-                  marginBottom: "0",
-                }}
-              >
-                Custom Software
-              </strong>
-            </div>
+          <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+            <div
+              style={{
+                width: "8px",
+                height: "8px",
+                borderRadius: "50%",
+                background: "var(--coral, #E05A47)",
+              }}
+            />
+            <strong
+              style={{
+                fontSize: "14px",
+                letterSpacing: "0",
+                marginBottom: "0",
+              }}
+            >
+              Mobile Apps
+            </strong>
+          </div>
+          <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+            <div
+              style={{
+                width: "8px",
+                height: "8px",
+                borderRadius: "50%",
+                background: "var(--coral, #E05A47)",
+              }}
+            />
+            <strong
+              style={{
+                fontSize: "14px",
+                letterSpacing: "0",
+                marginBottom: "0",
+              }}
+            >
+              Custom Software
+            </strong>
           </div>
         </div>
-        <div
-          className="hero-art reveal reveal-delay-2"
-          // alt="Code Pe Charcha company visual"
-          aria-label="Code Pe Charcha company visual"
-        >
-          <motion.div
-            className="orbit one"
-            animate={{ rotate: 360 }}
-            transition={{ repeat: Infinity, duration: 40, ease: "linear" }}
-          />
-          <motion.div
-            className="orbit two"
-            animate={{ rotate: -360 }}
-            transition={{ repeat: Infinity, duration: 55, ease: "linear" }}
-          />
-          <motion.div
-            className="orbit three"
-            animate={{ rotate: 360 }}
-            transition={{ repeat: Infinity, duration: 70, ease: "linear" }}
-          />
-          <div className="hero-console">
-            <div className="console-top">
-              <span>cpc / build-log.tsx</span>
-              <span className="console-dots">
-                <i />
-                <i />
-                <i />
-              </span>
-            </div>
-            <div className="console-code">
-              <div>
-                <span className="muted">01</span>{" "}
-                <span className="pink">const</span>{" "}
-                <span className="blue">roughIdea</span> ={" "}
-                <span className="lime">true</span>;
-              </div>
-              <div>
-                <span className="muted">02</span>{" "}
-                <span className="pink">while</span> (business.needs) {"{"}
-              </div>
-              <div className="indent">
-                <span className="pink">listen</span>(requirements);
-              </div>
-              <div className="indent">
-                <span className="pink">shape</span>(betterExperiences);
-              </div>
-              <div className="indent">
-                <span className="pink">ship</span>(somethingUseful);
-              </div>
-              <div>
-                {"}"} <span className="console-cursor" />
-              </div>
-              <br />
-              <div>
-                <span className="muted">
-                  // from conversation to production
-                </span>
-              </div>
-            </div>
-          </div>
-          <div className="floating-chip chip-one">
-            <CircleDot size={13} /> human-first process
-          </div>
-          <div className="floating-chip chip-two">
-            <Blocks size={13} /> built to ship
-          </div>
-        </div>
-      </div>
-      <a href="#intro" className="hero-scroll" data-testid="link-hero-scroll">
+      </SculptureHero>
+      {/* <a
+        href="#intro"
+        className="hero-scroll"
+        data-testid="link-hero-scroll"
+        style={{ zIndex: 10 }}
+      >
         <span /> Scroll to explore
-      </a>
-    </section>
+      </a> */}
+    </div>
   );
 }
 
@@ -312,27 +208,127 @@ function Intro() {
       <div className="section-shell intro-layout">
         <div className="reveal flex flex-col gap-6">
           <div className="section-kicker">01 / The starting point</div>
-          <img
-            src="/intro-image.png"
-            alt="Turning ideas into digital products"
-            className="w-full object-cover aspect-square"
-          />
+          <div className="intro-visual-card">
+            <div
+              style={{
+                position: "absolute",
+                top: "14px",
+                left: "14px",
+                zIndex: 10,
+                display: "inline-flex",
+                alignItems: "center",
+                gap: "8px",
+                padding: "6px 14px",
+                borderRadius: "999px",
+                background: "rgba(255, 255, 255, 0.95)",
+                color: "#15803d",
+                fontSize: "11px",
+                fontWeight: 700,
+                letterSpacing: "0.02em",
+                boxShadow: "0 4px 14px rgba(0, 0, 0, 0.08)",
+                border: "1px solid rgba(22, 163, 74, 0.2)",
+              }}
+            >
+              <span
+                style={{
+                  width: "7px",
+                  height: "7px",
+                  borderRadius: "50%",
+                  background: "#16a34a",
+                  boxShadow: "0 0 8px #16a34a",
+                }}
+              />
+              Verified Production Engineering
+            </div>
+            <img
+              src="/intro-image.png"
+              alt="Turning ideas into digital products"
+              className="w-full object-cover aspect-square"
+            />
+            <div
+              style={{
+                position: "absolute",
+                bottom: "14px",
+                left: "14px",
+                right: "14px",
+                zIndex: 10,
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "space-between",
+                padding: "12px 18px",
+                borderRadius: "16px",
+                background: "rgba(255, 255, 255, 0.94)",
+                backdropFilter: "blur(12px)",
+                border: "1px solid rgba(24, 28, 27, 0.08)",
+                boxShadow: "0 10px 25px rgba(0, 0, 0, 0.08)",
+              }}
+            >
+              <div>
+                <div
+                  style={{
+                    fontWeight: 800,
+                    color: "var(--ink)",
+                    fontSize: "14px",
+                  }}
+                >
+                  50+ Digital Builds
+                </div>
+                <div style={{ color: "#616864", fontSize: "11px" }}>
+                  Web, Mobile Apps & Enterprise CRM
+                </div>
+              </div>
+              <div style={{ textAlign: "right" }}>
+                <div
+                  style={{
+                    fontWeight: 800,
+                    color: "var(--coral)",
+                    fontSize: "14px",
+                  }}
+                >
+                  100% Handover
+                </div>
+                <div style={{ color: "#616864", fontSize: "11px" }}>
+                  Complete Code Ownership
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-        <div className="reveal reveal-delay-1">
-          <h2 id="intro-title">
+        <div className="reveal reveal-delay-1 flex flex-col justify-center">
+          <h2
+            id="intro-title"
+            style={{ fontSize: "clamp(34px, 4.4vw, 56px)", lineHeight: 1.05 }}
+          >
             Turning ideas into{" "}
-            <span className="text-balance">digital products.</span>
+            <span style={{ color: "var(--coral)" }}>digital products.</span>
           </h2>
-          <p className="intro-statement">
+          <p className="intro-statement" style={{ marginTop: "18px" }}>
             From business websites to complete software systems, we design and
             develop practical digital solutions{" "}
-            <span>around your requirements.</span>
+            <span style={{ fontWeight: 700, color: "var(--ink)" }}>
+              around your requirements.
+            </span>
           </p>
-          <p className="section-intro">
+          <p className="section-intro" style={{ marginTop: "14px" }}>
             No theatre. No technical fog. Just a thoughtful team that asks good
             questions, makes the complex feel clear and gets your product into
             the hands of real people.
           </p>
+
+          <div className="intro-stat-strip">
+            <div>
+              <div className="intro-stat-val accent">₹6,999+</div>
+              <div className="intro-stat-lbl">Transparent Pricing</div>
+            </div>
+            <div>
+              <div className="intro-stat-val">10–25 Days</div>
+              <div className="intro-stat-lbl">Fast Ship Time</div>
+            </div>
+            <div>
+              <div className="intro-stat-val">99.9%</div>
+              <div className="intro-stat-lbl">Production Uptime</div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -343,12 +339,13 @@ function Services() {
   return (
     <section className="section" id="services" aria-labelledby="services-title">
       <div className="section-shell">
-        <div className="services-head reveal">
-          <div>
-            <div className="section-kicker">02 / Capabilities</div>
-            <h2 id="services-title">Our Services: What we build</h2>
-          </div>
-          <p className="section-intro">
+        <div className="reveal flex flex-col items-center text-center gap-6 mb-16 section-header-center">
+          <div className="section-kicker">02 / Capabilities</div>
+          <h2 id="services-title">Our Services: What we build</h2>
+          <p
+            className="section-intro"
+            style={{ margin: "0 auto", maxWidth: "650px" }}
+          >
             A focused set of capabilities for teams who want to move from “we
             should” to “it works.”
           </p>
@@ -394,7 +391,10 @@ function Services() {
             ),
           )}
         </div>
-        <div style={{ textAlign: "center", marginTop: "40px" }} className="reveal">
+        <div
+          style={{ textAlign: "center", marginTop: "40px" }}
+          className="reveal"
+        >
           <Link
             href="/services"
             className="button-ghost inline-flex items-center gap-2"
@@ -494,12 +494,19 @@ function Projects() {
 
   const filteredProjects = projects.filter((p) => {
     if (filter === "All") return true;
-    if (filter === "Live Demos" && p.url && p.url.startsWith("http")) return true;
-    if (filter === "Websites" && (p.type === "website" || p.category.toLowerCase().includes("e-commerce"))) return true;
+    if (filter === "Live Demos" && p.url && p.url.startsWith("http"))
+      return true;
+    if (
+      filter === "Websites" &&
+      (p.type === "website" || p.category.toLowerCase().includes("e-commerce"))
+    )
+      return true;
     if (filter === "Software" && p.type === "software") return true;
     if (filter === "Mobile Apps" && p.type === "app") return true;
     return false;
   });
+
+  const displayedProjects = filteredProjects.slice(0, 9);
 
   return (
     <section
@@ -508,32 +515,41 @@ function Projects() {
       aria-labelledby="projects-title"
     >
       <div className="section-shell">
-        <div className="projects-top reveal">
-          <div>
-            <div className="section-kicker">04 / Selected demos</div>
-            <h2 id="projects-title">Our Web & App Portfolio</h2>
-          </div>
-          <p className="section-intro">
+        <div className="reveal flex flex-col items-center text-center gap-6 mb-12 section-header-center">
+          <div className="section-kicker">04 / Projects</div>
+          <h2 id="projects-title">Our Web & App Portfolio</h2>
+          <p
+            className="section-intro"
+            style={{ margin: "0 auto", maxWidth: "650px" }}
+          >
             A small tour of live deployments and interactive demos. Test our
-            enterprise systems, ERPs, and client platforms directly in real time.
+            enterprise systems, ERPs, and client platforms directly in real
+            time.
           </p>
         </div>
 
-        <div className="projects-filters reveal">
-          {["All", "Live Demos", "Software", "Websites", "Mobile Apps"].map((f) => (
-            <button
-              key={f}
-              onClick={() => setFilter(f)}
-              className={`filter-btn ${filter === f ? "active" : ""}`}
-            >
-              {f === "Live Demos" ? "● Live Demos" : f}
-            </button>
-          ))}
+        <div
+          className="projects-filters reveal"
+          style={{ justifyContent: "center" }}
+        >
+          {["All", "Live Demos", "Software", "Websites", "Mobile Apps"].map(
+            (f) => (
+              <button
+                key={f}
+                onClick={() => setFilter(f)}
+                className={`filter-btn ${filter === f ? "active" : ""}`}
+              >
+                {f === "Live Demos" ? "● Live Demos" : f}
+              </button>
+            ),
+          )}
         </div>
 
         <div className="project-grid">
-          {filteredProjects.map((project, index) => {
-            const isLive = Boolean(project.url && project.url.startsWith("http"));
+          {displayedProjects.map((project, index) => {
+            const isLive = Boolean(
+              project.url && project.url.startsWith("http"),
+            );
             return (
               <motion.article
                 key={project.id}
@@ -595,7 +611,10 @@ function Projects() {
                 </div>
                 <div className="project-info">
                   <span className="project-tag">{project.category}</span>
-                  <Link href={`/projects/${project.id}`} style={{ textDecoration: "none" }}>
+                  <Link
+                    href={`/projects/${project.id}`}
+                    style={{ textDecoration: "none" }}
+                  >
                     <h3>{project.name}</h3>
                   </Link>
                   <p>{project.copy}</p>
@@ -667,13 +686,21 @@ function Projects() {
             );
           })}
         </div>
-        <div className="projects-end reveal" style={{ display: "flex", gap: "12px", justifyContent: "center", flexWrap: "wrap" }}>
+        <div
+          className="projects-end reveal"
+          style={{
+            display: "flex",
+            gap: "12px",
+            justifyContent: "center",
+            flexWrap: "wrap",
+          }}
+        >
           <Link
             className="button-coral"
             href="/projects"
             data-testid="button-view-all-portfolio"
           >
-            Explore Full Portfolio Hub <ArrowUpRight size={15} />
+            View All Projects ({projects.length}+) <ArrowUpRight size={15} />
           </Link>
           <a
             className="button-ghost"
@@ -823,10 +850,13 @@ function Technologies() {
   return (
     <section className="tech-section" aria-labelledby="tech-title">
       <div className="section-shell">
-        <div className="tech-header reveal">
+        <div className="reveal flex flex-col items-center text-center gap-6 mb-16 section-header-center">
           <div className="section-kicker">06 / Technologies</div>
           <h2 id="tech-title">The tech stack behind our work</h2>
-          <p>
+          <p
+            className="section-intro"
+            style={{ margin: "0 auto", maxWidth: "650px" }}
+          >
             Comfortable with the modern web. Curious enough to choose the right
             tool when it matters.
           </p>
@@ -865,22 +895,61 @@ function Technologies() {
 function CTA() {
   return (
     <section className="cta-section" aria-labelledby="cta-title">
-      <div className="section-shell cta-inner">
-        <div className="reveal">
-          <div className="section-kicker" style={{ color: "var(--ink)" }}>
+      <div className="section-shell cta-inner-center">
+        <div
+          className="reveal flex flex-col items-center text-center gap-6 section-header-center"
+          style={{ margin: "0 auto" }}
+        >
+          <div
+            className="section-kicker"
+            style={{
+              color: "var(--coral)",
+              background: "rgba(224, 90, 71, 0.15)",
+              borderColor: "rgba(224, 90, 71, 0.3)",
+              margin: "0 auto 16px auto",
+            }}
+          >
             09 / Make it real
           </div>
-          <h2 id="cta-title">Have an idea? Let's build it.</h2>
-          <p>
+          <h2
+            id="cta-title"
+            style={{
+              color: "#fff",
+              fontSize: "clamp(32px, 4.2vw, 56px)",
+              letterSpacing: "-0.04em",
+              lineHeight: 1.05,
+              textAlign: "center",
+              margin: "0 auto",
+              maxWidth: "750px",
+            }}
+          >
+            Have an idea?{" "}
+            <span style={{ color: "var(--coral)" }}>Let's build it.</span>
+          </h2>
+          <p
+            style={{
+              color: "#b3bab6",
+              fontSize: "17px",
+              maxWidth: "600px",
+              margin: "16px auto 0 auto",
+              lineHeight: 1.6,
+              textAlign: "center",
+            }}
+          >
             Tell us what you want to build and we'll help turn your idea into a
-            working digital product.
+            working digital product — delivered on time with 100% code
+            ownership.
           </p>
         </div>
-        <div className="cta-actions reveal reveal-delay-1">
+        <div
+          className="cta-actions reveal reveal-delay-1"
+          style={{ marginTop: "28px", justifyContent: "center" }}
+        >
           <a
             className="button-coral"
             href="#contact"
             data-testid="button-cta-start"
+            style={{ boxShadow: "0 8px 24px rgba(224, 90, 71, 0.35)" }}
           >
             Start Your Project <ArrowUpRight size={16} />
           </a>
@@ -888,6 +957,7 @@ function CTA() {
             className="button-ghost"
             href="mailto:codepecharchainfo@gmail.com"
             data-testid="link-cta-talk"
+            style={{ color: "#fff", borderColor: "rgba(255, 255, 255, 0.25)" }}
           >
             Talk to Us <Mail size={15} />
           </a>
@@ -926,10 +996,13 @@ function FAQ() {
   return (
     <section className="section bg-light" id="faq" aria-labelledby="faq-title">
       <div className="section-shell">
-        <div className="reveal">
+        <div className="reveal flex flex-col items-center text-center gap-6 mb-16 section-header-center">
           <div className="section-kicker">07 / FAQ</div>
           <h2 id="faq-title">Common questions.</h2>
-          <p className="section-intro">
+          <p
+            className="section-intro"
+            style={{ margin: "0 auto", maxWidth: "650px" }}
+          >
             Everything you need to know about how we work.
           </p>
         </div>
@@ -1179,7 +1252,8 @@ function Pricing() {
     {
       name: "Starter Website",
       price: "₹6,999",
-      description: "Perfect for local businesses wanting a fast, clean digital presence.",
+      description:
+        "Perfect for local businesses wanting a fast, clean digital presence.",
       badge: null,
       popular: false,
       features: [
@@ -1197,7 +1271,8 @@ function Pricing() {
     {
       name: "Standard Website & CMS",
       price: "₹14,999",
-      description: "Best for growing companies needing a strong lead-generating website.",
+      description:
+        "Best for growing companies needing a strong lead-generating website.",
       badge: "Most Popular",
       popular: true,
       features: [
@@ -1215,7 +1290,8 @@ function Pricing() {
     {
       name: "Web App & E-Commerce",
       price: "₹24,999",
-      description: "For full-featured e-commerce stores, portals, and dynamic web apps.",
+      description:
+        "For full-featured e-commerce stores, portals, and dynamic web apps.",
       badge: null,
       popular: false,
       features: [
@@ -1233,7 +1309,8 @@ function Pricing() {
     {
       name: "Website + Mobile App",
       price: "₹44,999",
-      description: "Complete digital presence: Dynamic website + Cross-platform Mobile App with unified backend.",
+      description:
+        "Complete digital presence: Dynamic website + Cross-platform Mobile App with unified backend.",
       badge: "Combo Pack",
       popular: false,
       highlight: true,
@@ -1246,7 +1323,10 @@ function Pricing() {
         { name: "Production-Ready APK & iOS App Build Files", included: true },
         { name: "100% Full Source Code Handover", included: true },
         { name: "1 Year Technical Support & Maintenance", included: true },
-        { name: "Play Store & App Store Console / Publishing Fee", included: false },
+        {
+          name: "Play Store & App Store Console / Publishing Fee",
+          included: false,
+        },
       ],
     },
   ];
@@ -1272,14 +1352,18 @@ function Pricing() {
   return (
     <section className="section" id="pricing" aria-labelledby="pricing-title">
       <div className="section-shell">
-        <div className="reveal flex flex-col items-center text-center gap-6 mb-16">
+        <div className="reveal flex flex-col items-center text-center gap-6 mb-16 section-header-center">
           <div className="section-kicker">09 / Pricing & Packages</div>
-          <h2 id="pricing-title">Clear, upfront packages for Web, Software & Apps.</h2>
+          <h2 id="pricing-title">
+            Clear, upfront packages for Web, Software & Apps.
+          </h2>
           <p
             className="section-intro"
             style={{ margin: "0 auto", maxWidth: "650px" }}
           >
-            No hidden fees. Transparent investment from quick-launch business websites to production-grade custom software and cross-platform mobile apps.
+            No hidden fees. Transparent investment from quick-launch business
+            websites to production-grade custom software and cross-platform
+            mobile apps.
           </p>
         </div>
 
@@ -1343,11 +1427,14 @@ function Pricing() {
                       : plan.highlight
                         ? "var(--ink)"
                         : "transparent",
-                    color: plan.popular || plan.highlight ? "#fff" : "var(--ink)",
+                    color:
+                      plan.popular || plan.highlight ? "#fff" : "var(--ink)",
                     transition: "all 0.3s ease",
                   }}
                 >
-                  {plan.price.includes("+") ? "Get Custom Quote" : `Choose ${plan.name}`}
+                  {plan.price.includes("+")
+                    ? "Get Custom Quote"
+                    : `Choose ${plan.name}`}
                 </a>
               </div>
             </motion.div>
@@ -1481,10 +1568,13 @@ function Industries() {
       aria-labelledby="industries-title"
     >
       <div className="section-shell">
-        <div className="reveal" style={{ textAlign: "center" }}>
+        <div className="reveal flex flex-col items-center text-center gap-6 mb-16 section-header-center">
           <div className="section-kicker">10 / Industries We Build For</div>
           <h2 id="industries-title">Domains we specialize in.</h2>
-          <p className="section-intro" style={{ margin: "0 auto" }}>
+          <p
+            className="section-intro"
+            style={{ margin: "0 auto", maxWidth: "650px" }}
+          >
             We create tailored digital experiences for a wide variety of growing
             businesses.
           </p>
@@ -1493,7 +1583,7 @@ function Industries() {
         <div
           className="reveal reveal-delay-1"
           style={{
-            marginTop: "40px",
+            marginTop: "20px",
             display: "flex",
             flexWrap: "wrap",
             gap: "16px",
@@ -1544,10 +1634,13 @@ function Testimonials() {
       aria-labelledby="test-title"
     >
       <div className="section-shell">
-        <div className="reveal">
+        <div className="reveal flex flex-col items-center text-center gap-6 mb-16 section-header-center">
           <div className="section-kicker">11 / Client Reviews</div>
           <h2 id="test-title">What people say.</h2>
-          <p className="section-intro">
+          <p
+            className="section-intro"
+            style={{ margin: "0 auto", maxWidth: "650px" }}
+          >
             Don't just take our word for it. Here's what our clients have to say
             about our work.
           </p>

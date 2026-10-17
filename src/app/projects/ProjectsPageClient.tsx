@@ -3,7 +3,13 @@
 import { useState, useMemo } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowUpRight, ChevronRight, ExternalLink, Search, Sparkles } from "lucide-react";
+import {
+  ArrowUpRight,
+  ChevronRight,
+  ExternalLink,
+  Search,
+  Sparkles,
+} from "lucide-react";
 import { projects } from "@/data";
 
 export default function ProjectsPageClient() {
@@ -13,8 +19,14 @@ export default function ProjectsPageClient() {
   const filteredProjects = useMemo(() => {
     return projects.filter((p) => {
       // Type filter
-      if (filter === "Live Demos" && (!p.url || !p.url.startsWith("http"))) return false;
-      if (filter === "Websites" && p.type !== "website" && !p.category.toLowerCase().includes("e-commerce")) return false;
+      if (filter === "Live Demos" && (!p.url || !p.url.startsWith("http")))
+        return false;
+      if (
+        filter === "Websites" &&
+        p.type !== "website" &&
+        !p.category.toLowerCase().includes("e-commerce")
+      )
+        return false;
       if (filter === "Software" && p.type !== "software") return false;
       if (filter === "Mobile Apps" && p.type !== "app") return false;
 
@@ -24,7 +36,9 @@ export default function ProjectsPageClient() {
         const matchesName = p.name.toLowerCase().includes(q);
         const matchesCat = p.category.toLowerCase().includes(q);
         const matchesCopy = p.copy.toLowerCase().includes(q);
-        const matchesTech = p.techStack?.some((t) => t.toLowerCase().includes(q));
+        const matchesTech = p.techStack?.some((t) =>
+          t.toLowerCase().includes(q),
+        );
         if (!matchesName && !matchesCat && !matchesCopy && !matchesTech) {
           return false;
         }
@@ -88,12 +102,17 @@ export default function ProjectsPageClient() {
       {/* Breadcrumb Bar */}
       <div className="bg-ink text-bone/60 py-4 border-b border-white/10 mt-20">
         <div className="section-shell">
-          <nav aria-label="Breadcrumb" className="flex flex-wrap items-center gap-2 text-sm">
+          <nav
+            aria-label="Breadcrumb"
+            className="flex flex-wrap items-center gap-2 text-sm"
+          >
             <Link href="/" className="hover:text-coral transition-colors">
               Home
             </Link>
             <ChevronRight size={14} />
-            <span className="text-bone font-medium">Projects &amp; Portfolio</span>
+            <span className="text-bone font-medium">
+              Projects &amp; Portfolio
+            </span>
           </nav>
         </div>
       </div>
@@ -103,13 +122,15 @@ export default function ProjectsPageClient() {
         <div className="section-shell">
           <div className="max-w-4xl">
             <div className="inline-flex items-center gap-2 bg-coral/10 text-coral px-4 py-2 rounded-full font-bold uppercase tracking-wider text-xs mb-6 font-mono-cpc">
-              <Sparkles size={14} /> Selected Demos &amp; Deployments
+              <Sparkles size={14} /> Projects &amp; Deployments
             </div>
             <h1 className="text-4xl md:text-6xl font-bold tracking-tight text-ink leading-[1.05] mb-6">
               Our Web, App &amp; Software Portfolio
             </h1>
             <p className="text-lg md:text-xl text-ink/70 leading-relaxed max-w-2xl">
-              From enterprise-grade ERPs and clinic management systems to high-speed e-commerce platforms and native mobile apps — browse our engineering track record.
+              From enterprise-grade ERPs and clinic management systems to
+              high-speed e-commerce platforms and native mobile apps — browse
+              our engineering track record.
             </p>
           </div>
 
@@ -117,21 +138,23 @@ export default function ProjectsPageClient() {
           <div className="mt-12 flex flex-col md:flex-row md:items-center justify-between gap-6">
             {/* Filter Buttons */}
             <div className="flex flex-wrap gap-2">
-              {["All", "Live Demos", "Software", "Websites", "Mobile Apps"].map((f) => (
-                <button
-                  key={f}
-                  onClick={() => setFilter(f)}
-                  className={`filter-btn ${filter === f ? "active" : ""}`}
-                  style={{
-                    padding: "10px 20px",
-                    borderRadius: "999px",
-                    fontSize: "14px",
-                    fontWeight: 600,
-                  }}
-                >
-                  {f === "Live Demos" ? "● Live Demos" : f}
-                </button>
-              ))}
+              {["All", "Live Demos", "Software", "Websites", "Mobile Apps"].map(
+                (f) => (
+                  <button
+                    key={f}
+                    onClick={() => setFilter(f)}
+                    className={`filter-btn ${filter === f ? "active" : ""}`}
+                    style={{
+                      padding: "10px 20px",
+                      borderRadius: "999px",
+                      fontSize: "14px",
+                      fontWeight: 600,
+                    }}
+                  >
+                    {f === "Live Demos" ? "● Live Demos" : f}
+                  </button>
+                ),
+              )}
             </div>
 
             {/* Search Input */}
@@ -157,8 +180,12 @@ export default function ProjectsPageClient() {
         <div className="section-shell">
           {filteredProjects.length === 0 ? (
             <div className="text-center py-24 bg-white rounded-3xl border border-line p-8">
-              <h3 className="text-2xl font-bold text-ink mb-2">No projects found</h3>
-              <p className="text-ink/60 mb-6">Try clearing your search query or filter</p>
+              <h3 className="text-2xl font-bold text-ink mb-2">
+                No projects found
+              </h3>
+              <p className="text-ink/60 mb-6">
+                Try clearing your search query or filter
+              </p>
               <button
                 onClick={() => {
                   setFilter("All");
@@ -172,7 +199,9 @@ export default function ProjectsPageClient() {
           ) : (
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               {filteredProjects.map((project) => {
-                const isLive = Boolean(project.url && project.url.startsWith("http"));
+                const isLive = Boolean(
+                  project.url && project.url.startsWith("http"),
+                );
                 return (
                   <div
                     key={project.id}
@@ -218,7 +247,10 @@ export default function ProjectsPageClient() {
 
                     {/* Body Details */}
                     <div className="flex flex-col flex-1 p-6">
-                      <Link href={`/projects/${project.id}`} className="hover:text-coral transition-colors">
+                      <Link
+                        href={`/projects/${project.id}`}
+                        className="hover:text-coral transition-colors"
+                      >
                         <h2 className="text-xl font-bold text-ink mb-2 leading-snug">
                           {project.name}
                         </h2>
@@ -252,7 +284,11 @@ export default function ProjectsPageClient() {
                           href={`/projects/${project.id}`}
                           className="text-coral hover:text-ink flex items-center gap-1 transition-colors"
                         >
-                          Case Study <ArrowUpRight size={14} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                          Case Study{" "}
+                          <ArrowUpRight
+                            size={14}
+                            className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform"
+                          />
                         </Link>
                         {isLive ? (
                           <a
@@ -285,7 +321,8 @@ export default function ProjectsPageClient() {
             Have a custom software or web project in mind?
           </h2>
           <p className="text-bone/85 text-base md:text-lg max-w-2xl mx-auto mb-8">
-            Tell us about your requirements. We engineer high-performance digital products that scale with your business.
+            Tell us about your requirements. We engineer high-performance
+            digital products that scale with your business.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link

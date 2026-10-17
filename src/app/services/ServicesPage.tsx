@@ -2,7 +2,7 @@
 
 import { useEffect } from "react";
 import Link from "next/link";
-import { ArrowUpRight, Check, Monitor, Smartphone, ShoppingCart, Code2, Users, LayoutDashboard, Truck, Heart, Database, Settings } from "lucide-react";
+import { ArrowUpRight, Check, Monitor, Smartphone, ShoppingCart, Code2, Users, LayoutDashboard, Truck, Heart, Database, Settings, ChevronRight, Sparkles } from "lucide-react";
 import { motion } from "framer-motion";
 
 function useReveal() {
@@ -198,23 +198,44 @@ export default function ServicesPage() {
   useReveal();
 
   return (
-    <main>
-      {/* Hero Section */}
-      <section className="hero" style={{ paddingBottom: '4rem', paddingTop: '8rem' }}>
+    <main className="bg-bone min-h-screen">
+      {/* Breadcrumb Bar */}
+      <div className="bg-ink text-bone/60 py-4 border-b border-white/10 mt-20">
         <div className="section-shell">
-          <div style={{ maxWidth: '800px' }}>
-            <h1 className="reveal" style={{ fontSize: 'clamp(2.5rem, 5vw, 4rem)', lineHeight: 1.1, marginBottom: '1.5rem', letterSpacing: '-0.02em' }}>
+          <nav
+            aria-label="Breadcrumb"
+            className="flex flex-wrap items-center gap-2 text-sm"
+          >
+            <Link href="/" className="hover:text-coral transition-colors">
+              Home
+            </Link>
+            <ChevronRight size={14} />
+            <span className="text-bone font-medium">
+              Services &amp; Capabilities
+            </span>
+          </nav>
+        </div>
+      </div>
+
+      {/* Hero Header matching Projects and Case Studies */}
+      <section className="pt-16 pb-12 md:pt-24 md:pb-16 border-b border-line bg-gradient-to-b from-bone to-bone/40">
+        <div className="section-shell">
+          <div className="max-w-4xl">
+            <div className="inline-flex items-center gap-2 bg-coral/10 text-coral px-4 py-2 rounded-full font-bold uppercase tracking-wider text-xs mb-6 font-mono-cpc">
+              <Sparkles size={14} /> Services &amp; Capabilities
+            </div>
+            <h1 className="text-4xl md:text-6xl font-bold tracking-tight text-ink leading-[1.05] mb-6">
               Digital Solutions Built Around Your Business
             </h1>
-            <p className="hero-copy reveal reveal-delay-1" style={{ marginBottom: '2.5rem', fontSize: '1.125rem' }}>
+            <p className="text-lg md:text-xl text-ink/70 leading-relaxed max-w-2xl mb-8">
               From websites and mobile apps to custom business software, CRM, ERP and industry-specific solutions — Code Pe Charcha builds technology around your actual business needs.
             </p>
-            <div className="hero-actions reveal reveal-delay-2">
-              <Link href="/#contact" className="button-coral">
+            <div className="flex flex-wrap items-center gap-4">
+              <Link href="/#contact" className="button-coral inline-flex items-center gap-2">
                 Discuss Your Project <ArrowUpRight size={16} />
               </Link>
-              <a href="#all-services" className="button-ghost">
-                View Services <ArrowUpRight size={16} />
+              <a href="#all-services" className="button-ghost inline-flex items-center gap-2">
+                View All Services <ArrowUpRight size={16} />
               </a>
             </div>
           </div>
@@ -222,13 +243,13 @@ export default function ServicesPage() {
       </section>
 
       {/* Services Overview */}
-      <section className="section" id="all-services">
+      <section className="section py-16 md:py-24" id="all-services">
         <div className="section-shell">
-          <div className="services-head reveal">
-            <div>
-              <div className="section-kicker">01 / Our Capabilities</div>
-              <h2>Comprehensive Digital Services</h2>
-            </div>
+          <div className="reveal mb-12">
+            <div className="section-kicker">01 / Our Capabilities</div>
+            <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-ink">
+              Comprehensive Digital Services
+            </h2>
           </div>
           
           <div className="service-grid">
